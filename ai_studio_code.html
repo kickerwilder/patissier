@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин-кондитерская «Патисьер» | Симферополь</title>
+  <meta name="description" content="Премиальная кондитерская Патисьер в Симферополе. Честный состав: сливочное масло 82%, без маргарина. Торты и десерты на заказ.">
+
+  <!-- Google Fonts: Cormorant Garamond + Playfair Display + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FDFBF7',
+              100: '#F7F3EA',
+              200: '#EFE8DA',
+              DEFAULT: '#FBF8F3',
+            },
+            choco: {
+              900: '#1C0F0A',
+              800: '#27150E',
+              700: '#3D2015',
+              600: '#542E1F',
+              DEFAULT: '#27150E',
+            },
+            gold: {
+              300: '#E5CA85',
+              400: '#D4AF37',
+              500: '#C5A059',
+              600: '#A9843E',
+              DEFAULT: '#C5A059',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1C0F0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C5A059;
+      border-radius: 4px;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFE8A3 0%, #D4AF37 50%, #AA8238 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-cream text-choco-900 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+  <!-- ================= TOP NOTIFICATION BAR ================= -->
+  <div class="bg-choco-900 text-cream-100 text-xs py-2 px-4 border-b border-gold-500/20">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+        <span class="tracking-wide">Предзаказ за 24 часа • Только натуральное масло 82% • 0% маргарина</span>
+      </div>
+      <div class="flex items-center gap-4 text-gold-300 font-medium">
+        <a href="tel:+79789114855" class="hover:text-white transition flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+          +7 (978) 911-48-55
+        </a>
+        <span class="text-white/30 hidden sm:inline">|</span>
+        <span class="text-white/80 hidden sm:inline">Симферополь</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-choco-900/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="images/logo.png" alt="Патисьер" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider text-cream-100 uppercase">
+        <a href="#manifesto" class="hover:text-gold-400 transition-colors">Философия</a>
+        <a href="#catalog" class="hover:text-gold-400 transition-colors">Каталог</a>
+        <a href="#about" class="hover:text-gold-400 transition-colors">О нас</a>
+        <a href="#locations" class="hover:text-gold-400 transition-colors">Адреса и цех</a>
+        <a href="#contacts" class="hover:text-gold-400 transition-colors">Контакты</a>
+      </nav>
+
+      <!-- Cart Button & Socials -->
+      <div class="flex items-center gap-3 sm:gap-5">
+        <div class="hidden sm:flex items-center gap-2">
+          <a href="https://t.me/" target="_blank" title="Telegram" class="w-9 h-9 rounded-full bg-choco-800 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-choco-900 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          </a>
+          <a href="https://max.ru/" target="_blank" title="Max Messenger" class="px-2.5 h-9 rounded-full bg-choco-800 border border-gold-500/40 flex items-center justify-center text-xs font-bold text-gold-400 hover:bg-gold-500 hover:text-choco-900 transition">
+            MAX
+          </a>
+        </div>
+
+        <!-- Open Cart Button -->
+        <button id="open-cart-btn" class="relative flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-900 px-4 py-2.5 rounded-full font-semibold text-xs tracking-wider uppercase hover:shadow-lg hover:shadow-gold-500/30 transition transform hover:-translate-y-0.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span>Корзина</span>
+          <span id="cart-counter" class="w-5 h-5 rounded-full bg-choco-900 text-gold-400 text-[11px] font-bold flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION (BRIGHTENED VIDEO) ================= -->
+  <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-choco-900 text-cream-50">
+    <div class="absolute inset-0 z-0">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-75 scale-105 transition-all duration-700">
+        <source src="images/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-choco-900/90 via-choco-900/30 to-choco-900/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-400/50 bg-choco-900/80 backdrop-blur-md text-gold-300 text-xs uppercase tracking-[0.2em] mb-8 shadow-lg">
+        <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+        ПАТИСЬЕР • Симферополь
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-tight tracking-tight text-cream-50 mb-6 drop-shadow-lg">
+        «Франция в миниатюре» <br>
+        <span class="italic font-light text-gold-300">и вкус настоящего детства</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-base sm:text-lg text-cream-100 font-light leading-relaxed mb-10 drop-shadow">
+        Торты и десерты бескомпромиссного качества. Исключительно натуральное сливочное масло 82%, без маргарина, пальмового масла и искусственных загустителей.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-500 hover:bg-gold-400 text-choco-900 font-semibold tracking-wider text-xs uppercase transition-all transform hover:scale-105 shadow-xl shadow-gold-500/30">
+          Выбрать десерт к празднику
+        </a>
+        <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full border border-cream-100/50 bg-choco-900/40 backdrop-blur-sm hover:border-gold-400 text-cream-100 hover:text-gold-300 text-xs font-semibold uppercase tracking-wider transition">
+          История бренда
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 mt-12 border-t border-gold-500/30 text-cream-100 text-xs">
+        <div class="backdrop-blur-sm bg-choco-900/30 p-2 rounded-xl">
+          <span class="block font-serif text-2xl font-bold text-gold-400 drop-shadow">82%</span>
+          <span>Натуральное сливочное масло</span>
+        </div>
+        <div class="backdrop-blur-sm bg-choco-900/30 p-2 rounded-xl">
+          <span class="block font-serif text-2xl font-bold text-gold-400 drop-shadow">0%</span>
+          <span>Маргарина и растительных сливок</span>
+        </div>
+        <div class="backdrop-blur-sm bg-choco-900/30 p-2 rounded-xl">
+          <span class="block font-serif text-2xl font-bold text-gold-400 drop-shadow">24 ч</span>
+          <span>Бережный предзаказ свежести</span>
+        </div>
+        <div class="backdrop-blur-sm bg-choco-900/30 p-2 rounded-xl">
+          <span class="block font-serif text-2xl font-bold text-gold-400 drop-shadow">2 адреса</span>
+          <span>Цех и магазин в Симферополе</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MANIFESTO & MACRO NAPOLEON ================= -->
+  <section id="manifesto" class="py-24 bg-cream-100 border-b border-choco-900/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-600 font-semibold">Бескомпромиссные стандарты</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-choco-900 mt-2">Манифест честного состава</h2>
+        <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Macro Image Container (.jpeg) -->
+        <div class="lg:col-span-6 relative group">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="images/napoleon-macro.jpeg" alt="Торт Наполеон макросъемка" class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-choco-900/80 via-transparent to-transparent"></div>
+            
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="inline-block px-3 py-1 bg-gold-500 text-choco-900 font-bold text-xs rounded-full uppercase tracking-wider mb-2">Наш эталон</span>
+              <h3 class="font-serif text-2xl font-bold">Бабушкин «Наполеон» со вкусом пломбира</h3>
+              <p class="text-xs text-cream-200 mt-1">Десятки хрустящих коржей и много нежнейшего заварного крема</p>
+            </div>
+          </div>
+          <div class="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-choco-900 border-2 border-gold-400 text-gold-300 flex flex-col items-center justify-center text-center p-2 shadow-xl rotate-12">
+            <span class="text-[9px] uppercase tracking-widest font-semibold">100%</span>
+            <span class="font-serif text-xs font-bold leading-none">Честный состав</span>
+          </div>
+        </div>
+
+        <!-- Ingredients Story Points -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm hover:border-gold-500 transition">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-cream-100 flex-shrink-0 flex items-center justify-center text-gold-600 font-serif font-bold text-xl">01</div>
+              <div>
+                <h4 class="font-serif text-xl font-bold text-choco-900">Сливочное масло 82.5%</h4>
+                <p class="text-sm text-choco-700/80 mt-1 leading-relaxed">
+                  Используем исключительно высококачественное сливочное масло максимальной жирности. Никакого маргарина, спредов или гидрогенизированных жиров. Именно оно дает тот самый сливочно-пломбирный аромат.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm hover:border-gold-500 transition">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-cream-100 flex-shrink-0 flex items-center justify-center text-gold-600 font-serif font-bold text-xl">02</div>
+              <div>
+                <h4 class="font-serif text-xl font-bold text-choco-900">Натуральное молоко «Вкуснотеево» 3.2%</h4>
+                <p class="text-sm text-choco-700/80 mt-1 leading-relaxed">
+                  Отборное цельное молоко высокого качества. Заварной крем на таком молоке получается бархатистым, густым и шелковистым без добавления синтетических загустителей.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-gold-500/20 shadow-sm hover:border-gold-500 transition">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-cream-100 flex-shrink-0 flex items-center justify-center text-gold-600 font-serif font-bold text-xl">03</div>
+              <div>
+                <h4 class="font-serif text-xl font-bold text-choco-900">Крымские яйца категории С-1</h4>
+                <p class="text-sm text-choco-700/80 mt-1 leading-relaxed">
+                  Только свежие натуральные яйца высшего сорта с проверенной местной птицефабрики Крыма. Гарантия нежной бисквитной структуры и натурального цвета.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATALOG SECTION ================= -->
+  <section id="catalog" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-600 font-semibold">Витрина десертов</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-choco-900 mt-2">Коллекция «Патисьер»</h2>
+        <p class="text-sm text-choco-600 mt-2">Каждый десерт изготавливается индивидуально под ваш предзаказ</p>
+      </div>
+
+      <!-- Filter Categories -->
+      <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-container">
+        <button class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-choco-900 text-gold-400" data-category="all">Все (14)</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-200 text-choco-800 hover:bg-gold-500 hover:text-white" data-category="classic">Классика</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-200 text-choco-800 hover:bg-gold-500 hover:text-white" data-category="chocolate">Шоколад и мусс</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition bg-cream-200 text-choco-800 hover:bg-gold-500 hover:text-white" data-category="special">Рулеты и Чизкейки</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
+      <!-- Items generated by JavaScript -->
+    </div>
+
+  </section>
+
+  <!-- ================= ABOUT US (ANASTASIA VOROBYEVA) ================= -->
+  <section id="about" class="py-24 bg-choco-900 text-cream-50 relative overflow-hidden">
+    <div class="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-gold-500/5 blur-3xl"></div>
+    <div class="absolute -left-32 -bottom-32 w-96 h-96 rounded-full bg-gold-500/5 blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Portrait (.jpeg) -->
+        <div class="lg:col-span-5 text-center lg:text-left">
+          <div class="relative inline-block max-w-sm mx-auto">
+            <div class="absolute -inset-3 rounded-2xl border-2 border-gold-500/30 transform rotate-2"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gold-500/40 bg-choco-800">
+              <img src="images/anastasia.jpeg" alt="Анастасия Воробьева - основатель кондитерской Патисьер" class="w-full h-[500px] object-cover object-top filter contrast-105">
+            </div>
+            <div class="mt-4 text-center">
+              <h4 class="font-serif text-2xl font-bold text-gold-400">Анастасия Воробьева</h4>
+              <p class="text-xs uppercase tracking-widest text-cream-200/80">Основатель и шеф-кондитер «Патисьер»</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block px-3.5 py-1.5 rounded-full border border-gold-500/30 bg-choco-800 text-gold-300 text-xs uppercase tracking-widest">
+            История создания
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight text-cream-50">
+            «Здравствуйте, меня зовут Анастасия! <br>
+            <span class="italic text-gold-300 font-light">Хочу поделиться с Вами своей историей…»</span>
+          </h2>
+
+          <div class="space-y-4 text-cream-100/90 text-sm sm:text-base font-light leading-relaxed">
+            <p>
+              Идея создания тортов пришла в канун 90-го дня рождения моей бабушки. Я с детства помню её волшебный «Наполеон» со вкусом пломбира. Трудные были времена, когда за сливочным маслом нужно было стоять в очереди и приходилось экономить на всём, и наш любимый торт не был исключением. 
+            </p>
+            <p class="font-serif text-lg italic text-gold-200 border-l-2 border-gold-400 pl-4 py-1 my-2">
+              «Мне, как ребёнку, всегда хотелось побольше крема в бабушкином волшебстве».
+            </p>
+            <p>
+              Готовясь к бабушкиному юбилею, хотелось её удивить и порадовать, хотя человека, пережившего войну, ничем не порадуешь, кроме своего звонка и приезда с внуками. К тому времени бабушка своим «Наполеоном» нас давно не баловала — уже тяжело было стоять целый день на кухне.
+            </p>
+            <p>
+              И я решила приготовить бабушкин «Наполеон» и, конечно, воплотить свою детскую мечту: <strong>«Чтоб там было много крема»</strong>. Так появился наш фирменный «Наполеон» по семейному рецепту.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-gold-500/20 flex items-center justify-between">
+            <div class="text-xs text-cream-200">
+              С любовью к честному вкусу и традициям семьи.
+            </div>
+            <span class="font-serif text-xl italic text-gold-400">Анастасия Воробьева</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCATIONS & WORKSHOP (UPDATED) ================= -->
+  <section id="locations" class="py-24 bg-cream-50 border-b border-choco-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-[0.25em] text-gold-600 font-semibold">Симферополь</span>
+        <h2 class="font-serif text-3xl sm:text-5xl text-choco-900 mt-2">Кондитерский цех и магазины</h2>
+        <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- MAIN HUB: Eupatoriyskoe Highway (Workshop + Flagship Store) -->
+        <div class="bg-white p-8 rounded-2xl border-2 border-gold-500 shadow-xl relative transform hover:-translate-y-1 transition duration-300">
+          <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-gold-600 to-gold-400 text-choco-900 text-[10px] uppercase font-bold tracking-widest px-4 py-1 rounded-full shadow-md">
+            Кондитерский цех и Главный магазин
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-600 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-choco-900">Евпаторийское шоссе, 5б</h3>
+          <p class="text-sm text-gold-600 font-semibold mt-1">Центральное производство и флагманский магазин</p>
+          <p class="text-xs text-choco-700/80 mt-3 leading-relaxed">
+            Здесь расположен наш кондитерский цех, где выпекаются все торты, а также магазин со свежими десертами. <strong>Основная точка самовывоза предзаказов.</strong>
+          </p>
+          <a href="https://yandex.ru/maps/?text=Симферополь+Евпаторийское+шоссе+5б" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-gold-600 hover:text-choco-900 mt-6 uppercase tracking-wider">
+            Построить маршрут &raquo;
+          </a>
+        </div>
+
+        <!-- Location 2: Shpolyanskoy 6 (Confectionery Store) -->
+        <div class="bg-white p-8 rounded-2xl border border-choco-900/10 shadow-sm hover:border-gold-500/50 transition duration-300">
+          <div class="w-12 h-12 rounded-xl bg-cream-100 text-choco-700 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-choco-900">ул. Шполянской, 6</h3>
+          <p class="text-sm text-choco-700 font-medium mt-1">Магазин-кондитерская</p>
+          <p class="text-xs text-choco-600/80 mt-3 leading-relaxed">
+            Уютный фирменный магазин кондитерских изделий в Симферополе. Витрина со свежими порционными десертами, кофе и выдача предзаказов.
+          </p>
+          <a href="https://yandex.ru/maps/?text=Симферополь+ул+Шполянской+6" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold text-gold-600 hover:text-choco-900 mt-6 uppercase tracking-wider">
+            Построить маршрут &raquo;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER & REQUISITES ================= -->
+  <footer id="contacts" class="bg-choco-900 text-cream-100 pt-20 pb-12 border-t border-gold-500/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-cream-100/10">
+        
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-4">
+          <img src="images/logo.png" alt="Патисьер" class="h-14 w-auto object-contain">
+          <p class="text-xs text-cream-200/80 max-w-sm leading-relaxed">
+            Высокое кондитерское искусство на страже чистоты вкуса. Премиальные торты ручной работы для ваших особенных моментов.
+          </p>
+          
+          <div class="pt-2 flex items-center gap-3">
+            <a href="https://t.me/" target="_blank" class="w-10 h-10 rounded-full bg-choco-800 border border-gold-500/30 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-choco-900 transition" title="Telegram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            </a>
+            <a href="https://max.ru/" target="_blank" class="px-3 h-10 rounded-full bg-choco-800 border border-gold-500/30 flex items-center justify-center text-xs font-bold text-gold-400 hover:bg-gold-500 hover:text-choco-900 transition" title="Max">
+              MAX
+            </a>
+            <a href="tel:+79789114855" class="px-4 h-10 rounded-full bg-gold-500/20 border border-gold-500/50 flex items-center justify-center text-xs font-semibold text-gold-300 hover:bg-gold-500 hover:text-choco-900 transition">
+              +7 (978) 911-48-55
+            </a>
+          </div>
+        </div>
+
+        <!-- Addresses Column (Only 2 Valid Addresses) -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="font-serif text-lg font-bold text-gold-400">г. Симферополь</h4>
+          <ul class="space-y-3 text-xs text-cream-200/90">
+            <li class="flex items-start gap-2">
+              <span class="text-gold-400">•</span>
+              <div>
+                <strong>Евпаторийское шоссе, 5б</strong>
+                <span class="block text-[11px] text-gold-300">Кондитерский цех и Главный магазин (самовывоз)</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-gold-400">•</span>
+              <div>
+                <strong>ул. Шполянской, 6</strong>
+                <span class="block text-[11px] text-cream-200/70">Магазин-кондитерская</span>
+              </div>
+            </li>
+          </ul>
+          <p class="text-[11px] text-cream-200/60 pt-2">Прием онлайн-заказов: ежедневно с 09:00 до 20:00</p>
+        </div>
+
+        <!-- Legal Info & 152-FZ -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="font-serif text-lg font-bold text-gold-400">О предприятии</h4>
+          <div class="text-xs text-cream-200/80 space-y-1.5 font-light">
+            <p><strong>ИП:</strong> Воробьева Анастасия Андреевна</p>
+            <p><strong>Юр. адрес:</strong> 295047, РК, г. Симферополь, Евпаторийское шоссе, 5б</p>
+            <p><strong>ОГРН:</strong> 321911200092192</p>
+            <p><strong>ИНН:</strong> 910202897673</p>
+          </div>
+          <div class="pt-2 flex flex-col space-y-1 text-[11px] text-gold-300/80">
+            <a href="#" class="hover:text-white transition">Политика конфиденциальности (152-ФЗ)</a>
+            <a href="#" class="hover:text-white transition">Публичная оферта и условия доставки</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-cream-200/50 gap-4">
+        <div>© 2026 Кондитерская «Патисьер». Все права защищены.</div>
+        <div>Серверная база данных размещена в РФ по 152-ФЗ.</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= SMART CART DRAWER ================= -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+    <div id="cart-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
+
+    <div id="cart-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-cream-50 text-choco-900 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto border-l border-gold-500/30">
+      
+      <!-- Cart Header -->
+      <div class="p-6 bg-choco-900 text-cream-50 flex items-center justify-between border-b border-gold-500/30">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <h3 class="font-serif text-xl font-bold">Ваша корзина</h3>
+        </div>
+        <button id="close-cart-btn" class="text-cream-200 hover:text-white p-1">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Free Shipping Progress Bar -->
+      <div class="bg-cream-200 p-4 border-b border-choco-900/10">
+        <div class="flex justify-between text-xs font-semibold text-choco-800 mb-1.5">
+          <span id="shipping-progress-text">До бесплатной доставки по городу осталось 5 000 ₽</span>
+          <span id="shipping-progress-percent">0%</span>
+        </div>
+        <div class="w-full bg-cream-100 rounded-full h-2 overflow-hidden">
+          <div id="shipping-bar" class="bg-gradient-to-r from-gold-500 to-gold-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items List -->
+      <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Dynamic Items -->
+      </div>
+
+      <!-- Cart Footer & Checkout Action -->
+      <div class="p-6 bg-white border-t border-choco-900/10 space-y-4">
+        <div class="flex justify-between items-center text-sm">
+          <span class="text-choco-700">Итого к оплате:</span>
+          <span id="cart-total-price" class="font-serif text-2xl font-bold text-choco-900">0 ₽</span>
+        </div>
+        <button id="checkout-btn" class="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-choco-900 font-bold text-xs uppercase tracking-wider transition transform hover:scale-[1.02] shadow-lg shadow-gold-500/20 disabled:opacity-50 disabled:pointer-events-none" disabled>
+          Оформить предзаказ
+        </button>
+        <p class="text-[11px] text-center text-choco-600">
+          Оплата после подтверждения заказа менеджером
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CHECKOUT MODAL ================= -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="bg-cream-50 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gold-500/30 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="font-serif text-2xl font-bold text-choco-900">Оформление предзаказа</h3>
+        <button id="close-modal-btn" class="text-choco-600 hover:text-choco-900 text-xl font-bold">&times;</button>
+      </div>
+
+      <form id="order-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-choco-800 uppercase tracking-wider mb-1">Ваше Имя *</label>
+          <input type="text" required placeholder="Анастасия" class="w-full px-4 py-3 rounded-lg border border-choco-900/20 bg-white text-sm focus:border-gold-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-choco-800 uppercase tracking-wider mb-1">Телефон для связи *</label>
+          <input type="tel" required placeholder="+7 (978) 000-00-00" class="w-full px-4 py-3 rounded-lg border border-choco-900/20 bg-white text-sm focus:border-gold-500 focus:outline-none">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-choco-800 uppercase tracking-wider mb-1">Дата получения *</label>
+            <input type="date" required class="w-full px-4 py-3 rounded-lg border border-choco-900/20 bg-white text-sm focus:border-gold-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-choco-800 uppercase tracking-wider mb-1">Способ получения</label>
+            <select class="w-full px-4 py-3 rounded-lg border border-choco-900/20 bg-white text-sm focus:border-gold-500 focus:outline-none">
+              <option>Самовывоз: Евпаторийское ш., 5б (Цех и магазин)</option>
+              <option>Самовывоз: ул. Шполянской, 6 (Магазин)</option>
+              <option>Курьерская доставка по Симферополю</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-choco-800 uppercase tracking-wider mb-1">Пожелания или надпись на десерте</label>
+          <textarea rows="2" placeholder="Например: надпись «С Днем Рождения, Мама!»" class="w-full px-4 py-2 rounded-lg border border-choco-900/20 bg-white text-sm focus:border-gold-500 focus:outline-none"></textarea>
+        </div>
+
+        <!-- 152-ФЗ Checkbox -->
+        <div class="flex items-start gap-2 pt-2">
+          <input type="checkbox" id="pdn-consent" required class="mt-1 accent-gold-500 rounded">
+          <label for="pdn-consent" class="text-[11px] text-choco-700 leading-tight">
+            Согласен на обработку персональных данных в соответствии с <strong>152-ФЗ РФ</strong> и условиями публичной оферты.
+          </label>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-choco-900 font-bold text-xs uppercase tracking-wider transition shadow-lg shadow-gold-500/20 mt-4">
+          Подтвердить и отправить заявку
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // 14 Real Products with .jpeg extensions
+    const products = [
+      { id: 1, name: "Киевский", price: 2200, category: "classic", image: "images/kievsky.jpg", tag: "Классика" },
+      { id: 2, name: "Наполеон", price: 2470, category: "classic", image: "images/napoleon.jpg", tag: "Хит • Семейный рецепт" },
+      { id: 3, name: "Грильяжный", price: 3500, category: "classic", image: "images/grilyazhny.jpg", tag: "Премиум" },
+      { id: 4, name: "Меренговый рулет", price: 2640, category: "special", image: "images/merengovy.jpg", tag: "Нежность" },
+      { id: 5, name: "Морковно-карамельный с вишней", price: 3470, category: "special", image: "images/morkovny-vishnya.jpg", tag: "Авторский" },
+      { id: 6, name: "Птичье молоко", price: 3370, category: "classic", image: "images/ptichye-moloko.jpg", tag: "Нежный суфле" },
+      { id: 7, name: "Сникерс", price: 3870, category: "chocolate", image: "images/snikers.jpg", tag: "Карамель & Арахис" },
+      { id: 8, name: "Торт 3 шоколада", price: 3470, category: "chocolate", image: "images/tri-shokolada.jpg", tag: "Муссовый" },
+      { id: 9, name: "Морковно-Апельсиновый", price: 3770, category: "special", image: "images/morkovny-apelsin.jpg", tag: "Пряный" },
+      { id: 10, name: "Торт Москва", price: 3900, category: "classic", image: "images/moskva.jpg", tag: "Гляссаж" },
+      { id: 11, name: "Торт Сказка", price: 2970, category: "classic", image: "images/skazka.jpg", tag: "Детство" },
+      { id: 12, name: "Чизкейк Нью-Йорк", price: 3770, category: "special", image: "images/cheesecake-ny.jpg", tag: "Сливочный" },
+      { id: 13, name: "Шварцвальд", price: 3870, category: "chocolate", image: "images/schwarzwald.jpg", tag: "Вишня & Шоколад" },
+      { id: 14, name: "Эстерхази", price: 3570, category: "classic", image: "images/esterhazy.jpg", tag: "Миндальный" }
+    ];
+
+    let cart = [];
+
+    // Render Products
+    const productsGrid = document.getElementById('products-grid');
+
+    function renderProducts(items) {
+      productsGrid.innerHTML = items.map(product => `
+        <div class="bg-white rounded-2xl overflow-hidden border border-choco-900/10 hover:border-gold-500/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative h-60 overflow-hidden bg-cream-100">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 bg-choco-900/80 backdrop-blur-sm text-gold-300 text-[10px] uppercase font-bold tracking-wider rounded-full">
+              ${product.tag}
+            </span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-choco-900 group-hover:text-gold-600 transition">${product.name}</h3>
+              <p class="text-xs text-choco-600 mt-1">Свежий предзаказ • Масло 82%</p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-choco-900/5 flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-choco-900">${product.price.toLocaleString('ru-RU')} ₽</span>
+              <button onclick="addToCart(${product.id})" class="px-4 py-2 rounded-full bg-cream-200 hover:bg-gold-500 hover:text-white text-choco-900 text-xs font-semibold uppercase tracking-wider transition transform active:scale-95">
+                В корзину
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    renderProducts(products);
+
+    // Filter Buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-choco-900', 'text-gold-400');
+          b.classList.add('bg-cream-200', 'text-choco-800');
+        });
+        btn.classList.add('bg-choco-900', 'text-gold-400');
+        btn.classList.remove('bg-cream-200', 'text-choco-800');
+
+        const category = btn.getAttribute('data-category');
+        if (category === 'all') {
+          renderProducts(products);
+        } else {
+          renderProducts(products.filter(p => p.category === category));
+        }
+      });
+    });
+
+    // Cart Drawer Controls
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartPanel = document.getElementById('cart-panel');
+    const cartBackdrop = document.getElementById('cart-backdrop');
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartCounter = document.getElementById('cart-counter');
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartTotalPrice = document.getElementById('cart-total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    function openCart() {
+      cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
+      cartDrawer.classList.add('pointer-events-auto', 'opacity-100');
+      cartPanel.classList.remove('translate-x-full');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('pointer-events-none', 'opacity-0');
+      cartDrawer.classList.remove('pointer-events-auto', 'opacity-100');
+      cartPanel.classList.add('translate-x-full');
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartBackdrop.addEventListener('click', closeCart);
+
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartCounter.innerText = totalCount;
+      cartTotalPrice.innerText = `${totalPrice.toLocaleString('ru-RU')} ₽`;
+      checkoutBtn.disabled = cart.length === 0;
+
+      // Free Shipping Bar
+      const target = 5000;
+      const progress = Math.min(100, Math.round((totalPrice / target) * 100));
+      const remaining = Math.max(0, target - totalPrice);
+      
+      document.getElementById('shipping-bar').style.width = `${progress}%`;
+      document.getElementById('shipping-progress-percent').innerText = `${progress}%`;
+      
+      if (remaining > 0) {
+        document.getElementById('shipping-progress-text').innerText = `До бесплатной доставки: ${remaining.toLocaleString('ru-RU')} ₽`;
+      } else {
+        document.getElementById('shipping-progress-text').innerText = `🎉 Бесплатная доставка по Симферополю!`;
+      }
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="text-center py-12 text-choco-600">
+            <svg class="w-12 h-12 mx-auto text-gold-400/50 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <p class="font-serif text-lg font-bold">Корзина пуста</p>
+            <p class="text-xs text-choco-600/70 mt-1">Выберите десерт из каталога</p>
+          </div>
+        `;
+      } else {
+        cartItemsContainer.innerHTML = cart.map(item => `
+          <div class="flex items-center gap-4 bg-white p-3.5 rounded-xl border border-choco-900/10 shadow-sm">
+            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover bg-cream-100">
+            <div class="flex-1 min-w-0">
+              <h4 class="font-serif font-bold text-choco-900 text-sm truncate">${item.name}</h4>
+              <p class="text-xs text-gold-600 font-semibold mt-0.5">${item.price.toLocaleString('ru-RU')} ₽</p>
+              <div class="flex items-center gap-3 mt-2">
+                <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 rounded bg-cream-200 text-choco-900 flex items-center justify-center text-xs font-bold hover:bg-gold-500 hover:text-white transition">-</button>
+                <span class="text-xs font-bold text-choco-900">${item.qty}</span>
+                <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 rounded bg-cream-200 text-choco-900 flex items-center justify-center text-xs font-bold hover:bg-gold-500 hover:text-white transition">+</button>
+              </div>
+            </div>
+            <button onclick="removeItem(${item.id})" class="text-choco-400 hover:text-red-600 p-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `).join('');
+      }
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      }
+      updateCart();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCart();
+    }
+
+    // Checkout Modal
+    const checkoutModal = document.getElementById('checkout-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const orderForm = document.getElementById('order-form');
+
+    checkoutBtn.addEventListener('click', () => {
+      closeCart();
+      checkoutModal.classList.remove('hidden');
+      checkoutModal.classList.add('flex');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    });
+
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Спасибо! Ваш предзаказ принят. Менеджер свяжется с Вами по телефону в течение 15 минут для подтверждения.');
+      cart = [];
+      updateCart();
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    });
+  </script>
+</body>
+</html>
