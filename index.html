@@ -85,20 +85,6 @@
         0 calc(100% - 14px), 0 14px
       );
     }
-
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #FFE8A3 0%, #D4AF37 50%, #AA8238 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Прозрачный логотип без подложки */
-    .hero-logo-transparent {
-      mix-blend-mode: screen;
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
   </style>
 </head>
 <body class="bg-choco-900 text-cream-100 font-sans antialiased selection:bg-gold-500 selection:text-choco-950">
@@ -107,7 +93,7 @@
   <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Phone Button (Large, full button size, no subtitle) -->
+      <!-- Phone Button (Large, bold, full size) -->
       <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-3 px-5 py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md">
         <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
         <span class="text-sm sm:text-base font-bold tracking-wider leading-none">+7 (978) 911-48-55</span>
@@ -143,27 +129,49 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (PURE LOGO ON VIDEO) ================= -->
+  <!-- ================= HERO SECTION (VIDEO + VECTOR GOLD LOGO) ================= -->
   <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-choco-950 text-cream-50">
     <!-- Video background -->
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-80 scale-105 transition-all duration-700">
         <source src="images/hero-video.mp4" type="video/mp4">
       </video>
-      <!-- Soft smooth gradient overlay -->
+      <!-- Soft smooth gradient transition -->
       <div class="absolute inset-0 bg-gradient-to-b from-choco-950/70 via-choco-900/40 to-choco-900"></div>
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24 flex flex-col items-center">
       
-      <!-- SVG Logo (Directly on Video with NO Background box) -->
-      <div class="mb-8 w-full flex justify-center bg-transparent">
-        <img 
-          src="images/logo_patisier_transparent_svg.svg" 
-          alt="Патисьер" 
-          class="hero-logo-transparent w-80 sm:w-[460px] md:w-[560px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)] filter brightness-110"
-          onerror="handleLogoError(this)"
-        >
+      <!-- PURE GOLD VECTOR LOGO (ZERO BACKGROUND BOX, 100% TRANSPARENT) -->
+      <div class="w-full max-w-[580px] mx-auto mb-6 flex flex-col items-center select-none">
+        <svg viewBox="0 0 760 190" class="w-full h-auto drop-shadow-[0_8px_30px_rgba(0,0,0,0.9)] filter brightness-110" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="luxuryGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF2C2" />
+              <stop offset="25%" stop-color="#E5C158" />
+              <stop offset="50%" stop-color="#D4AF37" />
+              <stop offset="75%" stop-color="#FFF2C2" />
+              <stop offset="100%" stop-color="#AA8238" />
+            </linearGradient>
+          </defs>
+          
+          <!-- Title: ПАТИСЬЕР -->
+          <text x="360" y="105" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="108" font-weight="700" letter-spacing="8" fill="url(#luxuryGold)">
+            ПАТИСЬЕР
+          </text>
+          
+          <!-- Registered Icon (R) -->
+          <circle cx="685" cy="42" r="16" stroke="url(#luxuryGold)" stroke-width="2" fill="none" />
+          <text x="685" y="48" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="16" font-weight="700" fill="url(#luxuryGold)">R</text>
+          
+          <!-- Elegant signature swoop curve linking И to С -->
+          <path d="M 285 106 Q 375 -5 455 58" stroke="url(#luxuryGold)" stroke-width="4.5" fill="none" stroke-linecap="round" />
+          
+          <!-- Subtitle: МАГАЗИН-КОНДИТЕРСКАЯ -->
+          <text x="360" y="165" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', serif" font-size="34" font-weight="600" letter-spacing="12" fill="url(#luxuryGold)">
+            МАГАЗИН-КОНДИТЕРСКАЯ
+          </text>
+        </svg>
       </div>
 
       <!-- Slogan -->
@@ -216,7 +224,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Macro Image Container (.jpeg / .jpg auto-handled) -->
+        <!-- Macro Image Container -->
         <div class="lg:col-span-6 relative group">
           <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/30 bg-choco-950">
             <img src="images/napoleon-macro.jpeg" alt="Торт Наполеон макросъемка" class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" onerror="handleImgError(this)">
@@ -419,7 +427,15 @@
         
         <!-- Brand Column -->
         <div class="md:col-span-5 space-y-4">
-          <img src="images/logo_patisier_transparent_svg.svg" alt="Патисьер" class="hero-logo-transparent h-12 w-auto object-contain" onerror="handleLogoError(this)">
+          <div class="w-48">
+            <svg viewBox="0 0 760 190" class="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="360" y="105" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="108" font-weight="700" letter-spacing="8" fill="#D4AF37">ПАТИСЬЕР</text>
+              <circle cx="685" cy="42" r="16" stroke="#D4AF37" stroke-width="2" fill="none" />
+              <text x="685" y="48" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="16" font-weight="700" fill="#D4AF37">R</text>
+              <path d="M 285 106 Q 375 -5 455 58" stroke="#D4AF37" stroke-width="4.5" fill="none" stroke-linecap="round" />
+              <text x="360" y="165" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="34" font-weight="600" letter-spacing="12" fill="#D4AF37">МАГАЗИН-КОНДИТЕРСКАЯ</text>
+            </svg>
+          </div>
           <p class="text-xs text-cream-200/80 max-w-sm leading-relaxed">
             «Патисьер. Свой мир. Без аналогов». Высокое кондитерское искусство на страже чистоты вкуса.
           </p>
@@ -592,34 +608,18 @@
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
-    // Universal Error Handlers for Images & Logos
+    // Universal Error Handler: auto-swaps .jpeg and .jpg so images never fail
     function handleImgError(img) {
       if (!img.dataset.tried) {
         img.dataset.tried = "1";
-        // Swap .jpeg and .jpg
         img.src = img.src.includes('.jpeg') ? img.src.replace('.jpeg', '.jpg') : img.src.replace('.jpg', '.jpeg');
       } else if (img.dataset.tried === "1") {
         img.dataset.tried = "2";
-        // Try file from root directory if subfolder issue
         const parts = img.src.split('/');
         img.src = parts[parts.length - 1];
       }
     }
 
-    function handleLogoError(img) {
-      if (!img.dataset.ltried) {
-        img.dataset.ltried = "1";
-        img.src = 'images/logo_patisier_transparent_svg.png';
-      } else if (img.dataset.ltried === "1") {
-        img.dataset.ltried = "2";
-        img.src = 'images/logo.svg';
-      } else if (img.dataset.ltried === "2") {
-        img.dataset.ltried = "3";
-        img.src = 'images/logo.png';
-      }
-    }
-
-    // 14 Real Products with robust image resolution
     const products = [
       { id: 1, name: "Киевский", price: 2200, category: "classic", image: "images/kievsky.jpeg", tag: "Классика" },
       { id: 2, name: "Наполеон", price: 2470, category: "classic", image: "images/napoleon.jpeg", tag: "Хит • Семейный рецепт" },
@@ -688,7 +688,7 @@
       });
     });
 
-    // Cart Drawer Controls
+    // Cart Controls
     const cartDrawer = document.getElementById('cart-drawer');
     const cartPanel = document.getElementById('cart-panel');
     const cartBackdrop = document.getElementById('cart-backdrop');
