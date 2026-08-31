@@ -93,21 +93,19 @@
   <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
-      <!-- Mobile: Hamburger (3 stripes) & Phone Button -->
+      <!-- Mobile: Hamburger & Phone -->
       <div class="flex items-center gap-2.5">
-        <!-- Hamburger Button (Mobile only) -->
         <button id="mobile-menu-btn" class="cut-corner-btn lg:hidden flex items-center justify-center w-11 h-11 bg-choco-850 border border-gold-500/50 text-gold-400 focus:outline-none shadow-md">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
 
-        <!-- Phone Button (Preserved dark background with gold border/text) -->
         <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-2.5 px-3.5 sm:px-5 py-2.5 sm:py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md whitespace-nowrap">
           <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
           <span class="text-xs sm:text-sm font-bold tracking-wider leading-none whitespace-nowrap">+7 (978) 911-48-55</span>
         </a>
       </div>
 
-      <!-- Desktop Navigation Menu (Perfect 1-line alignment, strictly no wrapping) -->
+      <!-- Desktop Navigation Menu -->
       <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs font-semibold tracking-widest text-cream-100 uppercase">
         <a href="#manifesto" class="hover:text-gold-400 transition-colors whitespace-nowrap">Философия</a>
         <a href="#catalog" class="hover:text-gold-400 transition-colors whitespace-nowrap">Каталог</a>
@@ -117,7 +115,7 @@
         <a href="#contacts" class="hover:text-gold-400 transition-colors whitespace-nowrap">Контакты</a>
       </nav>
 
-      <!-- Cart Button (Right side) -->
+      <!-- Cart Button -->
       <div class="flex items-center">
         <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-4 sm:px-5 py-2.5 sm:py-3 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 whitespace-nowrap">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
@@ -129,13 +127,12 @@
     </div>
   </header>
 
-  <!-- ================= MOBILE SLIDE-OUT MENU (3 STRIPES MODAL) ================= -->
+  <!-- ================= MOBILE SLIDE-OUT MENU (FIXED NAVIGATION) ================= -->
   <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
     <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
     <div id="mobile-menu-panel" class="absolute left-0 top-0 bottom-0 w-4/5 max-w-sm bg-choco-950 text-cream-100 shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 pointer-events-auto border-r border-gold-500/30">
       
-      <!-- Mobile Menu Header -->
       <div class="p-6 border-b border-gold-500/20 flex items-center justify-between">
         <span class="font-serif text-lg font-bold text-gold-400">Меню «Патисьер»</span>
         <button id="close-mobile-menu-btn" class="text-gold-400 hover:text-white p-1 text-2xl font-bold">
@@ -143,17 +140,16 @@
         </button>
       </div>
 
-      <!-- Mobile Navigation Links -->
+      <!-- Links with reliable inline smooth handlers -->
       <div class="flex-1 overflow-y-auto p-6 space-y-5 text-sm font-semibold tracking-wider uppercase">
-        <a href="#manifesto" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Философия</a>
-        <a href="#catalog" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Каталог десертов</a>
-        <a href="#delivery-payment" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Оплата и доставка</a>
-        <a href="#about" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">О нас</a>
-        <a href="#locations" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Адреса и цех</a>
-        <a href="#contacts" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Контакты</a>
+        <a href="#manifesto" onclick="navigateToSection(event, '#manifesto')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Философия</a>
+        <a href="#catalog" onclick="navigateToSection(event, '#catalog')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Каталог десертов</a>
+        <a href="#delivery-payment" onclick="navigateToSection(event, '#delivery-payment')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Оплата и доставка</a>
+        <a href="#about" onclick="navigateToSection(event, '#about')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">О нас</a>
+        <a href="#locations" onclick="navigateToSection(event, '#locations')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Адреса и цех</a>
+        <a href="#contacts" onclick="navigateToSection(event, '#contacts')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Контакты</a>
       </div>
 
-      <!-- Mobile Messengers & Phone in Menu -->
       <div class="p-6 bg-choco-900 border-t border-gold-500/20 space-y-3">
         <div class="text-[11px] text-cream-200/60 uppercase tracking-wider text-center">Связь с шеф-кондитером:</div>
         <div class="flex gap-2">
@@ -183,7 +179,6 @@
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24 flex flex-col items-center">
       
-      <!-- Photoshop Transparent Logo -->
       <div class="mb-8 w-full flex justify-center">
         <img 
           src="images/logo.png" 
@@ -192,12 +187,10 @@
         >
       </div>
 
-      <!-- Slogan -->
       <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-normal tracking-wide text-gold-300 italic mb-10 drop-shadow-lg">
         «Патисьер. Свой мир. Без аналогов»
       </h1>
 
-      <!-- CTA Buttons with Cut Corners -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
         <a href="#catalog" class="cut-corner-btn w-full sm:w-auto px-8 py-4 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-wider text-xs uppercase shadow-xl shadow-gold-500/25">
           Выбрать десерт к празднику
@@ -207,7 +200,6 @@
         </a>
       </div>
 
-      <!-- Trust Badges -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-16 mt-12 border-t border-gold-500/20 text-cream-100 text-xs w-full">
         <div class="cut-corner-card bg-choco-900/60 border border-gold-500/20 p-3 backdrop-blur-sm">
           <span class="block font-serif text-2xl font-bold text-gold-400">82%</span>
@@ -315,7 +307,6 @@
           <p class="text-sm text-cream-200/70 mt-2">Нажмите на карточку любого торта, чтобы открыть подробный состав, КБЖУ и фото</p>
         </div>
 
-        <!-- Filter Categories with Cut Corners -->
         <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-container">
           <button class="filter-btn active cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-gold-500 text-choco-950" data-category="all">Все (14)</button>
           <button class="filter-btn cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-choco-850 border border-gold-500/30 text-cream-100 hover:bg-gold-500 hover:text-choco-950" data-category="classic">Классика</button>
@@ -324,7 +315,6 @@
         </div>
       </div>
 
-      <!-- Product Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
         <!-- Generated by JavaScript -->
       </div>
@@ -345,7 +335,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Step 1 -->
         <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
             <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
@@ -361,7 +350,6 @@
           </div>
         </div>
 
-        <!-- Step 2 -->
         <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
             <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
@@ -378,7 +366,6 @@
           </div>
         </div>
 
-        <!-- Step 3 -->
         <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
             <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
@@ -395,7 +382,6 @@
           </div>
         </div>
 
-        <!-- Step 4 -->
         <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
             <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
@@ -421,7 +407,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Portrait -->
         <div class="lg:col-span-5 text-center lg:text-left">
           <div class="relative inline-block max-w-sm mx-auto">
             <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/40 bg-choco-950">
@@ -434,7 +419,6 @@
           </div>
         </div>
 
-        <!-- Story Content -->
         <div class="lg:col-span-7 space-y-6">
           <div class="cut-corner-btn inline-block px-4 py-1.5 border border-gold-500/30 bg-choco-950 text-gold-300 text-xs uppercase tracking-widest">
             История создания
@@ -484,7 +468,6 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         
-        <!-- MAIN HUB: Eupatoriyskoe Highway -->
         <div class="cut-corner-card bg-choco-850 p-8 border-2 border-gold-500 shadow-2xl relative">
           <div class="cut-corner-btn inline-block bg-gold-500 text-choco-950 text-[10px] uppercase font-bold tracking-widest px-4 py-1 mb-4 shadow">
             Кондитерский цех и Главный магазин
@@ -499,7 +482,6 @@
           </a>
         </div>
 
-        <!-- Location 2: Shpolyanskoy 6 -->
         <div class="cut-corner-card bg-choco-850/70 p-8 border border-gold-500/30 shadow-lg">
           <div class="cut-corner-btn inline-block bg-choco-800 border border-gold-500/30 text-gold-300 text-[10px] uppercase font-bold tracking-widest px-4 py-1 mb-4">
             Магазин-кондитерская
@@ -525,7 +507,6 @@
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-gold-500/20">
         
-        <!-- Brand Column -->
         <div class="md:col-span-5 space-y-4">
           <img src="images/logo.png" alt="Патисьер" class="h-12 w-auto object-contain">
           <p class="text-xs text-cream-200/80 max-w-sm leading-relaxed">
@@ -545,7 +526,6 @@
           </div>
         </div>
 
-        <!-- Addresses Column -->
         <div class="md:col-span-4 space-y-3">
           <h4 class="font-serif text-lg font-bold text-gold-400">г. Симферополь</h4>
           <ul class="space-y-3 text-xs text-cream-200/90">
@@ -567,7 +547,6 @@
           <p class="text-[11px] text-cream-200/60 pt-2">Прием онлайн-заказов: ежедневно с 09:00 до 20:00</p>
         </div>
 
-        <!-- Legal Info & 152-FZ -->
         <div class="md:col-span-3 space-y-3">
           <h4 class="font-serif text-lg font-bold text-gold-400">О предприятии</h4>
           <div class="text-xs text-cream-200/80 space-y-1.5 font-light">
@@ -596,7 +575,6 @@
   <div id="product-detail-modal" class="fixed inset-0 z-50 hidden bg-choco-950/95 backdrop-blur-md overflow-y-auto">
     <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col">
       
-      <!-- Back Button Bar -->
       <div class="flex items-center justify-between border-b border-gold-500/20 pb-6 mb-8">
         <button id="close-product-btn" class="cut-corner-btn inline-flex items-center gap-2 px-5 py-2.5 bg-choco-850 border border-gold-500/40 text-gold-300 hover:bg-gold-500 hover:text-choco-950 text-xs font-bold uppercase tracking-wider transition">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -605,12 +583,10 @@
         <span class="text-xs uppercase tracking-widest text-cream-200/50 hidden sm:inline">Карточка десерта • Патисьер</span>
       </div>
 
-      <!-- Main Product Details Box -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 flex-1 items-start" id="product-detail-content">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Chef Cross-sell Recommendations -->
       <div class="mt-20 pt-10 border-t border-gold-500/20">
         <h3 class="font-serif text-2xl font-bold text-cream-50 mb-6 text-center sm:text-left">
           Вам также может понравиться:
@@ -623,13 +599,12 @@
     </div>
   </div>
 
-  <!-- ================= SMART CART DRAWER (WITH "CONTINUE SHOPPING" & BACK BUTTON SUPPORT) ================= -->
+  <!-- ================= SMART CART DRAWER ================= -->
   <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
     <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"></div>
 
     <div id="cart-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-choco-900 text-cream-100 shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto border-l border-gold-500/30">
       
-      <!-- Cart Header -->
       <div class="p-6 bg-choco-950 text-cream-50 flex items-center justify-between border-b border-gold-500/30">
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
@@ -640,7 +615,6 @@
         </button>
       </div>
 
-      <!-- Free Shipping Progress Bar -->
       <div class="bg-choco-850 p-4 border-b border-gold-500/20">
         <div class="flex justify-between text-xs font-semibold text-cream-100 mb-1.5">
           <span id="shipping-progress-text">До бесплатной доставки по городу осталось 5 000 ₽</span>
@@ -651,12 +625,10 @@
         </div>
       </div>
 
-      <!-- Cart Items List -->
       <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
         <!-- Dynamic Items -->
       </div>
 
-      <!-- Cart Footer & Actions -->
       <div class="p-6 bg-choco-950 border-t border-gold-500/20 space-y-3">
         <div class="flex justify-between items-center text-sm pb-1">
           <span class="text-cream-200">Итого к оплате:</span>
@@ -667,7 +639,6 @@
           Оформить предзаказ
         </button>
 
-        <!-- Continue Shopping Button -->
         <button onclick="closeCart()" class="cut-corner-btn w-full py-3 bg-transparent border border-gold-500/30 hover:border-gold-400 text-gold-300 hover:text-white font-bold text-xs uppercase tracking-wider transition">
           Продолжить покупки
         </button>
@@ -720,7 +691,6 @@
           <textarea rows="2" placeholder="Например: надпись «С Днем Рождения, Мама!»" class="cut-corner-btn w-full px-4 py-2 border border-gold-500/30 bg-choco-950 text-cream-100 text-sm focus:border-gold-400 focus:outline-none"></textarea>
         </div>
 
-        <!-- 152-ФЗ Checkbox -->
         <div class="flex items-start gap-2 pt-2">
           <input type="checkbox" id="pdn-consent" required class="mt-1 accent-gold-500 rounded">
           <label for="pdn-consent" class="text-[11px] text-cream-200/80 leading-tight">
@@ -936,7 +906,7 @@
 
     let cart = [];
 
-    // State Tracking for Smart Phone "Back" Arrow
+    // State Tracking
     let isCartOpen = false;
     let isProductDetailOpen = false;
     let isMobileMenuOpen = false;
@@ -977,39 +947,66 @@
 
     renderProducts(products);
 
-    // ================= MOBILE MENU (HAMBURGER) LOGIC =================
+    // ================= SAFE MOBILE NAVIGATION & SCROLLING =================
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
     const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
     function openMobileMenu() {
       isMobileMenuOpen = true;
-      history.pushState({ modal: 'menu' }, '', '#menu');
+      try {
+        history.pushState({ modal: 'menu' }, '', '#menu');
+      } catch(e) {}
       mobileMenuDrawer.classList.remove('pointer-events-none', 'opacity-0');
       mobileMenuDrawer.classList.add('pointer-events-auto', 'opacity-100');
       mobileMenuPanel.classList.remove('-translate-x-full');
-      document.body.style.overflow = 'hidden';
     }
 
-    function closeMobileMenu(shouldPop = true) {
+    function closeMobileMenu(shouldPop = false) {
       if (!isMobileMenuOpen) return;
       isMobileMenuOpen = false;
       mobileMenuDrawer.classList.add('pointer-events-none', 'opacity-0');
       mobileMenuDrawer.classList.remove('pointer-events-auto', 'opacity-100');
       mobileMenuPanel.classList.add('-translate-x-full');
-      document.body.style.overflow = 'auto';
-      if (shouldPop && window.location.hash === '#menu') {
-        history.back();
+
+      if (shouldPop) {
+        try {
+          if (window.location.hash === '#menu') history.back();
+        } catch(e) {}
       }
     }
 
     mobileMenuBtn.addEventListener('click', openMobileMenu);
     closeMobileMenuBtn.addEventListener('click', () => closeMobileMenu(true));
     mobileMenuBackdrop.addEventListener('click', () => closeMobileMenu(true));
-    mobileNavLinks.forEach(link => link.addEventListener('click', () => closeMobileMenu(true)));
+
+    // Reliable Section Navigator (Works 100% in iframes & real phones)
+    function navigateToSection(e, targetId) {
+      if (e) e.preventDefault();
+      closeMobileMenu(false);
+
+      try {
+        if (window.location.hash === '#menu') {
+          history.replaceState(null, document.title, window.location.pathname + window.location.search);
+        }
+      } catch(err) {}
+
+      setTimeout(() => {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          const headerOffset = 80;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + (window.pageYOffset || document.documentElement.scrollTop) - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth'
+          });
+        }
+      }, 50);
+    }
 
     // ================= PRODUCT DETAIL VIEW LOGIC =================
     const productDetailModal = document.getElementById('product-detail-modal');
@@ -1024,7 +1021,9 @@
 
       currentDetailQty = 1;
       isProductDetailOpen = true;
-      history.pushState({ modal: 'product', id: productId }, '', `#product-${productId}`);
+      try {
+        history.pushState({ modal: 'product', id: productId }, '', `#product-${productId}`);
+      } catch(e) {}
 
       productDetailContent.innerHTML = `
         <div class="lg:col-span-6 space-y-4">
@@ -1118,7 +1117,6 @@
       `).join('');
 
       productDetailModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
     }
 
     function switchDetailImg(src) {
@@ -1156,15 +1154,14 @@
       if (!isProductDetailOpen) return;
       isProductDetailOpen = false;
       productDetailModal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
       if (shouldPop && window.location.hash.startsWith('#product-')) {
-        history.back();
+        try { history.back(); } catch(e) {}
       }
     }
 
     closeProductBtn.addEventListener('click', () => closeProductDetail(true));
 
-    // ================= CART DRAWER (WITH HISTORY API & CONTINUE SHOPPING) =================
+    // ================= CART DRAWER =================
     const cartDrawer = document.getElementById('cart-drawer');
     const cartPanel = document.getElementById('cart-panel');
     const cartBackdrop = document.getElementById('cart-backdrop');
@@ -1177,11 +1174,12 @@
 
     function openCart() {
       isCartOpen = true;
-      history.pushState({ modal: 'cart' }, '', '#cart');
+      try {
+        history.pushState({ modal: 'cart' }, '', '#cart');
+      } catch(e) {}
       cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
       cartDrawer.classList.add('pointer-events-auto', 'opacity-100');
       cartPanel.classList.remove('translate-x-full');
-      document.body.style.overflow = 'hidden';
     }
 
     function closeCart(shouldPop = true) {
@@ -1190,9 +1188,8 @@
       cartDrawer.classList.add('pointer-events-none', 'opacity-0');
       cartDrawer.classList.remove('pointer-events-auto', 'opacity-100');
       cartPanel.classList.add('translate-x-full');
-      document.body.style.overflow = 'auto';
       if (shouldPop && window.location.hash === '#cart') {
-        history.back();
+        try { history.back(); } catch(e) {}
       }
     }
 
@@ -1278,7 +1275,7 @@
       updateCart();
     }
 
-    // ================= CHECKOUT MODAL LOGIC =================
+    // ================= CHECKOUT MODAL =================
     const checkoutModal = document.getElementById('checkout-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
     const orderForm = document.getElementById('order-form');
@@ -1286,10 +1283,11 @@
     checkoutBtn.addEventListener('click', () => {
       closeCart(false);
       isCheckoutOpen = true;
-      history.pushState({ modal: 'checkout' }, '', '#checkout');
+      try {
+        history.pushState({ modal: 'checkout' }, '', '#checkout');
+      } catch(e) {}
       checkoutModal.classList.remove('hidden');
       checkoutModal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
     });
 
     function closeCheckoutModal(shouldPop = true) {
@@ -1297,9 +1295,8 @@
       isCheckoutOpen = false;
       checkoutModal.classList.add('hidden');
       checkoutModal.classList.remove('flex');
-      document.body.style.overflow = 'auto';
       if (shouldPop && window.location.hash === '#checkout') {
-        history.back();
+        try { history.back(); } catch(e) {}
       }
     }
 
@@ -1313,7 +1310,7 @@
       closeCheckoutModal(true);
     });
 
-    // ================= SMART BROWSER / PHONE "BACK" ARROW INTERCEPTOR =================
+    // ================= BROWSER POPSTATE (BACK ARROW) =================
     window.addEventListener('popstate', () => {
       if (isCheckoutOpen) closeCheckoutModal(false);
       if (isCartOpen) closeCart(false);
@@ -1321,7 +1318,7 @@
       if (isMobileMenuOpen) closeMobileMenu(false);
     });
 
-    // Handle Direct URL hash loading on first visit
+    // Handle Direct URL hash on load
     window.addEventListener('load', () => {
       if (window.location.hash.startsWith('#product-')) {
         const id = parseInt(window.location.hash.replace('#product-', ''));
@@ -1331,7 +1328,7 @@
       }
     });
 
-    // Filter Buttons Logic
+    // Filter Buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
