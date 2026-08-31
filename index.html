@@ -91,44 +91,86 @@
 
   <!-- ================= HEADER / NAVBAR ================= -->
   <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
-      <!-- Phone Button -->
-      <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-3 px-5 py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md">
-        <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
-        <span class="text-sm sm:text-base font-bold tracking-wider leading-none">+7 (978) 911-48-55</span>
-      </a>
+      <!-- Mobile: Hamburger (3 stripes) & Phone Button -->
+      <div class="flex items-center gap-2.5">
+        <!-- Hamburger Button (Mobile only) -->
+        <button id="mobile-menu-btn" class="cut-corner-btn lg:hidden flex items-center justify-center w-11 h-11 bg-choco-850 border border-gold-500/50 text-gold-400 focus:outline-none shadow-md">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold tracking-widest text-cream-100 uppercase">
-        <a href="#manifesto" class="hover:text-gold-400 transition-colors">Философия</a>
-        <a href="#catalog" class="hover:text-gold-400 transition-colors">Каталог</a>
-        <a href="#delivery-payment" class="hover:text-gold-400 transition-colors">Оплата и доставка</a>
-        <a href="#about" class="hover:text-gold-400 transition-colors">О нас</a>
-        <a href="#locations" class="hover:text-gold-400 transition-colors">Адреса и цех</a>
-        <a href="#contacts" class="hover:text-gold-400 transition-colors">Контакты</a>
+        <!-- Phone Button (Preserved dark background with gold border/text) -->
+        <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-2.5 px-3.5 sm:px-5 py-2.5 sm:py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md whitespace-nowrap">
+          <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+          <span class="text-xs sm:text-sm font-bold tracking-wider leading-none whitespace-nowrap">+7 (978) 911-48-55</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu (Perfect 1-line alignment, strictly no wrapping) -->
+      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs font-semibold tracking-widest text-cream-100 uppercase">
+        <a href="#manifesto" class="hover:text-gold-400 transition-colors whitespace-nowrap">Философия</a>
+        <a href="#catalog" class="hover:text-gold-400 transition-colors whitespace-nowrap">Каталог</a>
+        <a href="#delivery-payment" class="hover:text-gold-400 transition-colors whitespace-nowrap">Оплата и доставка</a>
+        <a href="#about" class="hover:text-gold-400 transition-colors whitespace-nowrap">О нас</a>
+        <a href="#locations" class="hover:text-gold-400 transition-colors whitespace-nowrap">Адреса</a>
+        <a href="#contacts" class="hover:text-gold-400 transition-colors whitespace-nowrap">Контакты</a>
       </nav>
 
-      <!-- Messengers & Cart Button -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <div class="hidden sm:flex items-center gap-2">
-          <a href="https://t.me/" target="_blank" title="Telegram" class="cut-corner-btn w-10 h-10 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          </a>
-          <a href="https://max.ru/" target="_blank" title="Max Messenger" class="cut-corner-btn px-3 h-10 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-xs font-bold text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
-            MAX
-          </a>
-        </div>
-
-        <!-- Open Cart Button -->
-        <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-5 py-3 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20">
+      <!-- Cart Button (Right side) -->
+      <div class="flex items-center">
+        <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-4 sm:px-5 py-2.5 sm:py-3 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 whitespace-nowrap">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
           <span>Корзина</span>
           <span id="cart-counter" class="w-5 h-5 bg-choco-950 text-gold-400 text-[11px] font-bold flex items-center justify-center">0</span>
         </button>
       </div>
+
     </div>
   </header>
+
+  <!-- ================= MOBILE SLIDE-OUT MENU (3 STRIPES MODAL) ================= -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+    <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <div id="mobile-menu-panel" class="absolute left-0 top-0 bottom-0 w-4/5 max-w-sm bg-choco-950 text-cream-100 shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 pointer-events-auto border-r border-gold-500/30">
+      
+      <!-- Mobile Menu Header -->
+      <div class="p-6 border-b border-gold-500/20 flex items-center justify-between">
+        <span class="font-serif text-lg font-bold text-gold-400">Меню «Патисьер»</span>
+        <button id="close-mobile-menu-btn" class="text-gold-400 hover:text-white p-1 text-2xl font-bold">
+          &times;
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <div class="flex-1 overflow-y-auto p-6 space-y-5 text-sm font-semibold tracking-wider uppercase">
+        <a href="#manifesto" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Философия</a>
+        <a href="#catalog" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Каталог десертов</a>
+        <a href="#delivery-payment" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Оплата и доставка</a>
+        <a href="#about" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">О нас</a>
+        <a href="#locations" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Адреса и цех</a>
+        <a href="#contacts" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Контакты</a>
+      </div>
+
+      <!-- Mobile Messengers & Phone in Menu -->
+      <div class="p-6 bg-choco-900 border-t border-gold-500/20 space-y-3">
+        <div class="text-[11px] text-cream-200/60 uppercase tracking-wider text-center">Связь с шеф-кондитером:</div>
+        <div class="flex gap-2">
+          <a href="https://t.me/" target="_blank" class="cut-corner-btn flex-1 py-2.5 bg-choco-850 border border-gold-500/30 text-gold-400 text-xs font-bold text-center flex items-center justify-center gap-1.5 hover:bg-gold-500 hover:text-choco-950 transition">
+            Telegram
+          </a>
+          <a href="https://max.ru/" target="_blank" class="cut-corner-btn flex-1 py-2.5 bg-choco-850 border border-gold-500/30 text-gold-400 text-xs font-bold text-center flex items-center justify-center gap-1.5 hover:bg-gold-500 hover:text-choco-950 transition">
+            MAX
+          </a>
+        </div>
+        <a href="tel:+79789114855" class="cut-corner-btn block w-full py-3 bg-gold-500 text-choco-950 font-bold text-xs uppercase tracking-wider text-center">
+          Позвонить: +7 (978) 911-48-55
+        </a>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ================= HERO SECTION ================= -->
   <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-choco-950 text-cream-50">
@@ -290,7 +332,7 @@
     </div>
   </section>
 
-  <!-- ================= PAYMENT & DELIVERY SECTION (NEW) ================= -->
+  <!-- ================= PAYMENT & DELIVERY SECTION ================= -->
   <section id="delivery-payment" class="py-24 bg-gradient-to-b from-choco-750 via-choco-800 to-choco-850 border-b border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -550,7 +592,7 @@
     </div>
   </footer>
 
-  <!-- ================= PRODUCT DETAIL FULL-SCREEN VIEW (NEW) ================= -->
+  <!-- ================= PRODUCT DETAIL FULL-SCREEN VIEW ================= -->
   <div id="product-detail-modal" class="fixed inset-0 z-50 hidden bg-choco-950/95 backdrop-blur-md overflow-y-auto">
     <div class="min-h-screen max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col">
       
@@ -565,7 +607,7 @@
 
       <!-- Main Product Details Box -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 flex-1 items-start" id="product-detail-content">
-        <!-- Rendered dynamically via JavaScript -->
+        <!-- Rendered dynamically -->
       </div>
 
       <!-- Chef Cross-sell Recommendations -->
@@ -581,7 +623,7 @@
     </div>
   </div>
 
-  <!-- ================= SMART CART DRAWER ================= -->
+  <!-- ================= SMART CART DRAWER (WITH "CONTINUE SHOPPING" & BACK BUTTON SUPPORT) ================= -->
   <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
     <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"></div>
 
@@ -614,16 +656,23 @@
         <!-- Dynamic Items -->
       </div>
 
-      <!-- Cart Footer & Checkout Action -->
-      <div class="p-6 bg-choco-950 border-t border-gold-500/20 space-y-4">
-        <div class="flex justify-between items-center text-sm">
+      <!-- Cart Footer & Actions -->
+      <div class="p-6 bg-choco-950 border-t border-gold-500/20 space-y-3">
+        <div class="flex justify-between items-center text-sm pb-1">
           <span class="text-cream-200">Итого к оплате:</span>
           <span id="cart-total-price" class="font-serif text-2xl font-bold text-gold-400">0 ₽</span>
         </div>
+
         <button id="checkout-btn" class="cut-corner-btn w-full py-4 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-gold-500/20 disabled:opacity-40 disabled:pointer-events-none" disabled>
           Оформить предзаказ
         </button>
-        <p class="text-[11px] text-center text-cream-200/60">
+
+        <!-- Continue Shopping Button -->
+        <button onclick="closeCart()" class="cut-corner-btn w-full py-3 bg-transparent border border-gold-500/30 hover:border-gold-400 text-gold-300 hover:text-white font-bold text-xs uppercase tracking-wider transition">
+          Продолжить покупки
+        </button>
+
+        <p class="text-[11px] text-center text-cream-200/60 pt-1">
           Оплата после подтверждения заказа менеджером
         </p>
       </div>
@@ -700,7 +749,6 @@
       }
     }
 
-    // Comprehensive Catalog Products with Full Specifications
     const products = [
       { 
         id: 1, 
@@ -888,9 +936,15 @@
 
     let cart = [];
 
+    // State Tracking for Smart Phone "Back" Arrow
+    let isCartOpen = false;
+    let isProductDetailOpen = false;
+    let isMobileMenuOpen = false;
+    let isCheckoutOpen = false;
+
+    // Render Catalog Grid
     const productsGrid = document.getElementById('products-grid');
 
-    // Render Catalog Grid with Product Click -> Open Detail View
     function renderProducts(items) {
       productsGrid.innerHTML = items.map(product => `
         <div class="cut-corner-card bg-choco-850/90 border border-gold-500/25 hover:border-gold-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="openProductDetail(${product.id})">
@@ -923,7 +977,41 @@
 
     renderProducts(products);
 
-    // ================= PRODUCT DETAIL FULL-SCREEN LOGIC =================
+    // ================= MOBILE MENU (HAMBURGER) LOGIC =================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMobileMenu() {
+      isMobileMenuOpen = true;
+      history.pushState({ modal: 'menu' }, '', '#menu');
+      mobileMenuDrawer.classList.remove('pointer-events-none', 'opacity-0');
+      mobileMenuDrawer.classList.add('pointer-events-auto', 'opacity-100');
+      mobileMenuPanel.classList.remove('-translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu(shouldPop = true) {
+      if (!isMobileMenuOpen) return;
+      isMobileMenuOpen = false;
+      mobileMenuDrawer.classList.add('pointer-events-none', 'opacity-0');
+      mobileMenuDrawer.classList.remove('pointer-events-auto', 'opacity-100');
+      mobileMenuPanel.classList.add('-translate-x-full');
+      document.body.style.overflow = 'auto';
+      if (shouldPop && window.location.hash === '#menu') {
+        history.back();
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMobileMenuBtn.addEventListener('click', () => closeMobileMenu(true));
+    mobileMenuBackdrop.addEventListener('click', () => closeMobileMenu(true));
+    mobileNavLinks.forEach(link => link.addEventListener('click', () => closeMobileMenu(true)));
+
+    // ================= PRODUCT DETAIL VIEW LOGIC =================
     const productDetailModal = document.getElementById('product-detail-modal');
     const productDetailContent = document.getElementById('product-detail-content');
     const closeProductBtn = document.getElementById('close-product-btn');
@@ -935,10 +1023,10 @@
       if (!product) return;
 
       currentDetailQty = 1;
-      window.location.hash = `product-${productId}`;
+      isProductDetailOpen = true;
+      history.pushState({ modal: 'product', id: productId }, '', `#product-${productId}`);
 
       productDetailContent.innerHTML = `
-        <!-- Left: Image Gallery (Main + Thumbnails) -->
         <div class="lg:col-span-6 space-y-4">
           <div class="cut-corner-card relative overflow-hidden bg-choco-950 border-2 border-gold-500/40 shadow-2xl h-[420px] sm:h-[500px]">
             <img id="main-detail-img" src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" onerror="handleImgError(this)">
@@ -947,7 +1035,6 @@
             </span>
           </div>
 
-          <!-- Thumbnails (Interactive photo switches) -->
           <div class="flex gap-3">
             <button onclick="switchDetailImg('${product.image}')" class="cut-corner-btn w-20 h-20 bg-choco-950 border-2 border-gold-500 overflow-hidden focus:outline-none">
               <img src="${product.image}" class="w-full h-full object-cover" onerror="handleImgError(this)">
@@ -958,9 +1045,7 @@
           </div>
         </div>
 
-        <!-- Right: Specifications, Composition & Order -->
         <div class="lg:col-span-6 space-y-6">
-          
           <div>
             <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-1">
               Коллекция «Патисьер» • Симферополь
@@ -978,9 +1063,7 @@
             ${product.story}
           </p>
 
-          <!-- Specifications Tabs / Blocks -->
           <div class="space-y-3 pt-2">
-            
             <div class="cut-corner-card bg-choco-850 p-4 border border-gold-500/25">
               <span class="text-xs font-bold text-gold-400 uppercase tracking-wider block mb-1">
                 🌿 Честный состав (0% маргарина):
@@ -1005,10 +1088,8 @@
               <span>⏱ <strong>Срок годности:</strong> 72 часа при температуре +2...+6°C</span>
               <span class="text-gold-400 font-semibold">Предзаказ за 24 ч</span>
             </div>
-
           </div>
 
-          <!-- Quantity & Add to Cart -->
           <div class="pt-4 border-t border-gold-500/20 flex flex-col sm:flex-row items-center gap-4">
             <div class="flex items-center gap-3 bg-choco-850 px-4 py-2.5 cut-corner-btn border border-gold-500/30">
               <span class="text-xs text-cream-200/60 uppercase">Кол-во:</span>
@@ -1022,11 +1103,9 @@
               <span>Добавить в корзину • <span id="detail-btn-price">${product.price.toLocaleString('ru-RU')}</span> ₽</span>
             </button>
           </div>
-
         </div>
       `;
 
-      // Render Recommendations (other cakes)
       const recs = products.filter(p => p.id !== productId).slice(0, 3);
       productRecommendations.innerHTML = recs.map(rec => `
         <div class="cut-corner-card bg-choco-850 p-4 border border-gold-500/20 hover:border-gold-400 cursor-pointer transition flex items-center gap-4 group" onclick="openProductDetail(${rec.id})">
@@ -1069,47 +1148,23 @@
         cart.push({ ...product, qty: currentDetailQty });
       }
       updateCart();
-      closeProductDetail();
+      closeProductDetail(false);
       openCart();
     }
 
-    function closeProductDetail() {
+    function closeProductDetail(shouldPop = true) {
+      if (!isProductDetailOpen) return;
+      isProductDetailOpen = false;
       productDetailModal.classList.add('hidden');
       document.body.style.overflow = 'auto';
-      history.pushState("", document.title, window.location.pathname + window.location.search);
+      if (shouldPop && window.location.hash.startsWith('#product-')) {
+        history.back();
+      }
     }
 
-    closeProductBtn.addEventListener('click', closeProductDetail);
+    closeProductBtn.addEventListener('click', () => closeProductDetail(true));
 
-    // Auto-open product if opened via direct URL hash (e.g. #product-2)
-    window.addEventListener('load', () => {
-      if (window.location.hash.startsWith('#product-')) {
-        const id = parseInt(window.location.hash.replace('#product-', ''));
-        if (id) openProductDetail(id);
-      }
-    });
-
-    // Filtering Buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
-          b.classList.remove('bg-gold-500', 'text-choco-950');
-          b.classList.add('bg-choco-850', 'text-cream-100');
-        });
-        btn.classList.add('bg-gold-500', 'text-choco-950');
-        btn.classList.remove('bg-choco-850', 'text-cream-100');
-
-        const category = btn.getAttribute('data-category');
-        if (category === 'all') {
-          renderProducts(products);
-        } else {
-          renderProducts(products.filter(p => p.category === category));
-        }
-      });
-    });
-
-    // Cart Controls
+    // ================= CART DRAWER (WITH HISTORY API & CONTINUE SHOPPING) =================
     const cartDrawer = document.getElementById('cart-drawer');
     const cartPanel = document.getElementById('cart-panel');
     const cartBackdrop = document.getElementById('cart-backdrop');
@@ -1121,20 +1176,29 @@
     const checkoutBtn = document.getElementById('checkout-btn');
 
     function openCart() {
+      isCartOpen = true;
+      history.pushState({ modal: 'cart' }, '', '#cart');
       cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
       cartDrawer.classList.add('pointer-events-auto', 'opacity-100');
       cartPanel.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
     }
 
-    function closeCart() {
+    function closeCart(shouldPop = true) {
+      if (!isCartOpen) return;
+      isCartOpen = false;
       cartDrawer.classList.add('pointer-events-none', 'opacity-0');
       cartDrawer.classList.remove('pointer-events-auto', 'opacity-100');
       cartPanel.classList.add('translate-x-full');
+      document.body.style.overflow = 'auto';
+      if (shouldPop && window.location.hash === '#cart') {
+        history.back();
+      }
     }
 
     openCartBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
-    cartBackdrop.addEventListener('click', closeCart);
+    closeCartBtn.addEventListener('click', () => closeCart(true));
+    cartBackdrop.addEventListener('click', () => closeCart(true));
 
     function addToCart(productId) {
       const product = products.find(p => p.id === productId);
@@ -1214,29 +1278,77 @@
       updateCart();
     }
 
-    // Checkout Modal
+    // ================= CHECKOUT MODAL LOGIC =================
     const checkoutModal = document.getElementById('checkout-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
     const orderForm = document.getElementById('order-form');
 
     checkoutBtn.addEventListener('click', () => {
-      closeCart();
+      closeCart(false);
+      isCheckoutOpen = true;
+      history.pushState({ modal: 'checkout' }, '', '#checkout');
       checkoutModal.classList.remove('hidden');
       checkoutModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
     });
 
-    closeModalBtn.addEventListener('click', () => {
+    function closeCheckoutModal(shouldPop = true) {
+      if (!isCheckoutOpen) return;
+      isCheckoutOpen = false;
       checkoutModal.classList.add('hidden');
       checkoutModal.classList.remove('flex');
-    });
+      document.body.style.overflow = 'auto';
+      if (shouldPop && window.location.hash === '#checkout') {
+        history.back();
+      }
+    }
+
+    closeModalBtn.addEventListener('click', () => closeCheckoutModal(true));
 
     orderForm.addEventListener('submit', (e) => {
       e.preventDefault();
       alert('Спасибо! Ваш предзаказ принят. Менеджер свяжется с Вами по телефону в течение 15 минут для подтверждения.');
       cart = [];
       updateCart();
-      checkoutModal.classList.add('hidden');
-      checkoutModal.classList.remove('flex');
+      closeCheckoutModal(true);
+    });
+
+    // ================= SMART BROWSER / PHONE "BACK" ARROW INTERCEPTOR =================
+    window.addEventListener('popstate', () => {
+      if (isCheckoutOpen) closeCheckoutModal(false);
+      if (isCartOpen) closeCart(false);
+      if (isProductDetailOpen) closeProductDetail(false);
+      if (isMobileMenuOpen) closeMobileMenu(false);
+    });
+
+    // Handle Direct URL hash loading on first visit
+    window.addEventListener('load', () => {
+      if (window.location.hash.startsWith('#product-')) {
+        const id = parseInt(window.location.hash.replace('#product-', ''));
+        if (id) openProductDetail(id);
+      } else if (window.location.hash === '#cart') {
+        openCart();
+      }
+    });
+
+    // Filter Buttons Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-gold-500', 'text-choco-950');
+          b.classList.add('bg-choco-850', 'text-cream-100');
+        });
+        btn.classList.add('bg-gold-500', 'text-choco-950');
+        btn.classList.remove('bg-choco-850', 'text-cream-100');
+
+        const category = btn.getAttribute('data-category');
+        if (category === 'all') {
+          renderProducts(products);
+        } else {
+          renderProducts(products.filter(p => p.category === category));
+        }
+      });
     });
   </script>
 </body>
