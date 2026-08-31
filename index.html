@@ -52,7 +52,6 @@
   </script>
 
   <style>
-    /* Стилизация скроллбара */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -63,7 +62,7 @@
       background: #C5A059;
     }
 
-    /* Элементы со срезанными углами (Chamfered / Визитка-стиль) */
+    /* Элементы со срезанными углами (Chamfered / Стиль визитки) */
     .cut-corner-btn {
       clip-path: polygon(
         8px 0, calc(100% - 8px) 0,
@@ -92,6 +91,14 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Прозрачный логотип без подложки */
+    .hero-logo-transparent {
+      mix-blend-mode: screen;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
   </style>
 </head>
 <body class="bg-choco-900 text-cream-100 font-sans antialiased selection:bg-gold-500 selection:text-choco-950">
@@ -100,13 +107,10 @@
   <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Phone Button on the Left (Instead of Logo) -->
-      <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center gap-2.5 px-4 py-2 border border-gold-500/40 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group">
-        <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
-        <div class="text-left">
-          <span class="text-xs font-semibold tracking-wider block">+7 (978) 911-48-55</span>
-          <span class="text-[9px] uppercase tracking-widest text-cream-200/60 block group-hover:text-choco-900 leading-none">Симферополь</span>
-        </div>
+      <!-- Phone Button (Large, full button size, no subtitle) -->
+      <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-3 px-5 py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md">
+        <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+        <span class="text-sm sm:text-base font-bold tracking-wider leading-none">+7 (978) 911-48-55</span>
       </a>
 
       <!-- Navigation Links -->
@@ -121,16 +125,16 @@
       <!-- Messengers & Cart Button -->
       <div class="flex items-center gap-3 sm:gap-4">
         <div class="hidden sm:flex items-center gap-2">
-          <a href="https://t.me/" target="_blank" title="Telegram" class="cut-corner-btn w-9 h-9 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
+          <a href="https://t.me/" target="_blank" title="Telegram" class="cut-corner-btn w-10 h-10 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
           </a>
-          <a href="https://max.ru/" target="_blank" title="Max Messenger" class="cut-corner-btn px-2.5 h-9 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-xs font-bold text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
+          <a href="https://max.ru/" target="_blank" title="Max Messenger" class="cut-corner-btn px-3 h-10 bg-choco-850 border border-gold-500/40 flex items-center justify-center text-xs font-bold text-gold-400 hover:bg-gold-500 hover:text-choco-950 transition">
             MAX
           </a>
         </div>
 
-        <!-- Open Cart Button with Cut Corners -->
-        <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-5 py-2.5 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20">
+        <!-- Open Cart Button -->
+        <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-5 py-3 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
           <span>Корзина</span>
           <span id="cart-counter" class="w-5 h-5 bg-choco-950 text-gold-400 text-[11px] font-bold flex items-center justify-center">0</span>
@@ -139,21 +143,27 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (VIDEO + SVG LOGO + SLOGAN) ================= -->
+  <!-- ================= HERO SECTION (PURE LOGO ON VIDEO) ================= -->
   <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-choco-950 text-cream-50">
+    <!-- Video background -->
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-80 scale-105 transition-all duration-700">
         <source src="images/hero-video.mp4" type="video/mp4">
       </video>
-      <!-- Кинематографичный плавный переход от видео к градиенту контента -->
+      <!-- Soft smooth gradient overlay -->
       <div class="absolute inset-0 bg-gradient-to-b from-choco-950/70 via-choco-900/40 to-choco-900"></div>
     </div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24 flex flex-col items-center">
       
-      <!-- Big SVG Logo (Floating over video) -->
-      <div class="mb-8 w-full flex justify-center">
-        <img src="images/logo.svg" alt="Патисьер" class="w-80 sm:w-[440px] md:w-[540px] h-auto object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)] filter brightness-110" onerror="this.src='images/logo.png'">
+      <!-- SVG Logo (Directly on Video with NO Background box) -->
+      <div class="mb-8 w-full flex justify-center bg-transparent">
+        <img 
+          src="images/logo_patisier_transparent_svg.svg" 
+          alt="Патисьер" 
+          class="hero-logo-transparent w-80 sm:w-[460px] md:w-[560px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)] filter brightness-110"
+          onerror="handleLogoError(this)"
+        >
       </div>
 
       <!-- Slogan -->
@@ -194,7 +204,7 @@
     </div>
   </section>
 
-  <!-- ================= MANIFESTO & MACRO NAPOLEON (WARM GRADIENT TRANSITION) ================= -->
+  <!-- ================= MANIFESTO & MACRO NAPOLEON ================= -->
   <section id="manifesto" class="py-24 bg-gradient-to-b from-choco-900 via-choco-800 to-choco-750 border-t border-b border-gold-500/20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -206,10 +216,10 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Macro Image Container (.jpeg) with Cut Corners -->
+        <!-- Macro Image Container (.jpeg / .jpg auto-handled) -->
         <div class="lg:col-span-6 relative group">
           <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/30 bg-choco-950">
-            <img src="images/napoleon-macro.jpeg" alt="Торт Наполеон макросъемка" class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105">
+            <img src="images/napoleon-macro.jpeg" alt="Торт Наполеон макросъемка" class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" onerror="handleImgError(this)">
             <div class="absolute inset-0 bg-gradient-to-t from-choco-950/90 via-transparent to-transparent"></div>
             
             <div class="absolute bottom-6 left-6 right-6 text-white">
@@ -292,7 +302,7 @@
 
       <!-- Product Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
-        <!-- Items generated by JavaScript -->
+        <!-- Generated by JavaScript -->
       </div>
 
     </div>
@@ -303,11 +313,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Portrait with Cut Corners -->
+        <!-- Portrait -->
         <div class="lg:col-span-5 text-center lg:text-left">
           <div class="relative inline-block max-w-sm mx-auto">
             <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/40 bg-choco-950">
-              <img src="images/anastasia.jpeg" alt="Анастасия Воробьева - основатель кондитерской Патисьер" class="w-full h-[500px] object-cover object-top filter contrast-105">
+              <img src="images/anastasia.jpeg" alt="Анастасия Воробьева - основатель кондитерской Патисьер" class="w-full h-[500px] object-cover object-top filter contrast-105" onerror="handleImgError(this)">
             </div>
             <div class="mt-4 text-center">
               <h4 class="font-serif text-2xl font-bold text-gold-400">Анастасия Воробьева</h4>
@@ -366,7 +376,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         
-        <!-- MAIN HUB: Eupatoriyskoe Highway with Cut Corners -->
+        <!-- MAIN HUB: Eupatoriyskoe Highway -->
         <div class="cut-corner-card bg-choco-900 p-8 border-2 border-gold-500 shadow-2xl relative">
           <div class="cut-corner-btn inline-block bg-gold-500 text-choco-950 text-[10px] uppercase font-bold tracking-widest px-4 py-1 mb-4 shadow">
             Кондитерский цех и Главный магазин
@@ -381,7 +391,7 @@
           </a>
         </div>
 
-        <!-- Location 2: Shpolyanskoy 6 with Cut Corners -->
+        <!-- Location 2: Shpolyanskoy 6 -->
         <div class="cut-corner-card bg-choco-900/70 p-8 border border-gold-500/30 shadow-lg">
           <div class="cut-corner-btn inline-block bg-choco-800 border border-gold-500/30 text-gold-300 text-[10px] uppercase font-bold tracking-widest px-4 py-1 mb-4">
             Магазин-кондитерская
@@ -409,7 +419,7 @@
         
         <!-- Brand Column -->
         <div class="md:col-span-5 space-y-4">
-          <img src="images/logo.svg" alt="Патисьер" class="h-12 w-auto object-contain" onerror="this.src='images/logo.png'">
+          <img src="images/logo_patisier_transparent_svg.svg" alt="Патисьер" class="hero-logo-transparent h-12 w-auto object-contain" onerror="handleLogoError(this)">
           <p class="text-xs text-cream-200/80 max-w-sm leading-relaxed">
             «Патисьер. Свой мир. Без аналогов». Высокое кондитерское искусство на страже чистоты вкуса.
           </p>
@@ -582,6 +592,34 @@
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
   <script>
+    // Universal Error Handlers for Images & Logos
+    function handleImgError(img) {
+      if (!img.dataset.tried) {
+        img.dataset.tried = "1";
+        // Swap .jpeg and .jpg
+        img.src = img.src.includes('.jpeg') ? img.src.replace('.jpeg', '.jpg') : img.src.replace('.jpg', '.jpeg');
+      } else if (img.dataset.tried === "1") {
+        img.dataset.tried = "2";
+        // Try file from root directory if subfolder issue
+        const parts = img.src.split('/');
+        img.src = parts[parts.length - 1];
+      }
+    }
+
+    function handleLogoError(img) {
+      if (!img.dataset.ltried) {
+        img.dataset.ltried = "1";
+        img.src = 'images/logo_patisier_transparent_svg.png';
+      } else if (img.dataset.ltried === "1") {
+        img.dataset.ltried = "2";
+        img.src = 'images/logo.svg';
+      } else if (img.dataset.ltried === "2") {
+        img.dataset.ltried = "3";
+        img.src = 'images/logo.png';
+      }
+    }
+
+    // 14 Real Products with robust image resolution
     const products = [
       { id: 1, name: "Киевский", price: 2200, category: "classic", image: "images/kievsky.jpeg", tag: "Классика" },
       { id: 2, name: "Наполеон", price: 2470, category: "classic", image: "images/napoleon.jpeg", tag: "Хит • Семейный рецепт" },
@@ -607,7 +645,7 @@
       productsGrid.innerHTML = items.map(product => `
         <div class="cut-corner-card bg-choco-850/90 border border-gold-500/25 hover:border-gold-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group">
           <div class="relative h-60 overflow-hidden bg-choco-950">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImgError(this)">
             <span class="cut-corner-btn absolute top-3 left-3 px-3 py-1 bg-choco-950/90 text-gold-300 text-[10px] uppercase font-bold tracking-wider border border-gold-500/30">
               ${product.tag}
             </span>
@@ -650,7 +688,7 @@
       });
     });
 
-    // Cart Management
+    // Cart Drawer Controls
     const cartDrawer = document.getElementById('cart-drawer');
     const cartPanel = document.getElementById('cart-panel');
     const cartBackdrop = document.getElementById('cart-backdrop');
@@ -658,4 +696,127 @@
     const closeCartBtn = document.getElementById('close-cart-btn');
     const cartCounter = document.getElementById('cart-counter');
     const cartItemsContainer = document.getElementById('cart-items-container');
-    const cartTotalPrice = document.getElementById('cart-tot
+    const cartTotalPrice = document.getElementById('cart-total-price');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    function openCart() {
+      cartDrawer.classList.remove('pointer-events-none', 'opacity-0');
+      cartDrawer.classList.add('pointer-events-auto', 'opacity-100');
+      cartPanel.classList.remove('translate-x-full');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('pointer-events-none', 'opacity-0');
+      cartDrawer.classList.remove('pointer-events-auto', 'opacity-100');
+      cartPanel.classList.add('translate-x-full');
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartBackdrop.addEventListener('click', closeCart);
+
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartCounter.innerText = totalCount;
+      cartTotalPrice.innerText = `${totalPrice.toLocaleString('ru-RU')} ₽`;
+      checkoutBtn.disabled = cart.length === 0;
+
+      const target = 5000;
+      const progress = Math.min(100, Math.round((totalPrice / target) * 100));
+      const remaining = Math.max(0, target - totalPrice);
+      
+      document.getElementById('shipping-bar').style.width = `${progress}%`;
+      document.getElementById('shipping-progress-percent').innerText = `${progress}%`;
+      
+      if (remaining > 0) {
+        document.getElementById('shipping-progress-text').innerText = `До бесплатной доставки: ${remaining.toLocaleString('ru-RU')} ₽`;
+      } else {
+        document.getElementById('shipping-progress-text').innerText = `🎉 Бесплатная доставка по Симферополю!`;
+      }
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="text-center py-12 text-cream-200/50">
+            <svg class="w-12 h-12 mx-auto text-gold-400/40 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            <p class="font-serif text-lg font-bold text-cream-100">Корзина пуста</p>
+            <p class="text-xs text-cream-200/60 mt-1">Выберите десерт из каталога</p>
+          </div>
+        `;
+      } else {
+        cartItemsContainer.innerHTML = cart.map(item => `
+          <div class="cut-corner-card flex items-center gap-4 bg-choco-850 p-3.5 border border-gold-500/20 shadow-sm">
+            <img src="${item.image}" alt="${item.name}" class="cut-corner-btn w-16 h-16 object-cover bg-choco-950" onerror="handleImgError(this)">
+            <div class="flex-1 min-w-0">
+              <h4 class="font-serif font-bold text-cream-50 text-sm truncate">${item.name}</h4>
+              <p class="text-xs text-gold-400 font-semibold mt-0.5">${item.price.toLocaleString('ru-RU')} ₽</p>
+              <div class="flex items-center gap-3 mt-2">
+                <button onclick="changeQty(${item.id}, -1)" class="cut-corner-btn w-6 h-6 bg-choco-950 text-gold-300 flex items-center justify-center text-xs font-bold hover:bg-gold-500 hover:text-choco-950 transition">-</button>
+                <span class="text-xs font-bold text-cream-50">${item.qty}</span>
+                <button onclick="changeQty(${item.id}, 1)" class="cut-corner-btn w-6 h-6 bg-choco-950 text-gold-300 flex items-center justify-center text-xs font-bold hover:bg-gold-500 hover:text-choco-950 transition">+</button>
+              </div>
+            </div>
+            <button onclick="removeItem(${item.id})" class="text-cream-200/40 hover:text-red-400 p-1 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            </button>
+          </div>
+        `).join('');
+      }
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== id);
+        }
+      }
+      updateCart();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCart();
+    }
+
+    // Checkout Modal
+    const checkoutModal = document.getElementById('checkout-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const orderForm = document.getElementById('order-form');
+
+    checkoutBtn.addEventListener('click', () => {
+      closeCart();
+      checkoutModal.classList.remove('hidden');
+      checkoutModal.classList.add('flex');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    });
+
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Спасибо! Ваш предзаказ принят. Менеджер свяжется с Вами по телефону в течение 15 минут для подтверждения.');
+      cart = [];
+      updateCart();
+      checkoutModal.classList.add('hidden');
+      checkoutModal.classList.remove('flex');
+    });
+  </script>
+</body>
+</html>
