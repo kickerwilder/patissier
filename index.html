@@ -62,7 +62,7 @@
       background: #C5A059;
     }
 
-    /* Элементы со срезанными углами (Chamfered / Стиль визитки) */
+    /* Элементы со срезанными углами */
     .cut-corner-btn {
       clip-path: polygon(
         8px 0, calc(100% - 8px) 0,
@@ -90,13 +90,13 @@
 <body class="bg-choco-900 text-cream-100 font-sans antialiased selection:bg-gold-500 selection:text-choco-950">
 
   <!-- ================= HEADER / NAVBAR ================= -->
-  <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/30 transition-all duration-300">
+  <header class="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
-      <!-- Mobile: Hamburger & Phone -->
-      <div class="flex items-center gap-3 sm:gap-4">
-        <button id="mobile-menu-btn" class="cut-corner-btn lg:hidden flex items-center justify-center w-10 h-10 bg-choco-850 border border-gold-500/40 text-gold-400 focus:outline-none shadow-md">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <!-- Left: Hamburger (No frame) & Phone -->
+      <div class="flex items-center gap-3 sm:gap-5">
+        <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center text-gold-400 hover:text-gold-300 focus:outline-none p-1 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
 
         <a href="tel:+79789114855" class="inline-flex items-center gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap">
@@ -105,21 +105,17 @@
         </a>
       </div>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs font-semibold tracking-widest text-cream-100 uppercase">
-        <a href="#manifesto" class="hover:text-gold-400 transition-colors whitespace-nowrap">Философия</a>
-        <a href="#catalog" class="hover:text-gold-400 transition-colors whitespace-nowrap">Каталог</a>
-        <a href="#delivery-payment" class="hover:text-gold-400 transition-colors whitespace-nowrap">Оплата и доставка</a>
-        <a href="#about" class="hover:text-gold-400 transition-colors whitespace-nowrap">О нас</a>
-        <a href="#locations" class="hover:text-gold-400 transition-colors whitespace-nowrap">Адреса</a>
-        <a href="#contacts" class="hover:text-gold-400 transition-colors whitespace-nowrap">Контакты</a>
-      </nav>
+      <!-- Center: Sticky Navbar Brand Logo -->
+      <a href="#" class="flex flex-col items-center group">
+        <span class="font-serif text-lg sm:text-2xl tracking-[0.2em] text-gold-400 font-bold leading-none">ПАТИСЬЕР<span class="text-[10px] align-top ml-0.5">®</span></span>
+        <span class="text-[8px] sm:text-[9px] tracking-[0.25em] text-cream-200/70 uppercase mt-0.5">МАГАЗИН-КОНДИТЕРСКАЯ</span>
+      </a>
 
-      <!-- Cart Button -->
+      <!-- Right: Frameless Cart Button -->
       <div class="flex items-center">
         <button id="open-cart-btn" class="inline-flex items-center gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap">
           <svg class="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-          <span class="text-xs sm:text-sm font-bold tracking-wider uppercase">Корзина</span>
+          <span class="text-xs sm:text-sm font-bold tracking-wider uppercase hidden sm:inline">Корзина</span>
           <span id="cart-counter" class="w-5 h-5 rounded-full bg-gold-500 text-choco-950 text-[11px] font-bold flex items-center justify-center shadow-sm">0</span>
         </button>
       </div>
@@ -142,7 +138,7 @@
 
       <div class="flex-1 overflow-y-auto p-6 space-y-5 text-sm font-semibold tracking-wider uppercase">
         <a href="#manifesto" onclick="navigateToSection(event, '#manifesto')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Философия</a>
-        <a href="#catalog" onclick="navigateToSection(event, '#catalog')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Каталог десертов</a>
+        <a href="#catalog" onclick="navigateToSection(event, '#catalog')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Витрина десертов</a>
         <a href="#delivery-payment" onclick="navigateToSection(event, '#delivery-payment')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Оплата и доставка</a>
         <a href="#about" onclick="navigateToSection(event, '#about')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">О нас</a>
         <a href="#locations" onclick="navigateToSection(event, '#locations')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Адреса и цех</a>
@@ -167,9 +163,8 @@
     </div>
   </div>
 
-  <!-- ================= HERO SECTION (BUTTON PUSHED TO THE BOTTOM) ================= -->
+  <!-- ================= HERO SECTION ================= -->
   <section class="relative min-h-[92vh] flex flex-col justify-between items-center overflow-hidden bg-choco-950 text-cream-50 pt-16 pb-12">
-    <!-- Background Video -->
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-80 scale-105 transition-all duration-700">
         <source src="images/hero-video.mp4" type="video/mp4">
@@ -177,17 +172,11 @@
       <div class="absolute inset-0 bg-gradient-to-b from-choco-950/70 via-choco-900/40 to-choco-900"></div>
     </div>
 
-    <!-- Top Spacer for vertical balance -->
     <div class="w-full"></div>
 
-    <!-- Center: Logo + Slogan -->
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center my-auto py-6">
       <div class="mb-6 w-full flex justify-center">
-        <img 
-          src="images/logo.png" 
-          alt="" 
-          class="w-[320px] sm:w-[480px] md:w-[560px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)] filter brightness-105"
-        >
+        <img src="images/logo.png" alt="" class="w-[320px] sm:w-[480px] md:w-[560px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)] filter brightness-105">
       </div>
 
       <h1 class="font-serif text-base sm:text-xl md:text-2xl font-normal tracking-[0.28em] text-gold-300 uppercase drop-shadow-lg">
@@ -195,106 +184,158 @@
       </h1>
     </div>
 
-    <!-- Bottom: CTA Button (Positioned down where the old badges were) -->
     <div class="relative z-10 w-full flex justify-center pb-2 sm:pb-6">
-      <a href="#catalog" class="cut-corner-btn px-10 sm:px-14 py-4 sm:py-5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.15em] text-xs sm:text-sm uppercase shadow-2xl shadow-gold-500/30 transition transform hover:scale-105">
-        Выбрать торт
+      <a href="#catalog" class="cut-corner-btn px-10 sm:px-14 py-4 sm:py-5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.2em] text-xs sm:text-sm uppercase shadow-2xl shadow-gold-500/30 transition transform hover:scale-105">
+        В Ы Б Р А Т Ь &nbsp; Т О Р Т
       </a>
     </div>
   </section>
 
-  <!-- ================= PHILOSOPHY SECTION ================= -->
-  <section id="manifesto" class="py-24 bg-gradient-to-b from-choco-900 via-choco-800 to-choco-750 border-t border-b border-gold-500/20 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- ================= PHILOSOPHY / MANIFESTO (UNIFIED VIDEO BANNER) ================= -->
+  <section id="manifesto" class="py-24 bg-gradient-to-b from-choco-900 via-choco-850 to-choco-800 border-t border-b border-gold-500/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Large Header -->
-      <div class="text-center max-w-4xl mx-auto mb-16">
-        <h2 class="font-serif text-4xl sm:text-6xl text-cream-50 font-normal">Бескомпромиссные стандарты</h2>
-        <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Video container (images/philosophy-video.mp4) -->
-        <div class="lg:col-span-6 relative">
-          <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/30 bg-choco-950 h-[460px] sm:h-[540px]">
-            <video autoplay muted loop playsinline class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-              <source src="images/philosophy-video.mp4" type="video/mp4">
-            </video>
-            <img src="images/napoleon-macro.jpeg" alt="Философия Патисьер" class="w-full h-full object-cover hidden" onerror="handleImgError(this)">
-            <div class="absolute inset-0 bg-gradient-to-t from-choco-950/70 via-transparent to-transparent pointer-events-none"></div>
-          </div>
+      <div class="cut-corner-card relative overflow-hidden shadow-2xl border border-gold-500/30 bg-choco-950 min-h-[440px] sm:min-h-[500px] flex items-center mb-12">
+        <div class="absolute inset-0 z-0">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover object-right sm:object-center" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <source src="images/philosophy-video.mp4" type="video/mp4">
+          </video>
+          <img src="images/napoleon-macro.jpeg" alt="" class="w-full h-full object-cover object-right sm:object-center hidden" onerror="handleImgError(this)">
+          <div class="absolute inset-0 bg-gradient-to-r from-choco-950 via-choco-950/90 sm:via-choco-950/80 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-choco-950/60 via-transparent to-transparent"></div>
         </div>
 
-        <!-- Philosophy Content -->
-        <div class="lg:col-span-6 space-y-6">
-          
-          <div>
-            <h3 class="font-serif text-2xl sm:text-3xl text-gold-300 font-bold mb-3">
-              Делаем для других, как для себя
-            </h3>
-            <p class="text-sm sm:text-base text-cream-200/90 leading-relaxed font-light">
-              Мы убеждены: то, что создаётся для людей, должно соответствовать стандартам, которые мы предъявляем самим себе. Поэтому мы не ищем лёгких путей там, где они ухудшают итоговый результат.
-            </p>
+        <div class="relative z-10 max-w-xl p-6 sm:p-10 lg:p-12 space-y-5">
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream-50 leading-[1.15]">
+            Делаем для других, <br>
+            <span class="italic text-gold-300 font-light">как для себя</span>
+          </h2>
+
+          <div class="flex items-center gap-3 py-1">
+            <div class="h-[1px] w-12 bg-gold-500/60"></div>
+            <div class="w-3 h-3 rounded-full border border-gold-400 flex items-center justify-center">
+              <div class="w-1 h-1 rounded-full bg-gold-400"></div>
+            </div>
+            <div class="h-[1px] w-12 bg-gold-500/60"></div>
           </div>
 
-          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg space-y-3">
-            <h4 class="font-serif text-xl font-bold text-gold-400">Натуральные ингредиенты</h4>
-            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
-              Мы используем настоящее сливочное масло 82%, натуральные сливки, яйца, шоколад, орехи, ягоды и другие ингредиенты, которые формируют характер и вкус каждого торта.
-            </p>
-            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
-              Мы не используем дешёвые заменители животных жиров, растительные сливки, улучшители, загустители, стабилизаторы и другие ингредиенты, которые точно ухудшат качество и вкус торта.
-            </p>
-          </div>
+          <p class="text-sm sm:text-base text-cream-100/90 leading-relaxed font-light drop-shadow-sm">
+            Мы убеждены: то, что создаётся для людей, должно соответствовать стандартам, которые мы предъявляем самим себе. Поэтому мы не ищем лёгких путей там, где они ухудшают итоговый результат.
+          </p>
+        </div>
+      </div>
 
-          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg space-y-3">
-            <h4 class="font-serif text-xl font-bold text-gold-400">Собственное производство</h4>
-            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
-              Наши торты создаются в собственной кондитерской. Мы контролируем весь процесс — от приготовления до момента, когда торт попадает на витрину.
-            </p>
-            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
-              Концепция Патисьер проста: мы не покупаем чужие торты для продажи и не продаём свои торты в других заведениях.
-            </p>
-            <p class="text-xs sm:text-sm text-gold-300 font-semibold pt-1">
-              Наши торты можно купить только в кондитерских Патисьер.
-            </p>
-          </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="cut-corner-card bg-choco-950/60 p-8 border border-gold-500/25 flex flex-col items-center text-center space-y-4">
+          <h3 class="font-serif text-2xl sm:text-3xl text-cream-50 font-normal">
+            Без заменителей <br> и компромиссов
+          </h3>
+          <div class="w-1.5 h-1.5 rounded-full bg-gold-500/60 my-1"></div>
+          <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed font-light">
+            Мы используем настоящее сливочное масло 82%, натуральные сливки, яйца, шоколад, орехи, ягоды и другие ингредиенты, которые формируют характер и вкус каждого торта.
+          </p>
+          <div class="w-1.5 h-1.5 rounded-full bg-gold-500/60 my-1"></div>
+          <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed font-light">
+            Мы не используем дешёвые заменители животных жиров, растительные сливки, улучшители, загустители, стабилизаторы и другие вредные ингредиенты.
+          </p>
         </div>
 
+        <div class="cut-corner-card bg-choco-950/60 p-8 border border-gold-500/25 flex flex-col items-center text-center space-y-4">
+          <h3 class="font-serif text-2xl sm:text-3xl text-cream-50 font-normal">
+            Создано <br> в <span class="italic text-gold-300">Патисьер</span>
+          </h3>
+          <div class="w-1.5 h-1.5 rounded-full bg-gold-500/60 my-1"></div>
+          <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed font-light">
+            Наши торты создаются в собственной кондитерской. Мы контролируем весь процесс — от приготовления до момента, когда торт попадает на витрину.
+          </p>
+          <div class="w-1.5 h-1.5 rounded-full bg-gold-500/60 my-1"></div>
+          <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed font-light">
+            Мы не покупаем чужие торты для продажи и не продаём свои торты в других заведениях.
+          </p>
+          <p class="text-xs sm:text-sm text-gold-300 font-semibold leading-relaxed pt-2">
+            Наши торты можно купить только в кондитерских Патисьер.
+          </p>
+        </div>
       </div>
+
+      <div class="flex justify-center">
+        <a href="#catalog" class="cut-corner-btn px-12 sm:px-16 py-4 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.2em] text-xs sm:text-sm uppercase shadow-xl shadow-gold-500/25 transition transform hover:scale-105">
+          В Ы Б Р А Т Ь &nbsp; Т О Р Т
+        </a>
+      </div>
+
     </div>
   </section>
 
-  <!-- ================= CATALOG SECTION ================= -->
-  <section id="catalog" class="py-24 bg-choco-750 border-b border-gold-500/20">
+  <!-- ================= DESSERT SHOWCASE / CATALOG (PROPORTIONAL 95% CAROUSEL) ================= -->
+  <section id="catalog" class="py-24 bg-choco-950 border-b border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Витрина десертов</span>
-          <h2 class="font-serif text-3xl sm:text-5xl text-cream-50 mt-2">Коллекция «Патисьер»</h2>
-          <p class="text-sm text-cream-200/70 mt-2">Нажмите на карточку любого торта, чтобы открыть подробный состав, КБЖУ и фото</p>
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <div class="h-[1px] w-12 bg-gold-500/50"></div>
+          <div class="w-2.5 h-2.5 rounded-full border border-gold-400 flex items-center justify-center">
+            <div class="w-1 h-1 rounded-full bg-gold-400"></div>
+          </div>
+          <div class="h-[1px] w-12 bg-gold-500/50"></div>
         </div>
 
-        <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filter-container">
-          <button class="filter-btn active cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-gold-500 text-choco-950" data-category="all">Все (14)</button>
-          <button class="filter-btn cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-choco-850 border border-gold-500/30 text-cream-100 hover:bg-gold-500 hover:text-choco-950" data-category="classic">Классика</button>
-          <button class="filter-btn cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-choco-850 border border-gold-500/30 text-cream-100 hover:bg-gold-500 hover:text-choco-950" data-category="chocolate">Шоколад и мусс</button>
-          <button class="filter-btn cut-corner-btn px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-choco-850 border border-gold-500/30 text-cream-100 hover:bg-gold-500 hover:text-choco-950" data-category="special">Рулеты и Чизкейки</button>
-        </div>
+        <h2 class="font-serif text-3xl sm:text-5xl text-cream-50 font-normal tracking-wide uppercase">
+          Витрина десертов
+        </h2>
+        <p class="text-xs sm:text-sm text-cream-200/80 mt-2 font-light tracking-wider">
+          Выберите тот, за которым захочется вернуться
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
-        <!-- Generated by JavaScript -->
+      <!-- Category Filter Tabs (Frameless) -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" id="filter-container">
+        <button class="filter-btn active cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-gold-500 text-choco-950 shadow-md" data-category="all">Все</button>
+        <button class="filter-btn cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-transparent text-cream-200/80 hover:text-gold-300 transition-colors" data-category="classic">Классика</button>
+        <button class="filter-btn cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-transparent text-cream-200/80 hover:text-gold-300 transition-colors" data-category="chocolate">Шоколадные</button>
+        <button class="filter-btn cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-transparent text-cream-200/80 hover:text-gold-300 transition-colors" data-category="nuts">Ореховые</button>
+        <button class="filter-btn cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-transparent text-cream-200/80 hover:text-gold-300 transition-colors" data-category="berries">Ягодные</button>
+        <button class="filter-btn cut-corner-btn px-5 py-2 text-xs font-bold tracking-wider bg-transparent text-cream-200/80 hover:text-gold-300 transition-colors" data-category="cheesecake">Чизкейки</button>
+      </div>
+
+      <!-- ================= 3D PROPORTIONAL OVERLAPPING CAROUSEL ================= -->
+      <div class="relative max-w-5xl mx-auto py-6 sm:py-8 px-2 sm:px-6 mb-12">
+        <button onclick="changeCarouselSlide(-1)" class="absolute left-0 sm:-left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-choco-950/90 border border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-2xl transition transform hover:scale-110">
+          ‹
+        </button>
+        
+        <!-- 3-Card Stage Container -->
+        <div id="carousel-stage" class="flex items-center justify-center relative min-h-[460px] sm:min-h-[520px] select-none py-4">
+          <!-- Rendered dynamically with 95% side proportions and overlap -->
+        </div>
+
+        <button onclick="changeCarouselSlide(1)" class="absolute right-0 sm:-right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-choco-950/90 border border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-2xl transition transform hover:scale-110">
+          ›
+        </button>
+      </div>
+
+      <!-- ================= LOWER ROW: MAIN SHOWCASE GRID ================= -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="main-catalog-grid">
+        <!-- Rendered dynamically with "В корзину" button -->
+      </div>
+
+      <!-- Bottom Button (Variant A: Progressive Reveal) -->
+      <div class="mt-14 flex flex-col items-center text-center">
+        <button id="toggle-catalog-btn" onclick="toggleFullCatalog()" class="cut-corner-btn inline-flex items-center gap-3 px-8 py-3.5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.15em] text-xs uppercase shadow-xl shadow-gold-500/25 transition transform hover:scale-105">
+          <span id="toggle-btn-text">Смотреть всю витрину</span>
+          <span class="text-base leading-none">→</span>
+        </button>
+
+        <p class="text-xs text-cream-200/70 mt-3 font-light tracking-wider">
+          Свежие десерты каждый день
+        </p>
       </div>
 
     </div>
   </section>
 
   <!-- ================= PAYMENT & DELIVERY SECTION ================= -->
-  <section id="delivery-payment" class="py-24 bg-gradient-to-b from-choco-750 via-choco-800 to-choco-850 border-b border-gold-500/20">
+  <section id="delivery-payment" class="py-24 bg-gradient-to-b from-choco-950 via-choco-900 to-choco-850 border-b border-gold-500/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -306,11 +347,9 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
+        <div class="cut-corner-card bg-choco-950/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
-            <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
-              01
-            </div>
+            <div class="cut-corner-btn w-12 h-12 bg-choco-900 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">01</div>
             <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Предзаказ за 24 часа</h3>
             <p class="text-xs text-cream-200/80 leading-relaxed">
               Мы не замораживаем торты впрок. Каждый десерт выпекается и собирается шеф-кондитером строго под дату и время вашего торжества.
@@ -321,11 +360,9 @@
           </div>
         </div>
 
-        <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
+        <div class="cut-corner-card bg-choco-950/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
-            <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
-              02
-            </div>
+            <div class="cut-corner-btn w-12 h-12 bg-choco-900 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">02</div>
             <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Доставка в термобоксах</h3>
             <p class="text-xs text-cream-200/80 leading-relaxed">
               Специальная автодоставка с контролем температуры: крем и декор сохраняют безупречный ресторанный вид.
@@ -337,11 +374,9 @@
           </div>
         </div>
 
-        <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
+        <div class="cut-corner-card bg-choco-950/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
-            <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
-              03
-            </div>
+            <div class="cut-corner-btn w-12 h-12 bg-choco-900 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">03</div>
             <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Бесплатный самовывоз</h3>
             <p class="text-xs text-cream-200/80 leading-relaxed">
               Вы можете забрать готовый заказ в удобной брендовой коробке из нашего кондитерского цеха или магазина.
@@ -353,11 +388,9 @@
           </div>
         </div>
 
-        <div class="cut-corner-card bg-choco-900/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
+        <div class="cut-corner-card bg-choco-950/90 p-6 border border-gold-500/25 flex flex-col justify-between hover:border-gold-500/60 transition">
           <div>
-            <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">
-              04
-            </div>
+            <div class="cut-corner-btn w-12 h-12 bg-choco-900 border border-gold-500/40 text-gold-400 font-serif font-bold text-xl flex items-center justify-center mb-4">04</div>
             <h3 class="font-serif text-xl font-bold text-cream-50 mb-2">Безопасная оплата</h3>
             <p class="text-xs text-cream-200/80 leading-relaxed">
               Оформляйте заявку на сайте. Менеджер свяжется с вами, уточнит детали, надпись на торте и подтвердит бронь даты.
@@ -692,10 +725,25 @@
 
     const products = [
       { 
+        id: 2, 
+        name: "НАПОЛЕОН", 
+        subtitle: "Нежный • сливочный • хорошо пропитанный",
+        price: 2470, 
+        categories: ["classic", "all"], 
+        image: "images/napoleon.jpeg", 
+        tag: "ХИТ",
+        weight: "1.6 кг (~10-12 порций)",
+        story: "Фирменный «Наполеон» Анастасии по бабушкиному рецепту с увеличенным количеством пломбирного заварного крема между десятками тончайших хрустящих коржей.",
+        composition: "Сливочное масло 82.5%, мука пшеничная высшего сорта, молоко натуральное 3.2% «Вкуснотеево», яйца С-1 (Крым), сахар, натуральная стручковая ваниль, соль морская.",
+        nutrition: "Белки: 5.2 г | Жиры: 21.4 г | Углеводы: 36.8 г | 360 ккал на 100 г",
+        allergens: "Содержит глютен, яйца, молоко. Без пальмового масла и консервантов."
+      },
+      { 
         id: 1, 
-        name: "Киевский", 
+        name: "КИЕВСКИЙ", 
+        subtitle: "Хрустящее безе • жареный фундук • крем Шарлотт",
         price: 2200, 
-        category: "classic", 
+        categories: ["classic", "nuts", "all"], 
         image: "images/kievsky.jpeg", 
         tag: "Классика",
         weight: "1.4 кг (~8-10 порций)",
@@ -705,36 +753,67 @@
         allergens: "Содержит орехи (фундук), яйца, лактозу. Без маргарина и без ГМО."
       },
       { 
-        id: 2, 
-        name: "Наполеон", 
-        price: 2470, 
-        category: "classic", 
-        image: "images/napoleon.jpeg", 
-        tag: "Хит • Семейный рецепт",
+        id: 12, 
+        name: "ЧИЗКЕЙК НЬЮ-ЙОРК", 
+        subtitle: "Нежный сырный крем • песочное сабле",
+        price: 3770, 
+        categories: ["cheesecake", "all"], 
+        image: "images/cheesecake-ny.jpeg", 
+        tag: "Сливочный",
         weight: "1.6 кг (~10-12 порций)",
-        story: "Фирменный «Наполеон» Анастасии по бабушкиному рецепту с увеличенным количеством пломбирного заварного крема между десятками тончайших хрустящих коржей.",
-        composition: "Сливочное масло 82.5%, мука пшеничная высшего сорта, молоко натуральное 3.2% «Вкуснотеево», яйца С-1 (Крым), сахар, натуральная стручковая ваниль, соль морская.",
-        nutrition: "Белки: 5.2 г | Жиры: 21.4 г | Углеводы: 36.8 г | 360 ккал на 100 г",
-        allergens: "Содержит глютен, яйца, молоко. Без пальмового масла и консервантов."
+        story: "Классический запеченный чизкейк с плотной, шелковистой текстурой из сливочного сыра Cremette на тонкой хрустящей основе из домашнего сабле.",
+        composition: "Сливочный творожный сыр Cremette, сливки 33%, яйца С-1, сахар, стручковая бурбонская ваниль, песочное печенье сабле собственного приготовления, сливочное масло 82.5%.",
+        nutrition: "Белки: 6.2 г | Жиры: 25.4 г | Углеводы: 28.0 г | 365 ккал на 100 г",
+        allergens: "Лактоза, яйца, глютен."
       },
       { 
-        id: 3, 
-        name: "Грильяжный", 
-        price: 3500, 
-        category: "classic", 
-        image: "images/grilyazhny.jpeg", 
-        tag: "Премиум",
-        weight: "1.5 кг (~8-10 порций)",
-        story: "Благородный торт с хрустящим грильяжем из карамелизированных грецких орехов и миндаля в сочетании с шелковистым шоколадно-масляным кремом.",
-        composition: "Сливочное масло 82.5%, грецкий орех, миндаль, темный бельгийский шоколад 54%, сахар карамельный, яйца фермерские С-1, молоко 3.2%.",
-        nutrition: "Белки: 7.1 г | Жиры: 28.5 г | Углеводы: 42.0 г | 450 ккал на 100 г",
-        allergens: "Содержит орехи, яйца, лактозу."
+        id: 7, 
+        name: "СНИКЕРС", 
+        subtitle: "Шоколад • соленая карамель • арахис и нежный крем",
+        price: 3870, 
+        categories: ["chocolate", "nuts", "all"], 
+        image: "images/snikers.jpeg", 
+        tag: "Топ",
+        weight: "1.8 кг (~10-12 порций)",
+        story: "Насыщенный шоколадный бисквит, тягучая сливочная карамель, щедрый слой обжаренного соленого арахиса и нежный кремчиз.",
+        composition: "Темный шоколад, какао премиум, мука в/с, арахис отборный жареный, домашняя сливочная карамель, сливочное масло 82.5%, кремчиз, яйца С-1.",
+        nutrition: "Белки: 8.2 г | Жиры: 26.4 г | Углеводы: 45.0 г | 450 ккал на 100 г",
+        allergens: "Арахис, глютен, лактоза, яйца."
+      },
+      { 
+        id: 13, 
+        name: "ШВАРЦВАЛЬД", 
+        subtitle: "Шоколадные коржи • вишня и взбитые сливки",
+        price: 3870, 
+        categories: ["chocolate", "berries", "all"], 
+        image: "images/schwarzwald.jpeg", 
+        tag: "Шоколад",
+        weight: "1.7 кг (~10-12 порций)",
+        story: "Знаменитый «Черный лес»: сочный шоколадный бисквит, пропитанный вишневым соком, пряная томленая вишня и воздушный крем из взбитых натуральных сливок.",
+        composition: "Шоколадный бисквит на какао премиум, вишня без косточки, сливки животные 33%, темный бельгийский шоколад в стружке, пряная корица, яйца С-1.",
+        nutrition: "Белки: 4.8 г | Жиры: 18.9 г | Углеводы: 36.2 г | 335 ккал на 100 г",
+        allergens: "Глютен, молоко, яйца."
+      },
+      { 
+        id: 8, 
+        name: "ТРИ ШОКОЛАДА", 
+        subtitle: "Три слоя нежнейшего мусса на бисквите",
+        price: 3470, 
+        categories: ["chocolate", "all"], 
+        image: "images/tri-shokolada.jpeg", 
+        tag: "Муссовый",
+        weight: "1.4 кг (~8-10 порций)",
+        story: "Изысканный муссовый градиент из трех видов бельгийского шоколада (горький 70%, молочный 33% и белый) на тонком брауни-бисквите.",
+        composition: "Шоколад бельгийский Callebaut (темный, молочный, белый), сливки натуральные животные 33%, молоко «Вкуснотеево», желатин высшей очистки, какао, яйца С-1.",
+        nutrition: "Белки: 5.6 г | Жиры: 23.1 г | Углеводы: 34.2 г | 365 ккал на 100 г",
+        allergens: "Молоко, соевый лецитин (в шоколаде), яйца."
       },
       { 
         id: 4, 
-        name: "Меренговый рулет", 
+        name: "МЕРЕНГОВЫЙ РУЛЕТ", 
+        subtitle: "Воздушная меренга • сыр Маскарпоне • свежие ягоды",
         price: 2640, 
-        category: "special", 
+        categories: ["berries", "all"], 
         image: "images/merengovy.jpeg", 
         tag: "Нежность",
         weight: "1.1 кг (~6-8 порций)",
@@ -744,10 +823,25 @@
         allergens: "Яйца, лактоза, миндаль. Низкое содержание глютена."
       },
       { 
+        id: 3, 
+        name: "ГРИЛЬЯЖНЫЙ", 
+        subtitle: "Карамелизированный ореховый грильяж • темный шоколад",
+        price: 3500, 
+        categories: ["nuts", "classic", "all"], 
+        image: "images/grilyazhny.jpeg", 
+        tag: "Премиум",
+        weight: "1.5 кг (~8-10 порций)",
+        story: "Благородный торт с хрустящим грильяжем из карамелизированных грецких орехов и миндаля в сочетании с шелковистым шоколадно-масляным кремом.",
+        composition: "Сливочное масло 82.5%, грецкий орех, миндаль, темный бельгийский шоколад 54%, сахар карамельный, яйца фермерские С-1, молоко 3.2%.",
+        nutrition: "Белки: 7.1 г | Жиры: 28.5 г | Углеводы: 42.0 г | 450 ккал на 100 г",
+        allergens: "Содержит орехи, яйца, лактозу."
+      },
+      { 
         id: 5, 
-        name: "Морковно-карамельный с вишней", 
+        name: "МОРКОВНО-КАРАМЕЛЬНЫЙ С ВИШНЕЙ", 
+        subtitle: "Пряный бисквит • соленая карамель • сочная вишня",
         price: 3470, 
-        category: "special", 
+        categories: ["berries", "all"], 
         image: "images/morkovny-vishnya.jpeg", 
         tag: "Авторский",
         weight: "1.7 кг (~10-12 порций)",
@@ -758,11 +852,12 @@
       },
       { 
         id: 6, 
-        name: "Птичье молоко", 
+        name: "ПТИЧЬЕ МОЛОКО", 
+        subtitle: "Сливочно-ванильное суфле на агар-агаре • шоколадный гляссаж",
         price: 3370, 
-        category: "classic", 
+        categories: ["classic", "all"], 
         image: "images/ptichye-moloko.jpeg", 
-        tag: "Нежное суфле",
+        tag: "Суфле",
         weight: "1.3 кг (~8 порций)",
         story: "Тот самый эталонный вкус: нежнейшее сливочно-ванильное суфле на агар-агаре на тонком песочном бисквите под слоем глянцевого темного шоколада.",
         composition: "Сливочное масло 82.5%, сгущенное цельное молоко ГОСТ, яичный белок, агар-агар натуральный из морских водорослей, темный бельгийский шоколад, ваниль.",
@@ -770,38 +865,13 @@
         allergens: "Яйца, молоко."
       },
       { 
-        id: 7, 
-        name: "Сникерс", 
-        price: 3870, 
-        category: "chocolate", 
-        image: "images/snikers.jpeg", 
-        tag: "Карамель & Арахис",
-        weight: "1.8 кг (~10-12 порций)",
-        story: "Насыщенный шоколадный бисквит, тягучая сливочная карамель, щедрый слой обжаренного соленого арахиса и нежный кремчиз.",
-        composition: "Темный шоколад, какао премиум, мука в/с, арахис отборный жареный, домашняя сливочная карамель, сливочное масло 82.5%, кремчиз, яйца С-1.",
-        nutrition: "Белки: 8.2 г | Жиры: 26.4 г | Углеводы: 45.0 г | 450 ккал на 100 г",
-        allergens: "Арахис, глютен, лактоза, яйца."
-      },
-      { 
-        id: 8, 
-        name: "Торт 3 шоколада", 
-        price: 3470, 
-        category: "chocolate", 
-        image: "images/tri-shokolada.jpeg", 
-        tag: "Муссовый",
-        weight: "1.4 кг (~8-10 порций)",
-        story: "Изысканный муссовый градиент из трех видов бельгийского шоколада (горький 70%, молочный 33% и белый) на тонком брауни-бисквите.",
-        composition: "Шоколад бельгийский Callebaut (темный, молочный, белый), сливки натуральные животные 33%, молоко «Вкуснотеево», желатин высшей очистки, какао, яйца С-1.",
-        nutrition: "Белки: 5.6 г | Жиры: 23.1 г | Углеводы: 34.2 г | 365 ккал на 100 г",
-        allergens: "Молоко, соевый лецитин (в шоколаде), яйца."
-      },
-      { 
         id: 9, 
-        name: "Морковно-Апельсиновый", 
+        name: "МОРКОВНО-АПЕЛЬСИНОВЫЙ", 
+        subtitle: "Цитрусовое кули • крем Маскарпоне • мускатный орех",
         price: 3770, 
-        category: "special", 
+        categories: ["berries", "all"], 
         image: "images/morkovny-apelsin.jpeg", 
-        tag: "Пряный",
+        tag: "Цитрус",
         weight: "1.6 кг (~10 порций)",
         story: "Освежающий авторский торт с сочным апельсиновым кули, легкими пряными нотками и бархатным кремом на сыре Маскарпоне.",
         composition: "Морковь, свежевыжатый сок и цедра апельсина, сливочный сыр, масло 82.5%, тростниковый сахар, мука в/с, яйца куриные С-1, мускатный орех.",
@@ -810,9 +880,10 @@
       },
       { 
         id: 10, 
-        name: "Торт Москва", 
+        name: "ТОРТ МОСКВА", 
+        subtitle: "Фундучное безе • вареная сгущенка • красный гляссаж",
         price: 3900, 
-        category: "classic", 
+        categories: ["nuts", "classic", "all"], 
         image: "images/moskva.jpeg", 
         tag: "Гляссаж",
         weight: "1.5 кг (~8-10 порций)",
@@ -823,9 +894,10 @@
       },
       { 
         id: 11, 
-        name: "Торт Сказка", 
+        name: "ТОРТ СКАЗКА", 
+        subtitle: "Бисквит с ванильным сиропом • крем Шарлотт • цукаты",
         price: 2970, 
-        category: "classic", 
+        categories: ["classic", "all"], 
         image: "images/skazka.jpeg", 
         tag: "Детство",
         weight: "1.3 кг (~8 порций)",
@@ -835,38 +907,13 @@
         allergens: "Глютен, яйца, молоко."
       },
       { 
-        id: 12, 
-        name: "Чизкейк Нью-Йорк", 
-        price: 3770, 
-        category: "special", 
-        image: "images/cheesecake-ny.jpeg", 
-        tag: "Сливочный",
-        weight: "1.6 кг (~10-12 порций)",
-        story: "Классический запеченный чизкейк с плотной, шелковистой текстурой из сливочного сыра Cremette на тонкой хрустящей основе из домашнего сабле.",
-        composition: "Сливочный творожный сыр Cremette, сливки 33%, яйца С-1, сахар, стручковая бурбонская ваниль, песочное печенье сабле собственного приготовления, сливочное масло 82.5%.",
-        nutrition: "Белки: 6.2 г | Жиры: 25.4 г | Углеводы: 28.0 г | 365 ккал на 100 г",
-        allergens: "Лактоза, яйца, глютен."
-      },
-      { 
-        id: 13, 
-        name: "Шварцвальд", 
-        price: 3870, 
-        category: "chocolate", 
-        image: "images/schwarzwald.jpeg", 
-        tag: "Вишня & Шоколад",
-        weight: "1.7 кг (~10-12 порций)",
-        story: "Знаменитый «Черный лес»: сочный шоколадный бисквит, пропитанный вишневым соком, пряная томленая вишня и воздушный крем из взбитых натуральных сливок.",
-        composition: "Шоколадный бисквит на какао премиум, вишня без косточки, сливки животные 33%, темный бельгийский шоколад в стружке, пряная корица, яйца С-1.",
-        nutrition: "Белки: 4.8 г | Жиры: 18.9 г | Углеводы: 36.2 г | 335 ккал на 100 г",
-        allergens: "Глютен, молоко, яйца."
-      },
-      { 
         id: 14, 
-        name: "Эстерхази", 
+        name: "ЭСТЕРХАЗИ", 
+        subtitle: "Миндальные коржи • крем пралине • паутинка из шоколада",
         price: 3570, 
-        category: "classic", 
+        categories: ["nuts", "classic", "all"], 
         image: "images/esterhazy.jpeg", 
-        tag: "Миндальный",
+        tag: "Миндаль",
         weight: "1.4 кг (~8-10 порций)",
         story: "Пять тончайших миндально-белковых коржей, соединенных нежным кремом с добавлением пралине, украшенных фирменной паутинкой из темного шоколада.",
         composition: "Миндальная мука тонкого помола, белок яичный, сливочное масло 82.5%, молоко 3.2%, заварной крем пралине, белый и темный шоколад, лепестки миндаля.",
@@ -876,6 +923,9 @@
     ];
 
     let cart = [];
+    let isFullCatalogExpanded = false;
+    let currentCategory = 'all';
+    let carouselIndex = 0;
 
     // State Tracking
     let isCartOpen = false;
@@ -883,11 +933,122 @@
     let isMobileMenuOpen = false;
     let isCheckoutOpen = false;
 
-    // Render Catalog Grid
-    const productsGrid = document.getElementById('products-grid');
+    // ================= 3D PROPORTIONAL OVERLAPPING CAROUSEL (95% SIDES) =================
+    const carouselItems = products.slice(0, 6);
 
-    function renderProducts(items) {
-      productsGrid.innerHTML = items.map(product => `
+    function renderCarouselStage() {
+      const stage = document.getElementById('carousel-stage');
+      if (!stage) return;
+
+      const total = carouselItems.length;
+      const prevIndex = (carouselIndex - 1 + total) % total;
+      const currIndex = carouselIndex;
+      const nextIndex = (carouselIndex + 1) % total;
+
+      const prevItem = carouselItems[prevIndex];
+      const currItem = carouselItems[currIndex];
+      const nextItem = carouselItems[nextIndex];
+
+      stage.innerHTML = `
+        <!-- Left Card (95% Scale, Full Height, Click to slide left) -->
+        <div class="w-[32%] sm:w-[33%] max-w-[320px] cut-corner-card bg-choco-900 border border-gold-500/25 opacity-80 sm:opacity-85 transform scale-[0.95] transition-all duration-500 flex flex-col cursor-pointer z-10 hover:opacity-100 shadow-xl" onclick="changeCarouselSlide(-1)">
+          <div class="relative h-48 sm:h-60 overflow-hidden bg-choco-950">
+            <img src="${prevItem.image}" alt="" class="w-full h-full object-cover filter brightness-90" onerror="handleImgError(this)">
+            <span class="cut-corner-btn absolute top-3 right-3 px-3 py-1 bg-gold-500/80 text-choco-950 text-[10px] uppercase font-bold tracking-wider">${prevItem.tag}</span>
+          </div>
+          <div class="p-4 sm:p-5 text-center flex-1 flex flex-col justify-between bg-choco-900">
+            <div>
+              <h3 class="font-serif text-base sm:text-xl font-bold text-cream-100 truncate">${prevItem.name}</h3>
+              <p class="text-xs text-cream-200/60 mt-1 line-clamp-1 font-light">${prevItem.subtitle}</p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-gold-500/15 flex flex-col items-center gap-2">
+              <span class="font-serif text-lg sm:text-xl font-bold text-gold-400">${prevItem.price.toLocaleString('ru-RU')} ₽</span>
+              <button class="cut-corner-btn w-full py-2 bg-choco-950 text-gold-300 border border-gold-500/30 text-[11px] font-bold uppercase tracking-widest pointer-events-none">
+                В Ы Б Р А Т Ь
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Card (Elevated, Overlapping Left and Right, Glowing Border) -->
+        <div class="w-[36%] sm:w-[35%] max-w-[340px] cut-corner-card bg-choco-900 border-2 border-gold-500 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(197,160,89,0.3)] transform scale-100 sm:scale-105 -mx-4 sm:-mx-8 lg:-mx-10 transition-all duration-500 flex flex-col z-20 cursor-pointer" onclick="openProductDetail(${currItem.id})">
+          <div class="relative h-48 sm:h-60 overflow-hidden bg-choco-950">
+            <img src="${currItem.image}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" onerror="handleImgError(this)">
+            <span class="cut-corner-btn absolute top-3 right-3 px-3 py-1 bg-gold-500 text-choco-950 text-[10px] uppercase font-bold tracking-widest shadow-md">${currItem.tag}</span>
+          </div>
+          <div class="p-4 sm:p-5 text-center flex-1 flex flex-col justify-between bg-choco-900">
+            <div>
+              <h3 class="font-serif text-base sm:text-xl font-bold text-cream-50 hover:text-gold-300 transition">${currItem.name}</h3>
+              <p class="text-xs text-cream-200/70 mt-1 line-clamp-1 font-light">${currItem.subtitle}</p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-gold-500/20 flex flex-col items-center gap-2">
+              <span class="font-serif text-lg sm:text-xl font-bold text-gold-400">${currItem.price.toLocaleString('ru-RU')} ₽</span>
+              <button onclick="event.stopPropagation(); openProductDetail(${currItem.id})" class="cut-corner-btn w-full py-2 bg-gold-500 hover:bg-gold-400 text-choco-950 text-xs font-bold uppercase tracking-widest shadow transition">
+                В Ы Б Р А Т Ь
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card (95% Scale, Full Height, Click to slide right) -->
+        <div class="w-[32%] sm:w-[33%] max-w-[320px] cut-corner-card bg-choco-900 border border-gold-500/25 opacity-80 sm:opacity-85 transform scale-[0.95] transition-all duration-500 flex flex-col cursor-pointer z-10 hover:opacity-100 shadow-xl" onclick="changeCarouselSlide(1)">
+          <div class="relative h-48 sm:h-60 overflow-hidden bg-choco-950">
+            <img src="${nextItem.image}" alt="" class="w-full h-full object-cover filter brightness-90" onerror="handleImgError(this)">
+            <span class="cut-corner-btn absolute top-3 right-3 px-3 py-1 bg-gold-500/80 text-choco-950 text-[10px] uppercase font-bold tracking-wider">${nextItem.tag}</span>
+          </div>
+          <div class="p-4 sm:p-5 text-center flex-1 flex flex-col justify-between bg-choco-900">
+            <div>
+              <h3 class="font-serif text-base sm:text-xl font-bold text-cream-100 truncate">${nextItem.name}</h3>
+              <p class="text-xs text-cream-200/60 mt-1 line-clamp-1 font-light">${nextItem.subtitle}</p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-gold-500/15 flex flex-col items-center gap-2">
+              <span class="font-serif text-lg sm:text-xl font-bold text-gold-400">${nextItem.price.toLocaleString('ru-RU')} ₽</span>
+              <button class="cut-corner-btn w-full py-2 bg-choco-950 text-gold-300 border border-gold-500/30 text-[11px] font-bold uppercase tracking-widest pointer-events-none">
+                В Ы Б Р А Т Ь
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function changeCarouselSlide(delta) {
+      const total = carouselItems.length;
+      carouselIndex = (carouselIndex + delta + total) % total;
+      renderCarouselStage();
+    }
+
+    // Touch Swipe Support on Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const stageEl = document.getElementById('carousel-stage');
+
+    stageEl.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    stageEl.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 45) {
+        changeCarouselSlide(1);
+      } else if (touchEndX - touchStartX > 45) {
+        changeCarouselSlide(-1);
+      }
+    }, { passive: true });
+
+    // ================= RENDER MAIN CATALOG GRID =================
+    const mainCatalogGrid = document.getElementById('main-catalog-grid');
+    const toggleCatalogBtn = document.getElementById('toggle-catalog-btn');
+    const toggleBtnText = document.getElementById('toggle-btn-text');
+
+    function renderCatalogGrid() {
+      let filtered = currentCategory === 'all' 
+        ? products 
+        : products.filter(p => p.categories.includes(currentCategory));
+
+      const itemsToDisplay = isFullCatalogExpanded ? filtered : filtered.slice(0, 4);
+
+      mainCatalogGrid.innerHTML = itemsToDisplay.map(product => `
         <div class="cut-corner-card bg-choco-850/90 border border-gold-500/25 hover:border-gold-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="openProductDetail(${product.id})">
           <div class="relative h-60 overflow-hidden bg-choco-950">
             <img src="${product.image}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImgError(this)">
@@ -903,7 +1064,7 @@
           <div class="p-5 flex-1 flex flex-col justify-between" onclick="event.stopPropagation()">
             <div onclick="openProductDetail(${product.id})" class="cursor-pointer">
               <h3 class="font-serif text-xl font-bold text-cream-50 group-hover:text-gold-400 transition">${product.name}</h3>
-              <p class="text-xs text-cream-200/60 mt-1">${product.weight}</p>
+              <p class="text-xs text-cream-200/60 mt-1 line-clamp-1 font-light">${product.subtitle}</p>
             </div>
             <div class="pt-5 mt-4 border-t border-gold-500/15 flex items-center justify-between">
               <span class="font-serif text-2xl font-bold text-gold-400">${product.price.toLocaleString('ru-RU')} ₽</span>
@@ -914,9 +1075,39 @@
           </div>
         </div>
       `).join('');
+
+      if (filtered.length <= 4) {
+        toggleCatalogBtn.style.display = 'none';
+      } else {
+        toggleCatalogBtn.style.display = 'inline-flex';
+        toggleBtnText.innerText = isFullCatalogExpanded ? 'Свернуть витрину' : 'Смотреть всю витрину';
+      }
     }
 
-    renderProducts(products);
+    function toggleFullCatalog() {
+      isFullCatalogExpanded = !isFullCatalogExpanded;
+      renderCatalogGrid();
+    }
+
+    renderCarouselStage();
+    renderCatalogGrid();
+
+    // ================= CATEGORY FILTER BUTTONS (FRAMELESS) =================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-gold-500', 'text-choco-950', 'shadow-md');
+          b.classList.add('bg-transparent', 'text-cream-200/80');
+        });
+        btn.classList.add('bg-gold-500', 'text-choco-950', 'shadow-md');
+        btn.classList.remove('bg-transparent', 'text-cream-200/80');
+
+        currentCategory = btn.getAttribute('data-category');
+        isFullCatalogExpanded = false;
+        renderCatalogGrid();
+      });
+    });
 
     // ================= SAFE MOBILE NAVIGATION & SCROLLING =================
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -1296,26 +1487,6 @@
       } else if (window.location.hash === '#cart') {
         openCart();
       }
-    });
-
-    // Filter Buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => {
-          b.classList.remove('bg-gold-500', 'text-choco-950');
-          b.classList.add('bg-choco-850', 'text-cream-100');
-        });
-        btn.classList.add('bg-gold-500', 'text-choco-950');
-        btn.classList.remove('bg-choco-850', 'text-cream-100');
-
-        const category = btn.getAttribute('data-category');
-        if (category === 'all') {
-          renderProducts(products);
-        } else {
-          renderProducts(products.filter(p => p.category === category));
-        }
-      });
     });
   </script>
 </body>
