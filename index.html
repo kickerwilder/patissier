@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазин-кондитерская «Патисьер» | Симферополь</title>
-  <meta name="description" content="Патисьер. Свой мир. Без аналогов. Премиальная кондитерская в Симферополе. Честный состав: сливочное масло 82%, без маргарина.">
+  <meta name="description" content="Свой мир. Без аналогов. Премиальная кондитерская в Симферополе. Честный состав: сливочное масло 82%, без маргарина.">
 
   <!-- Google Fonts: Cormorant Garamond + Playfair Display + Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,13 +94,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
       
       <!-- Mobile: Hamburger & Phone -->
-      <div class="flex items-center gap-2.5">
-        <button id="mobile-menu-btn" class="cut-corner-btn lg:hidden flex items-center justify-center w-11 h-11 bg-choco-850 border border-gold-500/50 text-gold-400 focus:outline-none shadow-md">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <button id="mobile-menu-btn" class="cut-corner-btn lg:hidden flex items-center justify-center w-10 h-10 bg-choco-850 border border-gold-500/40 text-gold-400 focus:outline-none shadow-md">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
 
-        <a href="tel:+79789114855" class="cut-corner-btn inline-flex items-center justify-center gap-2.5 px-3.5 sm:px-5 py-2.5 sm:py-3 border border-gold-500/50 bg-choco-850 hover:bg-gold-500 text-gold-300 hover:text-choco-950 transition group shadow-md whitespace-nowrap">
-          <svg class="w-4 h-4 text-gold-400 group-hover:text-choco-950 transition flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+        <a href="tel:+79789114855" class="inline-flex items-center gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap">
+          <svg class="w-4 h-4 text-gold-400 group-hover:scale-110 transition-transform flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.12.45 2.33.69 3.48.69a1 1 0 011 1v3.5a1 1 0 01-1 1A19.93 19.93 0 012 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.15.24 2.36.69 3.48a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
           <span class="text-xs sm:text-sm font-bold tracking-wider leading-none whitespace-nowrap">+7 (978) 911-48-55</span>
         </a>
       </div>
@@ -117,17 +117,17 @@
 
       <!-- Cart Button -->
       <div class="flex items-center">
-        <button id="open-cart-btn" class="cut-corner-btn relative flex items-center gap-2.5 bg-gradient-to-r from-gold-500 to-gold-400 text-choco-950 px-4 sm:px-5 py-2.5 sm:py-3 font-bold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 whitespace-nowrap">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-          <span>Корзина</span>
-          <span id="cart-counter" class="w-5 h-5 bg-choco-950 text-gold-400 text-[11px] font-bold flex items-center justify-center">0</span>
+        <button id="open-cart-btn" class="inline-flex items-center gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap">
+          <svg class="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="text-xs sm:text-sm font-bold tracking-wider uppercase">Корзина</span>
+          <span id="cart-counter" class="w-5 h-5 rounded-full bg-gold-500 text-choco-950 text-[11px] font-bold flex items-center justify-center shadow-sm">0</span>
         </button>
       </div>
 
     </div>
   </header>
 
-  <!-- ================= MOBILE SLIDE-OUT MENU (FIXED NAVIGATION) ================= -->
+  <!-- ================= MOBILE SLIDE-OUT MENU ================= -->
   <div id="mobile-menu-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
     <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
 
@@ -140,7 +140,6 @@
         </button>
       </div>
 
-      <!-- Links with reliable inline smooth handlers -->
       <div class="flex-1 overflow-y-auto p-6 space-y-5 text-sm font-semibold tracking-wider uppercase">
         <a href="#manifesto" onclick="navigateToSection(event, '#manifesto')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Философия</a>
         <a href="#catalog" onclick="navigateToSection(event, '#catalog')" class="mobile-nav-link block py-2 border-b border-gold-500/10 text-cream-100 hover:text-gold-400">Каталог десертов</a>
@@ -168,8 +167,9 @@
     </div>
   </div>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-choco-950 text-cream-50">
+  <!-- ================= HERO SECTION (BUTTON PUSHED TO THE BOTTOM) ================= -->
+  <section class="relative min-h-[92vh] flex flex-col justify-between items-center overflow-hidden bg-choco-950 text-cream-50 pt-16 pb-12">
+    <!-- Background Video -->
     <div class="absolute inset-0 z-0">
       <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-80 scale-105 transition-all duration-700">
         <source src="images/hero-video.mp4" type="video/mp4">
@@ -177,117 +177,88 @@
       <div class="absolute inset-0 bg-gradient-to-b from-choco-950/70 via-choco-900/40 to-choco-900"></div>
     </div>
 
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24 flex flex-col items-center">
-      
-      <div class="mb-8 w-full flex justify-center">
+    <!-- Top Spacer for vertical balance -->
+    <div class="w-full"></div>
+
+    <!-- Center: Logo + Slogan -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center my-auto py-6">
+      <div class="mb-6 w-full flex justify-center">
         <img 
           src="images/logo.png" 
-          alt="Патисьер" 
+          alt="" 
           class="w-[320px] sm:w-[480px] md:w-[560px] h-auto object-contain drop-shadow-[0_8px_25px_rgba(0,0,0,0.9)] filter brightness-105"
         >
       </div>
 
-      <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl font-normal tracking-wide text-gold-300 italic mb-10 drop-shadow-lg">
-        «Патисьер. Свой мир. Без аналогов»
+      <h1 class="font-serif text-base sm:text-xl md:text-2xl font-normal tracking-[0.28em] text-gold-300 uppercase drop-shadow-lg">
+        Свой мир. Без аналогов.
       </h1>
+    </div>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-        <a href="#catalog" class="cut-corner-btn w-full sm:w-auto px-8 py-4 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-wider text-xs uppercase shadow-xl shadow-gold-500/25">
-          Выбрать десерт к празднику
-        </a>
-        <a href="#about" class="cut-corner-btn w-full sm:w-auto px-8 py-4 border border-gold-400/50 bg-choco-900/60 backdrop-blur-sm hover:border-gold-300 text-cream-100 hover:text-gold-300 text-xs font-bold uppercase tracking-wider">
-          История бренда
-        </a>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-16 mt-12 border-t border-gold-500/20 text-cream-100 text-xs w-full">
-        <div class="cut-corner-card bg-choco-900/60 border border-gold-500/20 p-3 backdrop-blur-sm">
-          <span class="block font-serif text-2xl font-bold text-gold-400">82%</span>
-          <span class="text-cream-200/80">Натуральное сливочное масло</span>
-        </div>
-        <div class="cut-corner-card bg-choco-900/60 border border-gold-500/20 p-3 backdrop-blur-sm">
-          <span class="block font-serif text-2xl font-bold text-gold-400">0%</span>
-          <span class="text-cream-200/80">Маргарина и заменителей</span>
-        </div>
-        <div class="cut-corner-card bg-choco-900/60 border border-gold-500/20 p-3 backdrop-blur-sm">
-          <span class="block font-serif text-2xl font-bold text-gold-400">24 ч</span>
-          <span class="text-cream-200/80">Бережный предзаказ свежести</span>
-        </div>
-        <div class="cut-corner-card bg-choco-900/60 border border-gold-500/20 p-3 backdrop-blur-sm">
-          <span class="block font-serif text-2xl font-bold text-gold-400">2 адреса</span>
-          <span class="text-cream-200/80">Цех и магазин в Симферополе</span>
-        </div>
-      </div>
-
+    <!-- Bottom: CTA Button (Positioned down where the old badges were) -->
+    <div class="relative z-10 w-full flex justify-center pb-2 sm:pb-6">
+      <a href="#catalog" class="cut-corner-btn px-10 sm:px-14 py-4 sm:py-5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.15em] text-xs sm:text-sm uppercase shadow-2xl shadow-gold-500/30 transition transform hover:scale-105">
+        Выбрать торт
+      </a>
     </div>
   </section>
 
-  <!-- ================= MANIFESTO & MACRO NAPOLEON ================= -->
+  <!-- ================= PHILOSOPHY SECTION ================= -->
   <section id="manifesto" class="py-24 bg-gradient-to-b from-choco-900 via-choco-800 to-choco-750 border-t border-b border-gold-500/20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Бескомпромиссные стандарты</span>
-        <h2 class="font-serif text-3xl sm:text-5xl text-cream-50 mt-2">Манифест честного состава</h2>
-        <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-4"></div>
+      <!-- Large Header -->
+      <div class="text-center max-w-4xl mx-auto mb-16">
+        <h2 class="font-serif text-4xl sm:text-6xl text-cream-50 font-normal">Бескомпромиссные стандарты</h2>
+        <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-4"></div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="lg:col-span-6 relative group">
-          <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/30 bg-choco-950">
-            <img src="images/napoleon-macro.jpeg" alt="Торт Наполеон макросъемка" class="w-full h-[480px] object-cover transition-transform duration-700 group-hover:scale-105" onerror="handleImgError(this)">
-            <div class="absolute inset-0 bg-gradient-to-t from-choco-950/90 via-transparent to-transparent"></div>
-            
-            <div class="absolute bottom-6 left-6 right-6 text-white">
-              <span class="cut-corner-btn inline-block px-3.5 py-1 bg-gold-500 text-choco-950 font-bold text-xs uppercase tracking-wider mb-2">Наш эталон</span>
-              <h3 class="font-serif text-2xl font-bold text-cream-50">Бабушкин «Наполеон» со вкусом пломбира</h3>
-              <p class="text-xs text-cream-200/90 mt-1">Десятки хрустящих коржей и много нежнейшего заварного крема</p>
-            </div>
-          </div>
-          
-          <div class="cut-corner-card absolute -top-5 -right-5 w-24 h-24 bg-choco-950 border-2 border-gold-400 text-gold-300 flex flex-col items-center justify-center text-center p-2 shadow-2xl rotate-6">
-            <span class="text-[9px] uppercase tracking-widest font-semibold">100%</span>
-            <span class="font-serif text-xs font-bold leading-none">Честный состав</span>
+        <!-- Video container (images/philosophy-video.mp4) -->
+        <div class="lg:col-span-6 relative">
+          <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/30 bg-choco-950 h-[460px] sm:h-[540px]">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <source src="images/philosophy-video.mp4" type="video/mp4">
+            </video>
+            <img src="images/napoleon-macro.jpeg" alt="Философия Патисьер" class="w-full h-full object-cover hidden" onerror="handleImgError(this)">
+            <div class="absolute inset-0 bg-gradient-to-t from-choco-950/70 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
 
-        <div class="lg:col-span-6 space-y-5">
+        <!-- Philosophy Content -->
+        <div class="lg:col-span-6 space-y-6">
           
-          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg hover:border-gold-500/60 transition">
-            <div class="flex items-start gap-4">
-              <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 flex-shrink-0 flex items-center justify-center text-gold-400 font-serif font-bold text-xl">01</div>
-              <div>
-                <h4 class="font-serif text-xl font-bold text-gold-300">Сливочное масло 82.5%</h4>
-                <p class="text-sm text-cream-200/80 mt-1 leading-relaxed">
-                  Используем исключительно высококачественное сливочное масло максимальной жирности. Никакого маргарина, спредов или гидрогенизированных жиров.
-                </p>
-              </div>
-            </div>
+          <div>
+            <h3 class="font-serif text-2xl sm:text-3xl text-gold-300 font-bold mb-3">
+              Делаем для других, как для себя
+            </h3>
+            <p class="text-sm sm:text-base text-cream-200/90 leading-relaxed font-light">
+              Мы убеждены: то, что создаётся для людей, должно соответствовать стандартам, которые мы предъявляем самим себе. Поэтому мы не ищем лёгких путей там, где они ухудшают итоговый результат.
+            </p>
           </div>
 
-          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg hover:border-gold-500/60 transition">
-            <div class="flex items-start gap-4">
-              <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 flex-shrink-0 flex items-center justify-center text-gold-400 font-serif font-bold text-xl">02</div>
-              <div>
-                <h4 class="font-serif text-xl font-bold text-gold-300">Натуральное молоко «Вкуснотеево» 3.2%</h4>
-                <p class="text-sm text-cream-200/80 mt-1 leading-relaxed">
-                  Отборное цельное молоко высокого качества. Заварной крем на таком молоке получается бархатистым и шелковистым без синтетических загустителей.
-                </p>
-              </div>
-            </div>
+          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg space-y-3">
+            <h4 class="font-serif text-xl font-bold text-gold-400">Натуральные ингредиенты</h4>
+            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+              Мы используем настоящее сливочное масло 82%, натуральные сливки, яйца, шоколад, орехи, ягоды и другие ингредиенты, которые формируют характер и вкус каждого торта.
+            </p>
+            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+              Мы не используем дешёвые заменители животных жиров, растительные сливки, улучшители, загустители, стабилизаторы и другие ингредиенты, которые точно ухудшат качество и вкус торта.
+            </p>
           </div>
 
-          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg hover:border-gold-500/60 transition">
-            <div class="flex items-start gap-4">
-              <div class="cut-corner-btn w-12 h-12 bg-choco-950 border border-gold-500/40 flex-shrink-0 flex items-center justify-center text-gold-400 font-serif font-bold text-xl">03</div>
-              <div>
-                <h4 class="font-serif text-xl font-bold text-gold-300">Крымские яйца категории С-1</h4>
-                <p class="text-sm text-cream-200/80 mt-1 leading-relaxed">
-                  Только свежие натуральные яйца высшего сорта с местной птицефабрики Крыма. Гарантия нежной бисквитной структуры и натурального вкуса.
-                </p>
-              </div>
-            </div>
+          <div class="cut-corner-card bg-choco-850/90 p-6 border border-gold-500/25 shadow-lg space-y-3">
+            <h4 class="font-serif text-xl font-bold text-gold-400">Собственное производство</h4>
+            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+              Наши торты создаются в собственной кондитерской. Мы контролируем весь процесс — от приготовления до момента, когда торт попадает на витрину.
+            </p>
+            <p class="text-xs sm:text-sm text-cream-200/80 leading-relaxed">
+              Концепция Патисьер проста: мы не покупаем чужие торты для продажи и не продаём свои торты в других заведениях.
+            </p>
+            <p class="text-xs sm:text-sm text-gold-300 font-semibold pt-1">
+              Наши торты можно купить только в кондитерских Патисьер.
+            </p>
           </div>
 
         </div>
@@ -410,7 +381,7 @@
         <div class="lg:col-span-5 text-center lg:text-left">
           <div class="relative inline-block max-w-sm mx-auto">
             <div class="cut-corner-card relative overflow-hidden shadow-2xl border-2 border-gold-500/40 bg-choco-950">
-              <img src="images/anastasia.jpeg" alt="Анастасия Воробьева - основатель кондитерской Патисьер" class="w-full h-[500px] object-cover object-top filter contrast-105" onerror="handleImgError(this)">
+              <img src="images/anastasia.jpeg" alt="" class="w-full h-[500px] object-cover object-top filter contrast-105" onerror="handleImgError(this)">
             </div>
             <div class="mt-4 text-center">
               <h4 class="font-serif text-2xl font-bold text-gold-400">Анастасия Воробьева</h4>
@@ -508,7 +479,7 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-gold-500/20">
         
         <div class="md:col-span-5 space-y-4">
-          <img src="images/logo.png" alt="Патисьер" class="h-12 w-auto object-contain">
+          <img src="images/logo.png" alt="" class="h-12 w-auto object-contain">
           <p class="text-xs text-cream-200/80 max-w-sm leading-relaxed">
             «Патисьер. Свой мир. Без аналогов». Высокое кондитерское искусство на страже чистоты вкуса.
           </p>
@@ -919,7 +890,7 @@
       productsGrid.innerHTML = items.map(product => `
         <div class="cut-corner-card bg-choco-850/90 border border-gold-500/25 hover:border-gold-500 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer" onclick="openProductDetail(${product.id})">
           <div class="relative h-60 overflow-hidden bg-choco-950">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImgError(this)">
+            <img src="${product.image}" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="handleImgError(this)">
             <span class="cut-corner-btn absolute top-3 left-3 px-3 py-1 bg-choco-950/90 text-gold-300 text-[10px] uppercase font-bold tracking-wider border border-gold-500/30">
               ${product.tag}
             </span>
@@ -982,7 +953,6 @@
     closeMobileMenuBtn.addEventListener('click', () => closeMobileMenu(true));
     mobileMenuBackdrop.addEventListener('click', () => closeMobileMenu(true));
 
-    // Reliable Section Navigator (Works 100% in iframes & real phones)
     function navigateToSection(e, targetId) {
       if (e) e.preventDefault();
       closeMobileMenu(false);
@@ -1028,7 +998,7 @@
       productDetailContent.innerHTML = `
         <div class="lg:col-span-6 space-y-4">
           <div class="cut-corner-card relative overflow-hidden bg-choco-950 border-2 border-gold-500/40 shadow-2xl h-[420px] sm:h-[500px]">
-            <img id="main-detail-img" src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" onerror="handleImgError(this)">
+            <img id="main-detail-img" src="${product.image}" alt="" class="w-full h-full object-cover" onerror="handleImgError(this)">
             <span class="cut-corner-btn absolute top-4 left-4 px-3.5 py-1.5 bg-choco-950/90 text-gold-400 text-xs uppercase font-bold tracking-wider border border-gold-500/40">
               ${product.tag}
             </span>
@@ -1241,7 +1211,7 @@
       } else {
         cartItemsContainer.innerHTML = cart.map(item => `
           <div class="cut-corner-card flex items-center gap-4 bg-choco-850 p-3.5 border border-gold-500/20 shadow-sm">
-            <img src="${item.image}" alt="${item.name}" class="cut-corner-btn w-16 h-16 object-cover bg-choco-950" onerror="handleImgError(this)">
+            <img src="${item.image}" alt="" class="cut-corner-btn w-16 h-16 object-cover bg-choco-950" onerror="handleImgError(this)">
             <div class="flex-1 min-w-0">
               <h4 class="font-serif font-bold text-cream-50 text-sm truncate">${item.name}</h4>
               <p class="text-xs text-gold-400 font-semibold mt-0.5">${item.price.toLocaleString('ru-RU')} ₽</p>
