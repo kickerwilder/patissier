@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+
+  --color-cream-50: #FDFBF7;
+  --color-cream-100: #F7F3EA;
+  --color-cream-200: #EAE1D0;
+
+  --color-choco-950: #140A07;
+  --color-choco-900: #1C0F0A;
+  --color-choco-850: #24130C;
+  --color-choco-800: #2B170F;
+  --color-choco-750: #341C12;
+  --color-choco-700: #3E2217;
+  --color-choco-600: #542E1F;
+
+  --color-gold-300: #E5CA85;
+  --color-gold-400: #D4AF37;
+  --color-gold-500: #C5A059;
+  --color-gold-600: #A9843E;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #140A07;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+}
+
+.cut-corner-btn {
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    100% 8px, 100% calc(100% - 8px),
+    calc(100% - 8px) 100%, 8px 100%,
+    0 calc(100% - 8px), 0 8px
+  );
+  transition: all 0.25s ease-in-out;
+}
+
+.cut-corner-card {
+  clip-path: polygon(
+    14px 0, calc(100% - 14px) 0,
+    100% 14px, 100% calc(100% - 14px),
+    calc(100% - 14px) 100%, 14px 100%,
+    0 calc(100% - 14px), 0 14px
+  );
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}

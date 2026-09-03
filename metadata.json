@@ -1,0 +1,6 @@
+{
+  "name": "Кондитерская «Патисьер»",
+  "description": "Премиальная кондитерская в Симферополе — честный состав, 3D-витрина десертов, корзина и предзаказ тортов",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
