@@ -27,15 +27,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-
-      - name: Copy Images to Public if exists
-        run: |
-          mkdir -p public
-          if [ -d "images" ]; then cp -r images public/; fi
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
+
+      - name: Copy root images to public if present
+        run: |
+          mkdir -p public/images
+          if [ -d "images" ] && [ "$(ls -A images 2>/dev/null)" ]; then
+            cp -r images/* public/images/ 2>/dev/null || true
+          fi
 
       - name: Build
         run: npm run build
