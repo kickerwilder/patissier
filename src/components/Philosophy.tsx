@@ -12,20 +12,20 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: Left Text Zone + Right Harmonious Natural Photo (Mobile & Desktop) */}
-      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[400px] max-h-[440px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: Left Text Zone + Right 1:1 Natural Photo (Mobile & Desktop) */}
+      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[380px] lg:min-h-[420px] flex items-center bg-choco-950">
         
-        {/* Right Photo Layer: Balanced framing so whole cake composition remains in view without extreme macro zoom */}
-        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[60%] md:w-[56%] lg:w-[54%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full">
+        {/* Right Photo Layer: Natural 1:1 square ratio preserved on desktop, no distorted macro zoom */}
+        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[58%] md:w-[52%] lg:w-[48%] xl:w-[45%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+          <div className="relative w-full h-full md:aspect-square md:max-h-full flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-cover object-[78%_center] sm:object-[center_center] filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[center_center] filter brightness-105 contrast-105"
             />
             {/* Seamless edge-only feathering: gradual fade into dark chocolate background */}
-            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[22%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/70 via-[25%] via-choco-950/15 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[26%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/75 via-[25%] via-choco-950/20 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
