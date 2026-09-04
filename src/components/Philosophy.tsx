@@ -36,10 +36,15 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
         <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
           {/* Left Column: Text sitting in its clean zone on dark choco-950 */}
           <div className="w-[45%] sm:w-[44%] md:w-[46%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
-            {/* Title: noticeably enlarged for prominence on mobile and desktop */}
-            <h2 className="font-serif text-[17px] sm:text-[27px] md:text-3xl lg:text-[40px] text-cream-50 leading-[1.15] font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
-              Делаем для других, <br />
-              как для себя
+            {/* Title: 'Делаем для других' on line 1 extending onto photo, 'как для себя' on line 2 */}
+            <h2 className="font-serif text-[19px] sm:text-[29px] md:text-3xl lg:text-[42px] text-cream-50 leading-[1.15] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] z-20">
+              <span className="whitespace-nowrap inline-block">
+                Делаем для <span className="relative z-20">других</span>,
+              </span>
+              <br />
+              <span className="whitespace-nowrap inline-block">
+                как для себя
+              </span>
             </h2>
 
             {/* Authentic Monogram Flourish under heading */}
@@ -67,8 +72,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent via-gold-500/80 to-gold-400"></div>
             </div>
 
-            {/* Manifesto text formatted in continuous 6 exact lines */}
-            <div className="text-[9px] sm:text-[11.5px] md:text-sm text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
+            {/* Manifesto text: enlarged for maximum legibility */}
+            <div className="text-[10px] sm:text-[13px] md:text-base text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               <div>Мы убеждены, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
               <div>стандартам, которые мы предъявляем</div>
@@ -89,7 +94,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
           
           {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
           <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
-            <div className="space-y-1 sm:space-y-1.5 w-full">
+            <div className="space-y-1 sm:space-y-2 w-full">
               {/* Elegant botanical leaf with stem & veins */}
               <div className="flex justify-center pb-0.5">
                 <svg
@@ -108,7 +113,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-[13.5px] sm:text-lg md:text-xl lg:text-2xl text-cream-50 font-normal leading-tight text-center tracking-wide">
+              <h3 className="font-serif text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 font-normal leading-tight text-center tracking-wide">
                 Без заменителей <br /> и компромиссов
               </h3>
 
@@ -119,8 +124,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
               </div>
 
-              {/* All single white color for text, left-aligned without indent */}
-              <p className="text-left text-[9px] sm:text-xs md:text-sm text-cream-50 leading-[1.3] sm:leading-relaxed font-light">
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
                 Мы используем настоящее сливочное масло 82%, натуральные сливки, яйца, шоколад, орехи, ягоды и другие ингредиенты, которые формируют характер и вкус каждого торта.
               </p>
 
@@ -129,8 +134,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 <div className="w-1 h-1 rounded-full bg-gold-400"></div>
               </div>
 
-              {/* All single white color for text, left-aligned without indent */}
-              <p className="text-left text-[8.5px] sm:text-[11px] md:text-xs text-cream-50 leading-[1.3] sm:leading-relaxed font-light">
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
                 Мы не используем дешёвые заменители животных жиров, растительные сливки, улучшители, загустители, стабилизаторы и другие вредные ингредиенты.
               </p>
             </div>
@@ -138,7 +143,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
 
           {/* Card 2: Создано в Патисьер (Planetary Stand Mixer Icon, left-aligned paragraphs, gold final sentence) */}
           <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
-            <div className="space-y-1 sm:space-y-1.5 w-full">
+            <div className="space-y-1 sm:space-y-2 w-full">
               {/* Authentic Stand Mixer Icon */}
               <div className="flex justify-center pb-0.5">
                 <svg
@@ -165,7 +170,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-[13.5px] sm:text-lg md:text-xl lg:text-2xl text-cream-50 font-normal leading-tight text-center tracking-wide">
+              <h3 className="font-serif text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 font-normal leading-tight text-center tracking-wide">
                 Создано <br /> в Патисьер
               </h3>
 
@@ -176,8 +181,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
               </div>
 
-              {/* White text, left-aligned without indent */}
-              <p className="text-left text-[9px] sm:text-xs md:text-sm text-cream-50 leading-[1.3] sm:leading-relaxed font-light">
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
                 Наши торты создаются в собственной кондитерской. Мы контролируем весь процесс — от приготовления до момента, когда торт попадает на витрину.
               </p>
 
@@ -186,13 +191,13 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 <div className="w-1 h-1 rounded-full bg-gold-400"></div>
               </div>
 
-              {/* White text, left-aligned without indent */}
-              <p className="text-left text-[8.5px] sm:text-[11px] md:text-xs text-cream-50 leading-[1.3] sm:leading-relaxed font-light">
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
                 Мы не покупаем чужие торты для продажи и не продаём свои торты в других заведениях.
               </p>
 
-              {/* Last line: ENTIRE sentence is gold as on reference */}
-              <p className="text-left text-[8.5px] sm:text-[11px] md:text-xs text-gold-300 font-medium leading-[1.3] sm:leading-relaxed pt-0.5">
+              {/* Maximized gold final sentence */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-gold-300 font-medium leading-[1.35] sm:leading-relaxed pt-0.5">
                 Наши торты можно купить только в кондитерских Патисьер.
               </p>
             </div>
