@@ -10,36 +10,33 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
   return (
     <section
       id="manifesto"
-      className="pt-0 sm:pt-2 pb-3 sm:pb-5 bg-choco-950 border-b border-gold-500/20 relative overflow-hidden"
+      className="pt-1 sm:pt-3 pb-3 sm:pb-5 bg-choco-950 border-b border-gold-500/20 relative overflow-hidden"
     >
-      {/* Top divider under hero - compact on mobile so philosophy sits directly below Hero button */}
-      <div className="max-w-7xl mx-auto px-4 mb-1.5 sm:mb-3">
-        <FlourishDivider lineWidth="w-20 sm:w-64" className="my-1 sm:my-2" />
-      </div>
-
-      {/* 1. TOP WIDE FRAMELESS BLOCK: Text Left + Full-bleed Photo Right (Seamless, like Hero) */}
-      <div className="relative w-full mb-3 sm:mb-4 min-h-[240px] sm:min-h-[265px] md:min-h-[285px] flex items-center overflow-hidden">
+      {/* 1. TOP WIDE BLOCK: Text Left + Scaled Still-life Photo Right (NOT from left edge, full still life visible) */}
+      <div className="relative w-full mb-2 sm:mb-3 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex items-center overflow-hidden">
         
-        {/* Full-bleed Photo layer: edge-to-edge without any frame, exactly like Hero */}
-        <div className="absolute inset-0 z-0 pointer-events-none select-none">
-          <img
-            src="images/philosophy-video.jpg"
-            alt="Торт Патисьер"
-            onError={(e) => handleImageError(e, 'philosophy')}
-            className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
-          />
-          {/* Seamless gradient: deep choco-950 on the left for text contrast, opening completely into the photo on the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-choco-950 from-0% via-choco-950/90 via-38% sm:via-30% md:via-25% to-transparent to-90%"></div>
-          {/* Soft top & bottom fades for perfect fusion */}
-          <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-choco-950 to-transparent"></div>
-          <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-choco-950 to-transparent"></div>
+        {/* Right Photo Container: Sits on the right (w-[56%] sm:w-[53%] md:w-[50%]), doesn't touch the left side at all */}
+        <div className="absolute right-0 top-0 bottom-0 w-[56%] sm:w-[53%] md:w-[50%] flex items-center justify-end pointer-events-none select-none z-0">
+          <div className="relative w-full h-full flex items-center justify-end">
+            <img
+              src="images/philosophy-video.jpg"
+              alt="Натюрморт Патисьер"
+              onError={(e) => handleImageError(e, 'philosophy')}
+              className="w-full h-full object-contain object-right filter brightness-105 contrast-105"
+            />
+            {/* Seamless gradient fade on the left edge of the photo blending into the dark chocolate text background */}
+            <div className="absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-choco-950 to-transparent pointer-events-none"></div>
+            {/* Subtle top & bottom edge fusions */}
+            <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
+          </div>
         </div>
 
-        {/* Left Column: Manifesto Text */}
-        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
-          <div className="w-[58%] sm:w-[50%] md:w-[46%] pr-1 sm:pr-2 py-2 text-left flex flex-col justify-center">
+        {/* Left Column: Manifesto Text sitting on clean dark choco-950 background */}
+        <div className="max-w-6xl mx-auto w-full px-3 sm:px-6 lg:px-8 relative z-10 flex items-center">
+          <div className="w-[48%] sm:w-[48%] md:w-[46%] pr-1 sm:pr-2 py-1 text-left flex flex-col justify-center">
             {/* Title: all one white color */}
-            <h2 className="font-serif text-[16px] sm:text-2xl md:text-3xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <h2 className="font-serif text-[15px] sm:text-2xl md:text-3xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               Делаем для других, <br />
               как для себя
             </h2>
@@ -70,7 +67,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
             </div>
 
             {/* Manifesto text formatted in continuous 6 exact lines as requested, with crisp drop shadow */}
-            <div className="text-[9.5px] sm:text-[11.5px] md:text-xs text-cream-50 leading-[1.4] sm:leading-[1.48] font-light drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <div className="text-[9px] sm:text-[11px] md:text-xs text-cream-50 leading-[1.38] sm:leading-[1.48] font-light drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               <div>Мы убеждены, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
               <div>стандартам, которые мы предъявляем</div>
@@ -86,10 +83,10 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
 
         {/* 2. TWO LOWER FRAMED CARDS - PULLED UPWARD FOR HARMONY IN ONE VIEWPORT */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-2.5 sm:mb-3.5">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-2 sm:mb-3">
           
           {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
-          <div className="rounded-lg bg-choco-950/85 p-2.5 sm:p-4 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
             <div className="space-y-1 sm:space-y-1.5 w-full">
               {/* Elegant botanical leaf with stem & veins */}
               <div className="flex justify-center pb-0.5">
@@ -138,7 +135,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
           </div>
 
           {/* Card 2: Создано в Патисьер (Planetary Stand Mixer Icon, left-aligned paragraphs, gold final sentence) */}
-          <div className="rounded-lg bg-choco-950/85 p-2.5 sm:p-4 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
             <div className="space-y-1 sm:space-y-1.5 w-full">
               {/* Authentic Stand Mixer Icon */}
               <div className="flex justify-center pb-0.5">
