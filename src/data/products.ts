@@ -161,7 +161,7 @@ export const PRODUCTS: Product[] = [
     subtitle: 'Фундучное безе • вареная сгущенка • красный гляссаж',
     price: 3900,
     categories: ['nuts', 'classic', 'all'],
-    image: 'images/moskva.jpeg',
+    image: 'images/moskva.jpg',
     tag: 'ГЛЯССАЖ',
     weight: '1.5 кг (~8-10 порций)',
     story: 'Торт в рубиновом глянцевом покрытии: четыре слоя безе с дробленым фундуком, прослоенные кремом из вареного сгущенного молока и орехового пралине.',
