@@ -64,10 +64,10 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
       ? PRODUCTS
       : PRODUCTS.filter((p) => p.categories.includes(selectedCategory));
 
-  // Default: show 2 cards under carousel (matching mobile reference), expand to all when clicked
+  // Default: 2 cards on mobile (<768px), 4 cards on desktop in one row. Full list when expanded.
   const displayedCatalogProducts = isFullCatalogExpanded
     ? filteredProducts
-    : filteredProducts.slice(0, 2);
+    : filteredProducts.slice(0, 4);
 
   return (
     <section
@@ -273,17 +273,15 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
         <div className="mt-1 sm:mt-2">
           <div
             id="main-catalog-grid"
-            className={
-              isFullCatalogExpanded
-                ? 'grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3.5 max-w-5xl mx-auto'
-                : 'grid grid-cols-2 max-w-xl mx-auto gap-2 sm:gap-3.5'
-            }
+            className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3.5 max-w-5xl mx-auto"
           >
-            {displayedCatalogProducts.map((product) => (
+            {displayedCatalogProducts.map((product, idx) => (
               <div
                 key={product.id}
                 onClick={() => onOpenProductDetail(product)}
-                className="cut-corner-card bg-choco-900 border border-gold-500/15 hover:border-gold-500/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer"
+                className={`cut-corner-card bg-choco-900 border border-gold-500/15 hover:border-gold-500/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer ${
+                  !isFullCatalogExpanded && idx >= 2 ? 'hidden md:flex' : 'flex'
+                }`}
               >
                 {/* Image Container with tag */}
                 <div className="relative h-32 sm:h-42 overflow-hidden bg-choco-950 flex-shrink-0">
