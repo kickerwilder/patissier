@@ -12,11 +12,11 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Square/Natural Photo on the Right with seamless wide fade */}
-      <div className="relative w-full overflow-hidden mb-3 sm:mb-5 min-h-[220px] sm:min-h-[260px] md:min-h-[290px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Square/Natural Photo on Right */}
+      <div className="relative w-full overflow-hidden mb-3 sm:mb-5 min-h-[290px] sm:min-h-[330px] md:min-h-[350px] flex items-center bg-choco-950">
         
-        {/* Right Photo Layer: Takes right 65% (approx 2/3), anchored to the right screen edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[62%] md:w-[58%] z-0 pointer-events-none select-none overflow-hidden">
+        {/* Right Photo Layer: Mobile full-bleed right 66%; Desktop constrained inside grid with proportional 1:1 square still life */}
+        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[60%] md:hidden z-0 pointer-events-none select-none overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
@@ -24,17 +24,18 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               onError={(e) => handleImageError(e, 'philosophy')}
               className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
             />
-            {/* Gradient: pure dark strictly on the first 5% edge, then immediate soft lightening into the still life photo */}
-           <div className="absolute inset-y-0 left-0 w-[24%] sm:w-[20%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
+            {/* Compact edge-only feathering on mobile */}
+            <div className="absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
           </div>
         </div>
 
-        {/* Left Text Container: Sits in its dedicated 1/3 - 40% clean zone on pure dark choco-950 */}
-        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
-          <div className="w-[45%] sm:w-[42%] md:w-[40%] pr-1 sm:pr-3 py-2 text-left flex flex-col justify-center">
+        {/* Content Container aligned with site grid */}
+        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center justify-between">
+          {/* Left Column: Text sitting in its clean zone on dark choco-950 */}
+          <div className="w-[45%] sm:w-[44%] md:w-[46%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
             {/* Title: all one white color */}
             <h2 className="font-serif text-[15px] sm:text-2xl md:text-3xl lg:text-4xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               Делаем для других, <br />
@@ -74,6 +75,23 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div>сами себе, поэтому мы не ищем</div>
               <div className="whitespace-nowrap">лёгких путей там, где они ухудшают</div>
               <div>итоговый результат.</div>
+            </div>
+          </div>
+
+          {/* Desktop-only: Proportional square photo inside grid showing the entire still life clearly */}
+          <div className="hidden md:flex md:w-[50%] lg:w-[48%] h-[320px] lg:h-[350px] items-center justify-end relative select-none">
+            <div className="relative w-full h-full rounded-sm overflow-hidden flex items-center justify-end">
+              <img
+                src="images/philosophy-video.jpg"
+                alt="Натюрморт Патисьер"
+                onError={(e) => handleImageError(e, 'philosophy')}
+                className="w-full h-full object-cover object-[center_center] filter brightness-105 contrast-105"
+              />
+              {/* Desktop soft feathered transition on left edge */}
+              <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-choco-950 via-choco-950/60 via-[25%] to-transparent pointer-events-none"></div>
+              {/* Subtle top & bottom edge fusions */}
+              <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
             </div>
           </div>
         </div>
