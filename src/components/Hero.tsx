@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface HeroProps {
   onSelectCake: () => void;
@@ -6,6 +6,17 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
   const [logoFailed, setLogoFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Явный вызов play() помогает с автовоспроизведением на некоторых мобильных браузерах,
+    // где атрибут autoPlay может игнорироваться (например, из-за режима энергосбережения или политик iOS).
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Autoplay prevented by browser:", error);
+      });
+    }
+  }, []);
 
   return (
     <section
@@ -15,10 +26,13 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
       {/* Ambient Video Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
+          /* @ts-expect-error - webkit-playsinline is needed for older iOS but not in standard types */
+          webkit-playsinline="true"
           className="w-full h-full object-cover opacity-70 scale-105 transition-all duration-700 filter brightness-95"
           poster="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80"
         >
