@@ -31,35 +31,35 @@ export const Navbar: React.FC<NavbarProps> = ({
         id="navbar"
         className="sticky top-0 z-40 bg-choco-950/95 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300 relative w-full"
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 h-20 sm:h-22 flex items-center justify-between gap-2 relative">
-          {/* Left: Hamburger & Phone (phone always visible on desktop, phone icon on mobile) */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 z-10 min-w-[120px] sm:min-w-[180px] md:min-w-[220px]">
+        <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between gap-1.5 sm:gap-2 relative">
+          {/* Left: Hamburger & Phone */}
+          <div className="flex items-center gap-1 sm:gap-3 flex-shrink-0 z-10">
             <button
               id="menu-toggle-btn"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Открыть меню"
               className="flex items-center justify-center text-gold-400 hover:text-gold-300 focus:outline-none p-1 sm:p-1.5 transition cursor-pointer"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 sm:w-6 sm:h-6" />
             </button>
 
             <a
               id="header-phone-link"
               href="tel:+79789114855"
-              className="inline-flex items-center gap-1.5 sm:gap-2.5 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap py-1"
+              className="inline-flex items-center gap-1 sm:gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap py-1"
               title="Позвонить: +7 (978) 911-48-55"
             >
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-choco-900 border border-gold-500/30 flex items-center justify-center group-hover:border-gold-400 transition flex-shrink-0">
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400" />
               </div>
-              <span className="hidden md:inline-block text-xs md:text-[13px] lg:text-sm font-bold tracking-wider leading-none whitespace-nowrap text-cream-50">
+              <span className="hidden xs:inline text-[10px] sm:text-xs md:text-sm font-bold tracking-wider leading-none whitespace-nowrap">
                 +7 (978) 911-48-55
               </span>
             </a>
           </div>
 
-          {/* Center: Brand Logo - MAXIMALLY LARGE & CENTERED */}
-          <div className="flex-1 flex items-center justify-center min-w-0 z-10 px-1 sm:px-4">
+          {/* Center: Brand Logo - MAXIMALLY LARGE on mobile and desktop */}
+          <div className="flex-1 flex items-center justify-center min-w-0 z-10 px-0.5 sm:px-4">
             <a
               id="header-brand-logo-link"
               href="#"
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   id="header-logo-image"
                   src="images/logo.png"
                   alt="Патисьер — Магазин-кондитерская"
-                  className="h-13 sm:h-14 md:h-16 lg:h-18 w-auto max-w-[260px] sm:max-w-[360px] md:max-w-[440px] lg:max-w-[480px] object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] filter brightness-105 group-hover:scale-105 transition-transform"
+                  className="h-13 sm:h-14 md:h-16 w-auto max-w-[260px] sm:max-w-[360px] md:max-w-[440px] object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)] filter brightness-105 group-hover:scale-105 transition-transform"
                   onError={() => setLogoFailed(true)}
                 />
               ) : (
@@ -86,15 +86,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
           </div>
 
-          {/* Right: Cart Button - matching width with left column for mathematical centering */}
-          <div className="flex items-center justify-end flex-shrink-0 z-10 min-w-[120px] sm:min-w-[180px] md:min-w-[220px]">
+          {/* Right: Cart Button */}
+          <div className="flex items-center justify-end flex-shrink-0 z-10">
             <button
               id="header-open-cart-btn"
               onClick={onOpenCart}
-              className="inline-flex items-center gap-1.5 sm:gap-2.5 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap py-1 cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-gold-300 hover:text-gold-200 transition group whitespace-nowrap py-1 cursor-pointer"
             >
               <div className="relative">
-                <ShoppingBag className="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" />
+                <ShoppingBag className="w-5 h-5 sm:w-5 sm:h-5 text-gold-400 group-hover:scale-110 transition-transform" />
                 <span
                   id="navbar-cart-badge"
                   className="sm:hidden absolute -top-1.5 -right-2 w-4 h-4 rounded-full bg-gold-500 text-choco-950 text-[10px] font-bold flex items-center justify-center shadow-sm"
@@ -105,8 +105,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-[11px] sm:text-xs md:text-sm font-bold tracking-wider uppercase hidden sm:inline">
                 Корзина
               </span>
-              <span className="hidden sm:inline-flex w-4 h-4 rounded-full bg-gold-500 text-choco-950 text-[10px] font-bold items-center justify-center shadow-sm">
-                {totalCartCount}
+              <span className="hidden sm:inline font-bold text-xs md:text-sm text-gold-400">
+                ({totalCartCount})
               </span>
             </button>
           </div>
