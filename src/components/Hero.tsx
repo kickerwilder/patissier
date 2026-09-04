@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
   return (
     <section
       id="hero"
-      className="relative min-h-[88vh] sm:min-h-[92vh] flex flex-col justify-between items-center overflow-hidden bg-choco-950 text-cream-50 pt-12 sm:pt-16 pb-12"
+      className="relative min-h-[90dvh] sm:min-h-screen flex flex-col justify-between items-center overflow-hidden bg-choco-950 text-cream-50 pt-14 sm:pt-16 pb-3 sm:pb-6"
     >
       {/* Ambient Video Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -29,17 +29,17 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
         <div className="absolute inset-0 bg-radial from-transparent via-choco-950/40 to-choco-950/90"></div>
       </div>
 
-      <div className="w-full"></div>
+      <div className="w-full h-0"></div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center my-auto py-6">
-        <div className="mb-6 sm:mb-8 w-full flex justify-center">
+      {/* Hero Content - centered precisely between navbar and action button */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center my-auto py-2 sm:py-4">
+        <div className="mb-4 sm:mb-6 w-full flex justify-center">
           {!logoFailed ? (
             <img
               id="hero-main-logo"
               src="images/logo.png"
               alt="Патисьер — Магазин-кондитерская"
-              className="w-[290px] sm:w-[460px] md:w-[540px] h-auto object-contain drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)] filter brightness-110"
+              className="w-[280px] sm:w-[440px] md:w-[520px] h-auto object-contain drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)] filter brightness-110"
               onError={() => setLogoFailed(true)}
             />
           ) : (
@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-3 mb-4">
+        <div className="flex items-center justify-center gap-3 mb-3">
           <div className="h-[1px] w-12 sm:w-16 bg-gold-500/60"></div>
           <div className="w-2.5 h-2.5 rounded-full border border-gold-400 flex items-center justify-center">
             <div className="w-1 h-1 rounded-full bg-gold-400"></div>
@@ -65,13 +65,13 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
           <div className="h-[1px] w-12 sm:w-16 bg-gold-500/60"></div>
         </div>
 
-        <h1 className="font-serif text-base sm:text-2xl md:text-3xl font-normal tracking-[0.2em] sm:tracking-[0.25em] text-gold-300 uppercase drop-shadow-md whitespace-nowrap">
+        <h1 className="font-serif text-sm sm:text-2xl md:text-3xl font-normal tracking-[0.2em] sm:tracking-[0.25em] text-gold-300 uppercase drop-shadow-md whitespace-nowrap">
           Свой мир. Без аналогов.
         </h1>
       </div>
 
-      {/* Action Button */}
-      <div className="relative z-10 w-full flex justify-center pb-1 sm:pb-4">
+      {/* Action Button - lifted higher to give breathing room for next screen */}
+      <div className="relative z-10 w-full flex justify-center pb-2 sm:pb-3">
         <button
           id="hero-select-cake-btn"
           onClick={onSelectCake}
