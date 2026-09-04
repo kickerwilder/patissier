@@ -10,7 +10,7 @@ interface DessertShowcaseProps {
   onAddToCart: (product: Product) => void;
 }
 
-const CATEGORIES = [
+const CATEGORIES = [\
   { id: 'all', label: 'Все' },
   { id: 'classic', label: 'Классика' },
   { id: 'chocolate', label: 'Шоколадные' },
@@ -115,29 +115,29 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
         </div>
 
         {/* ================= 3D ROTATING CAROUSEL (Photo occupies 65-70%, text block is tightly packed) ================= */}
-        <div className="relative max-w-3xl mx-auto py-1 sm:py-2 px-1 sm:px-6 mb-3 sm:mb-4 select-none">
+        <div className="relative max-w-3xl md:max-w-5xl lg:max-w-6xl mx-auto py-1 sm:py-2 md:py-4 px-1 sm:px-6 mb-3 sm:mb-5 select-none">
           
           {/* Left Arrow */}
           <button
             onClick={handlePrevSlide}
             aria-label="Предыдущий торт"
-            className="absolute left-0 sm:-left-2 top-1/2 -translate-y-1/2 z-40 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-choco-950/90 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-lg transition transform hover:scale-105 cursor-pointer"
+            className="absolute left-0 sm:-left-2 md:-left-4 top-1/2 -translate-y-1/2 z-40 w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 rounded-full bg-choco-950/90 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-lg transition transform hover:scale-105 cursor-pointer"
           >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Right Arrow */}
           <button
             onClick={handleNextSlide}
             aria-label="Следующий торт"
-            className="absolute right-0 sm:-right-2 top-1/2 -translate-y-1/2 z-40 w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-choco-950/90 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-lg transition transform hover:scale-105 cursor-pointer"
+            className="absolute right-0 sm:-right-2 md:-right-4 top-1/2 -translate-y-1/2 z-40 w-7 h-7 sm:w-9 sm:h-9 md:w-11 md:h-11 rounded-full bg-choco-950/90 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-choco-950 flex items-center justify-center shadow-lg transition transform hover:scale-105 cursor-pointer"
           >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
 
           {/* 3D Carousel Stage */}
           <div
-            className="relative h-[325px] sm:h-[365px] flex items-center justify-center overflow-visible"
+            className="relative h-[325px] sm:h-[365px] md:h-[430px] lg:h-[450px] flex items-center justify-center overflow-visible"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
@@ -169,16 +169,18 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                   }}
                   className={`absolute top-1 cut-corner-card bg-choco-900 flex flex-col cursor-pointer transition-all duration-500 ease-out select-none ${
                     isCenter
-                      ? 'z-30 w-[76%] max-w-[245px] sm:max-w-[275px] h-[315px] sm:h-[355px] border border-gold-500/35 hover:border-gold-500/70 shadow-[0_12px_35px_rgba(0,0,0,0.9),0_0_20px_rgba(197,160,89,0.2)] scale-100 sm:scale-105 opacity-100 translate-x-0'
+                      ? 'z-30 w-[76%] max-w-[245px] sm:max-w-[275px] md:max-w-[340px] lg:max-w-[360px] h-[315px] sm:h-[355px] md:h-[415px] lg:h-[435px] border border-gold-500/35 hover:border-gold-500/70 shadow-[0_12px_35px_rgba(0,0,0,0.9),0_0_25px_rgba(197,160,89,0.25)] scale-100 sm:scale-105 md:scale-100 opacity-100 translate-x-0'
                       : isLeft
-                      ? 'z-20 w-[68%] max-w-[210px] sm:max-w-[235px] h-[280px] sm:h-[315px] border border-gold-500/15 hover:border-gold-500/40 shadow-lg opacity-70 sm:opacity-80 -translate-x-[56%] sm:-translate-x-[68%] scale-90'
-                      : 'z-20 w-[68%] max-w-[210px] sm:max-w-[235px] h-[280px] sm:h-[315px] border border-gold-500/15 hover:border-gold-500/40 shadow-lg opacity-70 sm:opacity-80 translate-x-[56%] sm:translate-x-[68%] scale-90'
+                      ? 'z-20 w-[68%] max-w-[210px] sm:max-w-[235px] md:max-w-[280px] lg:max-w-[300px] h-[280px] sm:h-[315px] md:h-[370px] lg:h-[390px] border border-gold-500/15 hover:border-gold-500/40 shadow-lg opacity-70 sm:opacity-80 -translate-x-[56%] sm:-translate-x-[68%] md:-translate-x-[72%] lg:-translate-x-[76%] scale-90'
+                      : 'z-20 w-[68%] max-w-[210px] sm:max-w-[235px] md:max-w-[280px] lg:max-w-[300px] h-[280px] sm:h-[315px] md:h-[370px] lg:h-[390px] border border-gold-500/15 hover:border-gold-500/40 shadow-lg opacity-70 sm:opacity-80 translate-x-[56%] sm:translate-x-[68%] md:translate-x-[72%] lg:translate-x-[76%] scale-90'
                   }`}
                 >
                   {/* Image Container with Tag Badge: Occupies majority (65-70%) of card */}
                   <div
                     className={`relative overflow-hidden bg-choco-950 flex-shrink-0 ${
-                      isCenter ? 'h-[195px] sm:h-[225px]' : 'h-[170px] sm:h-[195px]'
+                      isCenter
+                        ? 'h-[195px] sm:h-[225px] md:h-[265px] lg:h-[280px]'
+                        : 'h-[170px] sm:h-[195px] md:h-[235px] lg:h-[250px]'
                     }`}
                   >
                     <img
@@ -192,11 +194,11 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                     />
 
                     {/* Seamless gradient fade from photo down into the card's dark brown background */}
-                    <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 bg-gradient-to-t from-choco-900 via-choco-900/60 to-transparent pointer-events-none"></div>
+                    <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 md:h-14 bg-gradient-to-t from-choco-900 via-choco-900/60 to-transparent pointer-events-none"></div>
 
                     {/* Classic Rectangular Cut-corner Tag Badge */}
                     <span
-                      className={`cut-corner-btn absolute top-2 right-2 px-2 sm:px-2.5 py-0.5 text-[8px] sm:text-[9px] uppercase font-bold tracking-wider shadow-md z-10 ${
+                      className={`cut-corner-btn absolute top-2 right-2 px-2 sm:px-2.5 md:px-3 py-0.5 md:py-1 text-[8px] sm:text-[9px] md:text-[10px] uppercase font-bold tracking-wider shadow-md z-10 ${
                         isCenter
                           ? 'bg-gold-500 text-choco-950'
                           : 'bg-choco-950/90 text-gold-300 border border-gold-500/40'
@@ -207,40 +209,40 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                   </div>
 
                   {/* Compact Body tightly packed: Name -> Subtitle -> Divider -> Price -> Button */}
-                  <div className="relative z-10 px-2 py-1.5 text-center flex flex-col items-center justify-between bg-choco-900 overflow-hidden flex-1">
+                  <div className="relative z-10 px-2 sm:px-3 py-1.5 md:py-2 text-center flex flex-col items-center justify-between bg-choco-900 overflow-hidden flex-1">
                     
                     {/* Title & Subtitle in pure delicate white */}
                     <div className="w-full">
                       <h3
                         className={`font-serif font-bold text-cream-50 leading-tight uppercase tracking-wider line-clamp-1 ${
-                          isCenter ? 'text-xs sm:text-sm' : 'text-[11px] sm:text-xs text-cream-50'
+                          isCenter ? 'text-xs sm:text-sm md:text-base' : 'text-[11px] sm:text-xs text-cream-50'
                         }`}
                       >
                         {item.name}
                       </h3>
-                      <p className="text-[8.5px] sm:text-[9.5px] text-cream-50/90 mt-0.5 line-clamp-1 font-light">
+                      <p className="text-[8.5px] sm:text-[9.5px] md:text-xs text-cream-50/90 mt-0.5 line-clamp-1 font-light">
                         {item.subtitle}
                       </p>
                     </div>
 
                     {/* Thin Line with Golden Dot */}
-                    <div className="flex items-center justify-center gap-1.5 my-0.5 w-full">
-                      <div className="h-[1px] w-6 sm:w-10 bg-gold-500/35"></div>
-                      <div className="w-1 h-1 rounded-full bg-gold-400"></div>
-                      <div className="h-[1px] w-6 sm:w-10 bg-gold-500/35"></div>
+                    <div className="flex items-center justify-center gap-1.5 my-0.5 sm:my-1 w-full">
+                      <div className="h-[1px] w-6 sm:w-10 md:w-14 bg-gold-500/35"></div>
+                      <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-gold-400"></div>
+                      <div className="h-[1px] w-6 sm:w-10 md:w-14 bg-gold-500/35"></div>
                     </div>
 
                     {/* Price & Action Button: Classic white linear font, noticeably larger */}
-                    <div className="w-full flex flex-col items-center gap-0.5">
-                      <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-cream-50 leading-none tracking-normal tabular-nums">
-                        {item.price.toLocaleString('ru-RU')} ₽ <span className="text-[9.5px] sm:text-[11px] font-sans font-normal text-cream-100/90">/ порция</span>
+                    <div className="w-full flex flex-col items-center gap-0.5 sm:gap-1">
+                      <div className="font-sans font-semibold text-sm sm:text-base md:text-lg lg:text-xl text-cream-50 leading-none tracking-normal tabular-nums">
+                        {item.price.toLocaleString('ru-RU')} ₽ <span className="text-[9.5px] sm:text-[11px] md:text-xs font-sans font-normal text-cream-100/90">/ порция</span>
                       </div>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           onOpenProductDetail(item);
                         }}
-                        className="cut-corner-btn w-full max-w-[115px] sm:max-w-[130px] py-1 px-2 border border-gold-500/40 hover:bg-gold-500 hover:text-choco-950 text-gold-300 text-[8.5px] sm:text-[9.5px] font-bold uppercase tracking-widest transition cursor-pointer mt-0.5"
+                        className="cut-corner-btn w-full max-w-[115px] sm:max-w-[130px] md:max-w-[160px] py-1 md:py-1.5 px-2 md:px-3 border border-gold-500/40 hover:bg-gold-500 hover:text-choco-950 text-gold-300 text-[8.5px] sm:text-[9.5px] md:text-[11px] font-bold uppercase tracking-widest transition cursor-pointer mt-0.5"
                       >
                         В Ы Б Р А Т Ь
                       </button>
@@ -253,7 +255,7 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
           </div>
 
           {/* Carousel Pagination Dots */}
-          <div className="flex justify-center items-center gap-1.5 mt-2 sm:mt-2.5">
+          <div className="flex justify-center items-center gap-1.5 mt-2 sm:mt-2.5 md:mt-4">
             {carouselProducts.map((_, i) => (
               <button
                 key={i}
@@ -261,8 +263,8 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                 aria-label={`Слайд ${i + 1}`}
                 className={`transition-all duration-300 cursor-pointer ${
                   carouselIndex === i
-                    ? 'w-5 h-1 bg-gold-400 rounded-full'
-                    : 'w-1.5 h-1 bg-gold-500/30 rounded-full hover:bg-gold-400/60'
+                    ? 'w-5 sm:w-6 h-1 sm:h-1.5 bg-gold-400 rounded-full'
+                    : 'w-1.5 h-1 sm:h-1.5 bg-gold-500/30 rounded-full hover:bg-gold-400/60'
                 }`}
               />
             ))}
@@ -270,10 +272,10 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
         </div>
 
         {/* ================= LOWER ROW: COMPACT TILES (2 on mobile, 4 on desktop) ================= */}
-        <div className="mt-1 sm:mt-2">
+        <div className="mt-1 sm:mt-2 md:mt-4">
           <div
             id="main-catalog-grid"
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3.5 max-w-5xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3.5 md:gap-5 lg:gap-6 max-w-7xl mx-auto"
           >
             {displayedCatalogProducts.map((product, idx) => (
               <div
@@ -284,7 +286,7 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                 }`}
               >
                 {/* Image Container with tag */}
-                <div className="relative h-32 sm:h-42 overflow-hidden bg-choco-950 flex-shrink-0">
+                <div className="relative h-32 sm:h-42 md:h-52 lg:h-56 overflow-hidden bg-choco-950 flex-shrink-0">
                   <img
                     src={product.image}
                     alt=""
@@ -293,45 +295,45 @@ export const DessertShowcase: React.FC<DessertShowcaseProps> = ({
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 text-transparent select-none"
                   />
                   {/* Seamless gradient fade from photo down into the card's dark brown background */}
-                  <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 bg-gradient-to-t from-choco-900 via-choco-900/60 to-transparent pointer-events-none"></div>
+                  <div className="absolute inset-x-0 bottom-0 h-10 sm:h-12 md:h-14 bg-gradient-to-t from-choco-900 via-choco-900/60 to-transparent pointer-events-none"></div>
 
-                  <span className="cut-corner-btn absolute top-1.5 left-1.5 px-1.5 py-0.5 bg-choco-950/90 text-gold-300 text-[8px] uppercase font-bold tracking-wider border border-gold-500/30 z-10">
+                  <span className="cut-corner-btn absolute top-1.5 left-1.5 md:top-2 md:left-2 px-1.5 md:px-2.5 py-0.5 bg-choco-950/90 text-gold-300 text-[8px] md:text-[9.5px] uppercase font-bold tracking-wider border border-gold-500/30 z-10">
                     {product.tag}
                   </span>
                 </div>
 
                 {/* Compact Content: Name -> Subtitle -> Line with dot -> Price -> ВЫБРАТЬ */}
                 <div
-                  className="relative z-10 px-2 py-1.5 flex-1 flex flex-col justify-between items-center text-center bg-choco-900"
+                  className="relative z-10 px-2 sm:px-3 md:px-4 py-1.5 md:py-2.5 flex-1 flex flex-col justify-between items-center text-center bg-choco-900"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <div
                     onClick={() => onOpenProductDetail(product)}
                     className="cursor-pointer w-full"
                   >
-                    <h3 className="font-serif text-[11px] sm:text-xs md:text-sm font-bold text-cream-50 leading-snug line-clamp-1 uppercase tracking-wide">
+                    <h3 className="font-serif text-[11px] sm:text-xs md:text-sm lg:text-base font-bold text-cream-50 leading-snug line-clamp-1 uppercase tracking-wide">
                       {product.name}
                     </h3>
-                    <p className="text-[8.5px] sm:text-[9.5px] text-cream-50/90 mt-0.5 line-clamp-1 font-light">
+                    <p className="text-[8.5px] sm:text-[9.5px] md:text-xs text-cream-50/90 mt-0.5 line-clamp-1 font-light">
                       {product.subtitle}
                     </p>
                   </div>
 
                   {/* Line with center dot */}
-                  <div className="flex items-center justify-center gap-1.5 my-0.5 w-full">
-                    <div className="h-[1px] w-5 sm:w-8 bg-gold-500/35"></div>
-                    <div className="w-1 h-1 rounded-full bg-gold-400"></div>
-                    <div className="h-[1px] w-5 sm:w-8 bg-gold-500/35"></div>
+                  <div className="flex items-center justify-center gap-1.5 my-0.5 sm:my-1 w-full">
+                    <div className="h-[1px] w-5 sm:w-8 md:w-12 bg-gold-500/35"></div>
+                    <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-gold-400"></div>
+                    <div className="h-[1px] w-5 sm:w-8 md:w-12 bg-gold-500/35"></div>
                   </div>
 
                   {/* Price & Action Button: Classic white linear font, noticeably larger */}
-                  <div className="w-full flex flex-col items-center gap-0.5">
-                    <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-cream-50 leading-none tracking-normal tabular-nums">
-                      {product.price.toLocaleString('ru-RU')} ₽ <span className="text-[9.5px] sm:text-[11px] font-sans font-normal text-cream-100/90">/ порция</span>
+                  <div className="w-full flex flex-col items-center gap-0.5 sm:gap-1">
+                    <div className="font-sans font-semibold text-sm sm:text-base md:text-lg lg:text-xl text-cream-50 leading-none tracking-normal tabular-nums">
+                      {product.price.toLocaleString('ru-RU')} ₽ <span className="text-[9.5px] sm:text-[11px] md:text-xs font-sans font-normal text-cream-100/90">/ порция</span>
                     </div>
                     <button
                       onClick={() => onOpenProductDetail(product)}
-                      className="cut-corner-btn w-full max-w-[115px] sm:max-w-[130px] py-1 px-2 border border-gold-500/40 hover:bg-gold-500 hover:text-choco-950 text-gold-300 text-[8.5px] sm:text-[9.5px] font-bold uppercase tracking-wider transition cursor-pointer mt-0.5"
+                      className="cut-corner-btn w-full max-w-[115px] sm:max-w-[130px] md:max-w-[160px] py-1 md:py-1.5 px-2 md:px-3 border border-gold-500/40 hover:bg-gold-500 hover:text-choco-950 text-gold-300 text-[8.5px] sm:text-[9.5px] md:text-[11px] font-bold uppercase tracking-wider transition cursor-pointer mt-0.5"
                     >
                       В Ы Б Р А Т Ь
                     </button>
