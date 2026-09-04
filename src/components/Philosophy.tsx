@@ -12,20 +12,20 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: Left Text Zone + Right Harmonious Natural Photo (Mobile & Desktop) */}
-      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[400px] max-h-[440px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: Left Text Zone + Right 1:1 Natural Photo (Mobile & Desktop) */}
+      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[380px] lg:min-h-[420px] flex items-center bg-choco-950">
         
-        {/* Right Photo Layer: Balanced framing so whole cake composition remains in view without extreme macro zoom */}
-        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[60%] md:w-[56%] lg:w-[54%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full">
+        {/* Right Photo Layer: Natural 1:1 square ratio preserved on desktop, no distorted macro zoom */}
+        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[58%] md:w-[52%] lg:w-[48%] xl:w-[45%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+          <div className="relative w-full h-full md:aspect-square md:max-h-full flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-cover object-[78%_center] sm:object-[center_center] filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[center_center] filter brightness-105 contrast-105"
             />
             {/* Seamless edge-only feathering: gradual fade into dark chocolate background */}
-            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[22%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/70 via-[25%] via-choco-950/15 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[26%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/75 via-[25%] via-choco-950/20 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
@@ -72,7 +72,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent via-gold-500/80 to-gold-400"></div>
             </div>
 
-            {/* Manifesto text: EXACT SAME font size as the two lower cards */}
+            {/* Manifesto text: EXACT SAME font size as the two lower cards (text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base) */}
             <div className="text-[10px] min-[380px]:text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               <div className="whitespace-nowrap">Мы убеждены: то, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
@@ -92,70 +92,128 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
         {/* TWO LOWER FRAMED CARDS */}
         <div className="grid grid-cols-2 gap-2.5 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-10">
           
-          {/* Card 1: Без заменителей и компромиссов */}
-          <div className="cut-corner-card bg-choco-900 border border-gold-500/20 p-2.5 sm:p-4 md:p-6 shadow-lg flex flex-col justify-between">
-            <div>
-              <h3 className="font-serif font-bold text-xs sm:text-base md:text-xl lg:text-2xl text-cream-50 leading-tight uppercase tracking-wider mb-1 sm:mb-2">
-                БЕЗ ЗАМЕНИТЕЛЕЙ
-                <br />
-                И КОМПРОМИССОВ
-              </h3>
-
-              {/* Authentic Monogram Flourish under heading */}
-              <div className="my-1 sm:my-2">
-                <FlourishDivider lineWidth="w-4 sm:w-10" />
+          {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
+          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+            <div className="space-y-1 sm:space-y-2 w-full">
+              {/* Elegant botanical leaf with stem & veins */}
+              <div className="flex justify-center pb-0.5">
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-gold-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6" />
+                  <path d="M11 13l3-2" />
+                  <path d="M13 16l3-1.5" />
+                </svg>
               </div>
 
-              <p className="text-[10px] min-[380px]:text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-100/90 font-light leading-relaxed">
-                Никакого маргарина, растительных сливок или дешёвых смесей. Мы
-                используем только настоящее сливочное масло 82,5%, бельгийский
-                шоколад и натуральные сливки.
+              <h3 className="font-serif font-bold text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 leading-tight text-center tracking-wide">
+                Без заменителей <br /> и компромиссов
+              </h3>
+
+              {/* Minimalist Divider: Line - Dot - Line */}
+              <div className="flex items-center justify-center gap-1.5 py-0.5">
+                <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
+                <div className="w-1 h-1 rounded-full bg-gold-400"></div>
+                <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
+              </div>
+
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
+                Мы используем настоящее сливочное масло 82%, натуральные сливки, яйца, шоколад, орехи, ягоды и другие ингредиенты, которые формируют характер и вкус каждого торта.
+              </p>
+
+              {/* Center Golden Dot */}
+              <div className="flex justify-center py-0.5">
+                <div className="w-1 h-1 rounded-full bg-gold-400"></div>
+              </div>
+
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
+                Мы не используем дешёвые заменители животных жиров, растительные сливки, улучшители, загустители, стабилизаторы и другие вредные ингредиенты.
               </p>
             </div>
           </div>
 
-          {/* Card 2: Создано в Патисьер */}
-          <div className="cut-corner-card bg-choco-900 border border-gold-500/20 p-2.5 sm:p-4 md:p-6 shadow-lg flex flex-col justify-between">
-            <div>
-              <h3 className="font-serif font-bold text-xs sm:text-base md:text-xl lg:text-2xl text-cream-50 leading-tight uppercase tracking-wider mb-1 sm:mb-2">
-                СОЗДАНО
-                <br />В ПАТИСЬЕР
-              </h3>
-
-              {/* Authentic Monogram Flourish under heading */}
-              <div className="my-1 sm:my-2">
-                <FlourishDivider lineWidth="w-4 sm:w-10" />
+          {/* Card 2: Создано в Патисьер (Planetary Stand Mixer Icon, left-aligned paragraphs, gold final sentence) */}
+          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+            <div className="space-y-1 sm:space-y-2 w-full">
+              {/* Authentic Stand Mixer Icon */}
+              <div className="flex justify-center pb-0.5">
+                <svg
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-gold-400"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  {/* Mixer base */}
+                  <line x1="3" y1="21" x2="21" y2="21" />
+                  {/* Stand pillar & head */}
+                  <path d="M18 21v-8a1 1 0 0 0-1-1h-2" />
+                  <path d="M6 7h11a2 2 0 0 1 2 2v2H6a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1z" />
+                  {/* Speed dial knob */}
+                  <circle cx="16" cy="9" r="0.75" fill="currentColor" />
+                  {/* Whisk attachment */}
+                  <path d="M9 11v3.5a2 2 0 0 1-1 1.5 2 2 0 0 0-1-1.5V11" />
+                  <line x1="8" y1="11" x2="8" y2="15" />
+                  {/* Mixing bowl with handle */}
+                  <path d="M5 14h8a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-2a1 1 0 0 1 1-1z" />
+                </svg>
               </div>
 
-              <p className="text-[10px] min-[380px]:text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-100/90 font-light leading-relaxed">
-                Каждый бисквит, крем, ягодное конфи и декор готовятся вручную
-                нашими мастерами с нуля в кондитерской по собственным
-                проверенным рецептурам.
+              <h3 className="font-serif font-bold text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 leading-tight text-center tracking-wide">
+                Создано <br /> в Патисьер
+              </h3>
+
+              {/* Minimalist Divider: Line - Dot - Line */}
+              <div className="flex items-center justify-center gap-1.5 py-0.5">
+                <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
+                <div className="w-1 h-1 rounded-full bg-gold-400"></div>
+                <div className="h-[1px] w-5 sm:w-10 bg-gold-500/40"></div>
+              </div>
+
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
+                Наши торты создаются в собственной кондитерской. Мы контролируем весь процесс — от приготовления до момента, когда торт попадает на витрину.
+              </p>
+
+              {/* Center Golden Dot */}
+              <div className="flex justify-center py-0.5">
+                <div className="w-1 h-1 rounded-full bg-gold-400"></div>
+              </div>
+
+              {/* Maximized paragraph text */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-cream-50 leading-[1.35] sm:leading-relaxed font-light">
+                Мы не покупаем чужие торты для продажи и не продаём свои торты в других заведениях.
+              </p>
+
+              {/* Maximized gold final sentence */}
+              <p className="text-left text-[10px] sm:text-[12.5px] md:text-sm lg:text-[15px] text-gold-300 font-medium leading-[1.35] sm:leading-relaxed pt-0.5">
+                Наши торты можно купить только в кондитерских Патисьер.
               </p>
             </div>
           </div>
 
         </div>
 
-        {/* Lowered Action Button "ВЫБРАТЬ ДЕСЕРТ" */}
-        <div className="flex flex-col items-center text-center mt-2 sm:mt-4">
+        {/* 3. WIDE ACTION BUTTON: "ВЫБРАТЬ ТОРТ" - lowered with ample breathing room */}
+        <div className="flex justify-center pt-1 pb-4 sm:pb-6">
           <button
+            id="philosophy-select-cake-btn"
             onClick={onSelectCake}
-            className="cut-corner-btn inline-flex items-center justify-center px-6 sm:px-10 py-2.5 sm:py-3.5 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold tracking-[0.16em] text-xs sm:text-sm uppercase shadow-lg shadow-gold-500/20 transition transform hover:scale-105 cursor-pointer rounded"
+            className="w-full max-w-sm sm:max-w-md py-3 sm:py-3.5 px-6 sm:px-10 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold uppercase tracking-[0.22em] text-[11px] sm:text-xs rounded shadow-lg transition transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
-            В Ы Б Р А Т Ь &nbsp; Д Е С Е Р Т
+            В Ы Б Р А Т Ь &nbsp; Т О Р Т
           </button>
-
-          {/* Slogan with center golden dot */}
-          <div className="mt-2 sm:mt-3 flex items-center justify-center gap-2 text-center">
-            <span className="text-[10px] sm:text-xs md:text-sm text-cream-100 font-light tracking-wide">
-              Натуральные ингредиенты
-            </span>
-            <div className="w-1 h-1 rounded-full bg-gold-400"></div>
-            <span className="text-[10px] sm:text-xs md:text-sm text-cream-100 font-light tracking-wide">
-              Ручная работа
-            </span>
-          </div>
         </div>
 
       </div>
