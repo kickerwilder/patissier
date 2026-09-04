@@ -36,8 +36,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
         <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
           {/* Left Column: Text sitting in its clean zone on dark choco-950 */}
           <div className="w-[45%] sm:w-[44%] md:w-[46%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
-            {/* Title: all one white color */}
-            <h2 className="font-serif text-[15px] sm:text-2xl md:text-3xl lg:text-4xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
+            {/* Title: noticeably enlarged for prominence on mobile and desktop */}
+            <h2 className="font-serif text-[17px] sm:text-[27px] md:text-3xl lg:text-[40px] text-cream-50 leading-[1.15] font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               Делаем для других, <br />
               как для себя
             </h2>
@@ -108,7 +108,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-xs sm:text-base md:text-lg text-cream-50 font-normal leading-tight text-center">
+              <h3 className="font-serif text-[13.5px] sm:text-lg md:text-xl lg:text-2xl text-cream-50 font-normal leading-tight text-center tracking-wide">
                 Без заменителей <br /> и компромиссов
               </h3>
 
@@ -165,7 +165,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-xs sm:text-base md:text-lg text-cream-50 font-normal leading-tight text-center">
+              <h3 className="font-serif text-[13.5px] sm:text-lg md:text-xl lg:text-2xl text-cream-50 font-normal leading-tight text-center tracking-wide">
                 Создано <br /> в Патисьер
               </h3>
 
