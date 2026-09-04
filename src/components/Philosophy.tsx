@@ -10,39 +10,39 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
   return (
     <section
       id="manifesto"
-      className="pt-1 sm:pt-3 pb-3 sm:pb-5 bg-choco-950 border-b border-gold-500/20 relative overflow-hidden"
+      className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP WIDE BLOCK: Text Left + Scaled Still-life Photo Right (NOT from left edge, full still life visible) */}
-      <div className="relative w-full mb-2 sm:mb-3 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex items-center overflow-hidden">
+      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Square/Natural Photo on the Right with seamless wide fade */}
+      <div className="relative w-full overflow-hidden mb-3 sm:mb-5 min-h-[220px] sm:min-h-[260px] md:min-h-[290px] flex items-center bg-choco-950">
         
-        {/* Right Photo Container: Sits on the right (w-[56%] sm:w-[53%] md:w-[50%]), doesn't touch the left side at all */}
-        <div className="absolute right-0 top-0 bottom-0 w-[56%] sm:w-[53%] md:w-[50%] flex items-center justify-end pointer-events-none select-none z-0">
+        {/* Right Photo Layer: Takes right 65% (approx 2/3), anchored to the right screen edge */}
+        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[62%] md:w-[58%] z-0 pointer-events-none select-none overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-contain object-right filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
             />
-            {/* Seamless gradient fade on the left edge of the photo blending into the dark chocolate text background */}
-            <div className="absolute inset-y-0 left-0 w-10 sm:w-16 bg-gradient-to-r from-choco-950 to-transparent pointer-events-none"></div>
-            {/* Subtle top & bottom edge fusions */}
-            <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
-            <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
+            {/* Gradient: pure dark strictly on the first 5% edge, then immediate soft lightening into the still life photo */}
+            <div className="absolute inset-y-0 left-0 w-[45%] sm:w-[40%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/85 via-[5%] via-choco-950/35 via-[22%] via-choco-950/10 via-[48%] to-transparent to-[75%] pointer-events-none"></div>
+            {/* Top & bottom subtle fusions */}
+            <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
           </div>
         </div>
 
-        {/* Left Column: Manifesto Text sitting on clean dark choco-950 background */}
-        <div className="max-w-6xl mx-auto w-full px-3 sm:px-6 lg:px-8 relative z-10 flex items-center">
-          <div className="w-[48%] sm:w-[48%] md:w-[46%] pr-1 sm:pr-2 py-1 text-left flex flex-col justify-center">
+        {/* Left Text Container: Sits in its dedicated 1/3 - 40% clean zone on pure dark choco-950 */}
+        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
+          <div className="w-[45%] sm:w-[42%] md:w-[40%] pr-1 sm:pr-3 py-2 text-left flex flex-col justify-center">
             {/* Title: all one white color */}
-            <h2 className="font-serif text-[15px] sm:text-2xl md:text-3xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <h2 className="font-serif text-[15px] sm:text-2xl md:text-3xl lg:text-4xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               Делаем для других, <br />
               как для себя
             </h2>
 
-            {/* Authentic Monogram Flourish under heading: round circles, dots inside, vertical bar */}
-            <div className="my-1.5 sm:my-2 flex items-center gap-1">
+            {/* Authentic Monogram Flourish under heading */}
+            <div className="my-1.5 sm:my-2.5 flex items-center gap-1">
               <div className="h-[1px] w-4 sm:w-10 bg-gradient-to-r from-transparent via-gold-500/80 to-gold-400"></div>
               <svg
                 viewBox="0 0 54 14"
@@ -55,7 +55,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 {/* Left round circle with center dot */}
                 <circle cx="22.8" cy="7" r="4.2" stroke="currentColor" strokeWidth="1.2" />
                 <circle cx="22.8" cy="7" r="1.3" fill="currentColor" />
-                {/* Vertical perpendicular bar at junction, length equal to circle diameter (8.4) */}
+                {/* Vertical perpendicular bar at junction */}
                 <line x1="27" y1="2.8" x2="27" y2="11.2" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
                 {/* Right round circle with center dot */}
                 <circle cx="31.2" cy="7" r="4.2" stroke="currentColor" strokeWidth="1.2" />
@@ -66,8 +66,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent via-gold-500/80 to-gold-400"></div>
             </div>
 
-            {/* Manifesto text formatted in continuous 6 exact lines as requested, with crisp drop shadow */}
-            <div className="text-[9px] sm:text-[11px] md:text-xs text-cream-50 leading-[1.38] sm:leading-[1.48] font-light drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            {/* Manifesto text formatted in continuous 6 exact lines */}
+            <div className="text-[9px] sm:text-[11.5px] md:text-sm text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
               <div>Мы убеждены, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
               <div>стандартам, которые мы предъявляем</div>
@@ -80,7 +80,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
 
       </div>
 
-      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8 w-full">
 
         {/* 2. TWO LOWER FRAMED CARDS - PULLED UPWARD FOR HARMONY IN ONE VIEWPORT */}
         <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-2 sm:mb-3">
