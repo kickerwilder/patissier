@@ -12,33 +12,33 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: Left Text Zone + Right 1:1 Natural Photo (Mobile & Desktop) */}
-      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[380px] lg:min-h-[420px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: Left Text Zone + Right 1:1 Natural Photo */}
+      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-10 bg-choco-950">
         
-        {/* Right Photo Layer: Natural 1:1 square ratio preserved on desktop, no distorted macro zoom */}
-        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[58%] md:w-[52%] lg:w-[48%] xl:w-[45%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
-          <div className="relative w-full h-full md:aspect-square md:max-h-full flex items-center justify-end">
+        {/* MOBILE PHOTO LAYER: Absolute background (Hidden on md+) */}
+        <div className="md:hidden absolute right-0 top-0 bottom-0 w-[55%] sm:w-[60%] z-0 pointer-events-none select-none flex items-center justify-end">
+          <div className="relative w-full h-full aspect-square flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-cover object-[center_center] filter brightness-105 contrast-105"
+              className="w-full h-full object-contain filter brightness-105 contrast-105"
             />
-            {/* Seamless edge-only feathering: gradual fade into dark chocolate background */}
-            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[26%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/75 via-[25%] via-choco-950/20 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
-            {/* Top & bottom subtle fusions */}
-            <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
-            <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
+            {/* Radial fade mask to blend the square image seamlessly into the chocolate background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,#140A07_100%)]"></div>
+            {/* Additional left edge fade to melt it into the dark left text side */}
+            <div className="absolute inset-y-0 left-0 w-[30%] bg-gradient-to-r from-choco-950 to-transparent pointer-events-none"></div>
           </div>
         </div>
 
         {/* Content Container aligned with site grid */}
-        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
-          {/* Left Column: Text sitting in its clean zone with heading boldly extending onto photo */}
-          <div className="w-[54%] sm:w-[50%] md:w-[50%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
-            {/* Title: Bold & expressive, 'Делаем для других' on line 1 extending onto photo, 'как для себя' on line 2 */}
-            <h2 className="font-serif font-bold text-[19px] sm:text-[27px] md:text-3xl lg:text-[40px] text-cream-50 leading-[1.14] drop-shadow-[0_2px_8px_rgba(0,0,0,0.98)] z-20">
-              <span className="whitespace-nowrap inline-block -mr-6 sm:-mr-12 md:-mr-16 lg:-mr-20">
+        <div className="max-w-7xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex flex-row md:items-center md:justify-between min-h-[300px] sm:min-h-[340px] md:min-h-0">
+          
+          {/* Left Column: Text */}
+          <div className="w-[54%] sm:w-[50%] md:w-[48%] lg:w-[45%] pr-1 sm:pr-4 py-2 md:py-10 text-left flex flex-col justify-center">
+            {/* Title: Bold & expressive */}
+            <h2 className="font-serif font-bold text-[19px] sm:text-[27px] md:text-[32px] lg:text-[40px] text-cream-50 leading-[1.14] drop-shadow-[0_2px_8px_rgba(0,0,0,0.98)] z-20">
+              <span className="whitespace-nowrap inline-block -mr-6 sm:-mr-12 md:mr-0">
                 Делаем для <span className="relative z-20">других</span>,
               </span>
               <br />
@@ -82,18 +82,29 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div className="whitespace-nowrap">итоговый результат.</div>
             </div>
           </div>
+
+          {/* Right Column (Desktop Only): Perfect Square Image */}
+          <div className="hidden md:block w-[48%] lg:w-[45%] relative aspect-square cut-corner-card border border-gold-500/20 overflow-hidden shadow-2xl bg-choco-900">
+            <img
+              src="images/philosophy-video.jpg"
+              alt="Натюрморт Патисьер"
+              onError={(e) => handleImageError(e, 'philosophy')}
+              className="w-full h-full object-cover filter brightness-105 contrast-105 hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+
         </div>
 
       </div>
 
       {/* 2. LOWER SECTION: Two Cards + Lowered Action Button */}
-      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8 w-full pb-6 sm:pb-10">
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 w-full pb-6 sm:pb-10">
 
         {/* TWO LOWER FRAMED CARDS */}
         <div className="grid grid-cols-2 gap-2.5 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-10">
           
           {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
-          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+          <div className="cut-corner-card bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
             <div className="space-y-1 sm:space-y-2 w-full">
               {/* Elegant botanical leaf with stem & veins */}
               <div className="flex justify-center pb-0.5">
@@ -142,7 +153,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
           </div>
 
           {/* Card 2: Создано в Патисьер (Planetary Stand Mixer Icon, left-aligned paragraphs, gold final sentence) */}
-          <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
+          <div className="cut-corner-card bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
             <div className="space-y-1 sm:space-y-2 w-full">
               {/* Authentic Stand Mixer Icon */}
               <div className="flex justify-center pb-0.5">
@@ -210,7 +221,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
           <button
             id="philosophy-select-cake-btn"
             onClick={onSelectCake}
-            className="w-full max-w-sm sm:max-w-md py-3 sm:py-3.5 px-6 sm:px-10 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold uppercase tracking-[0.22em] text-[11px] sm:text-xs rounded shadow-lg transition transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="cut-corner-btn w-full max-w-sm sm:max-w-md py-3 sm:py-3.5 px-6 sm:px-10 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold uppercase tracking-[0.22em] text-[11px] sm:text-xs shadow-lg transition transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             В Ы Б Р А Т Ь &nbsp; Т О Р Т
           </button>
