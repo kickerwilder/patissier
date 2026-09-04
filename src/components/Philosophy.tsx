@@ -25,7 +25,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
             />
             {/* Gradient: pure dark strictly on the first 5% edge, then immediate soft lightening into the still life photo */}
-            <div className="absolute inset-y-0 left-0 w-[45%] sm:w-[40%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/85 via-[5%] via-choco-950/35 via-[22%] via-choco-950/10 via-[48%] to-transparent to-[75%] pointer-events-none"></div>
+           <div className="absolute inset-y-0 left-0 w-[24%] sm:w-[20%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
