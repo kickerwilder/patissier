@@ -10,7 +10,7 @@ interface DessertShowcaseProps {
   onAddToCart: (product: Product) => void;
 }
 
-const CATEGORIES = [\
+const CATEGORIES = [
   { id: 'all', label: 'Все' },
   { id: 'classic', label: 'Классика' },
   { id: 'chocolate', label: 'Шоколадные' },
