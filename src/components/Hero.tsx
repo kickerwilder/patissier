@@ -71,11 +71,11 @@ export const Hero: React.FC<HeroProps> = ({ onSelectCake }) => {
       </div>
 
       {/* Action Button */}
-      <div className="relative z-10 w-full flex justify-center pb-2 sm:pb-4">
+      <div className="relative z-10 w-full flex justify-center pb-1 sm:pb-4">
         <button
           id="hero-select-cake-btn"
           onClick={onSelectCake}
-          className="cut-corner-btn px-10 sm:px-14 py-4 sm:py-5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.22em] text-xs sm:text-sm uppercase shadow-2xl shadow-gold-500/30 transition transform hover:scale-105 cursor-pointer"
+          className="cut-corner-btn px-10 sm:px-14 py-3.5 sm:py-5 bg-gold-500 hover:bg-gold-400 text-choco-950 font-bold tracking-[0.22em] text-xs sm:text-sm uppercase shadow-2xl shadow-gold-500/30 transition transform hover:scale-105 cursor-pointer"
         >
           В Ы Б Р А Т Ь &nbsp; Т О Р Т
         </button>
