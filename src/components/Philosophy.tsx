@@ -12,20 +12,20 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Square/Natural Photo on Right */}
-      <div className="relative w-full overflow-hidden mb-3 sm:mb-5 min-h-[290px] sm:min-h-[330px] md:min-h-[350px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Natural Photo Layer (Mobile & Desktop full aesthetic) */}
+      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[400px] lg:min-h-[440px] flex items-center bg-choco-950">
         
-        {/* Right Photo Layer: Mobile full-bleed right 66%; Desktop constrained inside grid with proportional 1:1 square still life */}
-        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[60%] md:hidden z-0 pointer-events-none select-none overflow-hidden">
+        {/* Right Photo Layer: Spans right ~66% on mobile, and right ~58% on desktop directly to the edge */}
+        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[62%] md:w-[58%] lg:w-[55%] z-0 pointer-events-none select-none overflow-hidden">
           <div className="relative w-full h-full flex items-center justify-end">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[right_center] md:object-[center_center] filter brightness-105 contrast-105"
             />
-            {/* Compact edge-only feathering on mobile */}
-            <div className="absolute inset-y-0 left-0 w-[22%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
+            {/* Compact edge-only feathering: seamless fade into dark chocolate */}
+            <div className="absolute inset-y-0 left-0 w-[22%] md:w-[18%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
@@ -33,7 +33,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
         </div>
 
         {/* Content Container aligned with site grid */}
-        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
           {/* Left Column: Text sitting in its clean zone on dark choco-950 */}
           <div className="w-[45%] sm:w-[44%] md:w-[46%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
             {/* Title: all one white color */}
@@ -77,31 +77,15 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div>итоговый результат.</div>
             </div>
           </div>
-
-          {/* Desktop-only: Proportional square photo inside grid showing the entire still life clearly */}
-          <div className="hidden md:flex md:w-[50%] lg:w-[48%] h-[320px] lg:h-[350px] items-center justify-end relative select-none">
-            <div className="relative w-full h-full rounded-sm overflow-hidden flex items-center justify-end">
-              <img
-                src="images/philosophy-video.jpg"
-                alt="Натюрморт Патисьер"
-                onError={(e) => handleImageError(e, 'philosophy')}
-                className="w-full h-full object-cover object-[center_center] filter brightness-105 contrast-105"
-              />
-              {/* Desktop soft feathered transition on left edge */}
-              <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-choco-950 via-choco-950/60 via-[25%] to-transparent pointer-events-none"></div>
-              {/* Subtle top & bottom edge fusions */}
-              <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
-              <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
-            </div>
-          </div>
         </div>
 
       </div>
 
-      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8 w-full">
+      {/* 2. LOWER SECTION: Two Cards + Lowered Action Button */}
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8 w-full pb-6 sm:pb-10">
 
-        {/* 2. TWO LOWER FRAMED CARDS - PULLED UPWARD FOR HARMONY IN ONE VIEWPORT */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-2 sm:mb-3">
+        {/* TWO LOWER FRAMED CARDS */}
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-10">
           
           {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
           <div className="rounded-lg bg-choco-950/85 p-2 sm:p-3.5 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
@@ -216,12 +200,12 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
 
         </div>
 
-        {/* 3. WIDE ACTION BUTTON: "ВЫБРАТЬ ТОРТ" */}
-        <div className="flex justify-center">
+        {/* 3. WIDE ACTION BUTTON: "ВЫБРАТЬ ТОРТ" - lowered with ample breathing room */}
+        <div className="flex justify-center pt-1 pb-4 sm:pb-6">
           <button
             id="philosophy-select-cake-btn"
             onClick={onSelectCake}
-            className="w-full max-w-sm sm:max-w-md py-2.5 sm:py-3 px-6 sm:px-10 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold uppercase tracking-[0.22em] text-[11px] sm:text-xs rounded shadow-lg transition transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="w-full max-w-sm sm:max-w-md py-3 sm:py-3.5 px-6 sm:px-10 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 hover:from-gold-400 hover:to-gold-300 text-choco-950 font-bold uppercase tracking-[0.22em] text-[11px] sm:text-xs rounded shadow-lg transition transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
             В Ы Б Р А Т Ь &nbsp; Т О Р Т
           </button>
