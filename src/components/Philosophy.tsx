@@ -12,20 +12,20 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
       id="manifesto"
       className="bg-choco-950 border-b border-gold-500/20 relative overflow-hidden py-3 sm:py-6"
     >
-      {/* 1. TOP BLOCK: 1/3 Text on Clean Choco Background + 2/3 Natural Photo Layer (Mobile & Desktop full aesthetic) */}
-      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[400px] lg:min-h-[440px] flex items-center bg-choco-950">
+      {/* 1. TOP BLOCK: Left Text Zone + Right Harmonious Natural Photo (Mobile & Desktop) */}
+      <div className="relative w-full overflow-hidden mb-4 sm:mb-6 md:mb-8 min-h-[300px] sm:min-h-[340px] md:min-h-[360px] lg:min-h-[400px] max-h-[440px] flex items-center bg-choco-950">
         
-        {/* Right Photo Layer: Spans right ~66% on mobile, and right ~58% on desktop directly to the edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-[66%] sm:w-[62%] md:w-[58%] lg:w-[55%] z-0 pointer-events-none select-none overflow-hidden">
-          <div className="relative w-full h-full flex items-center justify-end">
+        {/* Right Photo Layer: Balanced framing so whole cake composition remains in view without extreme macro zoom */}
+        <div className="absolute right-0 top-0 bottom-0 w-[64%] sm:w-[60%] md:w-[56%] lg:w-[54%] z-0 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+          <div className="relative w-full h-full">
             <img
               src="images/philosophy-video.jpg"
               alt="Натюрморт Патисьер"
               onError={(e) => handleImageError(e, 'philosophy')}
-              className="w-full h-full object-cover object-[right_center] md:object-[center_center] filter brightness-105 contrast-105"
+              className="w-full h-full object-cover object-[78%_center] sm:object-[center_center] filter brightness-105 contrast-105"
             />
-            {/* Compact edge-only feathering: seamless fade into dark chocolate */}
-            <div className="absolute inset-y-0 left-0 w-[22%] md:w-[18%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-[20%] via-choco-950/15 via-[50%] to-transparent to-[100%] pointer-events-none"></div>
+            {/* Seamless edge-only feathering: gradual fade into dark chocolate background */}
+            <div className="absolute inset-y-0 left-0 w-[24%] md:w-[22%] bg-gradient-to-r from-choco-950 from-0% via-choco-950/70 via-[25%] via-choco-950/15 via-[60%] to-transparent to-[100%] pointer-events-none"></div>
             {/* Top & bottom subtle fusions */}
             <div className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-choco-950 to-transparent pointer-events-none"></div>
             <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-choco-950 to-transparent pointer-events-none"></div>
@@ -34,11 +34,11 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
 
         {/* Content Container aligned with site grid */}
         <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
-          {/* Left Column: Text sitting in its clean zone on dark choco-950 */}
-          <div className="w-[45%] sm:w-[44%] md:w-[46%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
-            {/* Title: 'Делаем для других' on line 1 extending onto photo, 'как для себя' on line 2 */}
-            <h2 className="font-serif text-[19px] sm:text-[29px] md:text-3xl lg:text-[42px] text-cream-50 leading-[1.15] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] z-20">
-              <span className="whitespace-nowrap inline-block">
+          {/* Left Column: Text sitting in its clean zone with heading boldly extending onto photo */}
+          <div className="w-[54%] sm:w-[50%] md:w-[50%] pr-1 sm:pr-4 py-2 text-left flex flex-col justify-center">
+            {/* Title: Bold & expressive, 'Делаем для других' on line 1 extending onto photo, 'как для себя' on line 2 */}
+            <h2 className="font-serif font-bold text-[19px] sm:text-[27px] md:text-3xl lg:text-[40px] text-cream-50 leading-[1.14] drop-shadow-[0_2px_8px_rgba(0,0,0,0.98)] z-20">
+              <span className="whitespace-nowrap inline-block -mr-6 sm:-mr-12 md:-mr-16 lg:-mr-20">
                 Делаем для <span className="relative z-20">других</span>,
               </span>
               <br />
@@ -72,14 +72,14 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div className="h-[1px] w-6 sm:w-12 bg-gradient-to-l from-transparent via-gold-500/80 to-gold-400"></div>
             </div>
 
-            {/* Manifesto text: enlarged for maximum legibility */}
-            <div className="text-[10px] sm:text-[13px] md:text-base text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
-              <div>Мы убеждены, что создаётся</div>
+            {/* Manifesto text: EXACT SAME font size as the two lower cards (text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base) */}
+            <div className="text-[10px] min-[380px]:text-[10.5px] sm:text-[13.5px] md:text-[15px] lg:text-base text-cream-50 leading-[1.38] sm:leading-[1.5] font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)]">
+              <div className="whitespace-nowrap">Мы убеждены: то, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
-              <div>стандартам, которые мы предъявляем</div>
-              <div>сами себе, поэтому мы не ищем</div>
+              <div className="whitespace-nowrap">стандартам, которые мы предъявляем</div>
+              <div className="whitespace-nowrap">сами себе. Поэтому мы не ищем</div>
               <div className="whitespace-nowrap">лёгких путей там, где они ухудшают</div>
-              <div>итоговый результат.</div>
+              <div className="whitespace-nowrap">итоговый результат.</div>
             </div>
           </div>
         </div>
@@ -113,7 +113,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 font-normal leading-tight text-center tracking-wide">
+              <h3 className="font-serif font-bold text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 leading-tight text-center tracking-wide">
                 Без заменителей <br /> и компромиссов
               </h3>
 
@@ -170,7 +170,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
                 </svg>
               </div>
 
-              <h3 className="font-serif text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 font-normal leading-tight text-center tracking-wide">
+              <h3 className="font-serif font-bold text-[15px] sm:text-xl md:text-2xl lg:text-[26px] text-cream-50 leading-tight text-center tracking-wide">
                 Создано <br /> в Патисьер
               </h3>
 
