@@ -22,16 +22,6 @@
   --color-gold-600: #A9843E;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #140A07;
-}
-::-webkit-scrollbar-thumb {
-  background: #C5A059;
-}
-
 .cut-corner-btn {
   clip-path: polygon(
     8px 0, calc(100% - 8px) 0,
