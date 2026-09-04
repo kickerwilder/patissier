@@ -10,48 +10,42 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
   return (
     <section
       id="manifesto"
-      className="pt-2 sm:pt-4 pb-4 sm:pb-6 bg-choco-950 border-b border-gold-500/20 relative overflow-hidden"
+      className="pt-0 sm:pt-2 pb-3 sm:pb-5 bg-choco-950 border-b border-gold-500/20 relative overflow-hidden"
     >
-      {/* Top divider under header with authentic flourish monogram */}
-      <div className="max-w-7xl mx-auto px-4 mb-3 sm:mb-4">
-        <FlourishDivider lineWidth="w-24 sm:w-64" />
+      {/* Top divider under hero - compact on mobile so philosophy sits directly below Hero button */}
+      <div className="max-w-7xl mx-auto px-4 mb-1.5 sm:mb-3">
+        <FlourishDivider lineWidth="w-20 sm:w-64" className="my-1 sm:my-2" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+      {/* 1. TOP WIDE FRAMELESS BLOCK: Text Left + Full-bleed Photo Right (Seamless, like Hero) */}
+      <div className="relative w-full mb-3 sm:mb-4 min-h-[240px] sm:min-h-[265px] md:min-h-[285px] flex items-center overflow-hidden">
+        
+        {/* Full-bleed Photo layer: edge-to-edge without any frame, exactly like Hero */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none">
+          <img
+            src="images/philosophy-video.jpg"
+            alt="Торт Патисьер"
+            onError={(e) => handleImageError(e, 'philosophy')}
+            className="w-full h-full object-cover object-[right_center] filter brightness-105 contrast-105"
+          />
+          {/* Seamless gradient: deep choco-950 on the left for text contrast, opening completely into the photo on the right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-choco-950 from-0% via-choco-950/90 via-38% sm:via-30% md:via-25% to-transparent to-90%"></div>
+          {/* Soft top & bottom fades for perfect fusion */}
+          <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-choco-950 to-transparent"></div>
+          <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-choco-950 to-transparent"></div>
+        </div>
 
-        {/* 1. TOP WIDE FRAMELESS BLOCK: Text Left + Photo Right (Seamless transition) */}
-        <div className="relative mb-3 sm:mb-4 min-h-[210px] sm:min-h-[240px] flex items-center overflow-hidden">
-          
-          {/* Right: Frameless Cake Photo with Left Gradient Fade starting from middle of text */}
-          <div className="absolute right-0 top-0 bottom-0 w-[72%] sm:w-[70%] md:w-[68%] pointer-events-none select-none z-0">
-            <div className="relative w-full h-full">
-              <img
-                src="images/philosophy-video.jpg"
-                alt="Торт Патисьер"
-                onError={(e) => handleImageError(e, 'philosophy')}
-                className="w-full h-full object-cover object-[center_right] filter brightness-110 contrast-105"
-              />
-              {/* Left seamless fade gradient:
-                  0-20%: solid choco-950 matching left background
-                  20-45%: soft semi-transparent fade right under the right half of the text
-                  >50%: fully clear and bright cake photo */}
-              <div className="absolute inset-0 bg-gradient-to-r from-choco-950 from-0% via-choco-950/60 via-22% via-choco-950/20 via-42% to-transparent"></div>
-              {/* Top & Bottom subtle fades */}
-              <div className="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-choco-950 to-transparent"></div>
-              <div className="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-choco-950 to-transparent"></div>
-            </div>
-          </div>
-
-          {/* Left Column: Manifesto Text */}
-          <div className="relative z-10 w-[58%] sm:w-[54%] md:w-[50%] pr-1 sm:pr-2 py-1 text-left flex flex-col justify-center">
+        {/* Left Column: Manifesto Text */}
+        <div className="max-w-6xl mx-auto w-full px-3.5 sm:px-6 lg:px-8 relative z-10 flex items-center">
+          <div className="w-[58%] sm:w-[50%] md:w-[46%] pr-1 sm:pr-2 py-2 text-left flex flex-col justify-center">
             {/* Title: all one white color */}
-            <h2 className="font-serif text-[16px] sm:text-2xl md:text-3xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+            <h2 className="font-serif text-[16px] sm:text-2xl md:text-3xl text-cream-50 leading-[1.18] font-normal drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               Делаем для других, <br />
               как для себя
             </h2>
 
             {/* Authentic Monogram Flourish under heading: round circles, dots inside, vertical bar */}
-            <div className="my-1 sm:my-1.5 flex items-center gap-1">
+            <div className="my-1.5 sm:my-2 flex items-center gap-1">
               <div className="h-[1px] w-4 sm:w-10 bg-gradient-to-r from-transparent via-gold-500/80 to-gold-400"></div>
               <svg
                 viewBox="0 0 54 14"
@@ -76,7 +70,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
             </div>
 
             {/* Manifesto text formatted in continuous 6 exact lines as requested, with crisp drop shadow */}
-            <div className="text-[9px] sm:text-[11.5px] md:text-xs text-cream-50 leading-[1.38] sm:leading-[1.48] font-light drop-shadow-[0_1px_3px_rgba(0,0,0,0.85)]">
+            <div className="text-[9.5px] sm:text-[11.5px] md:text-xs text-cream-50 leading-[1.4] sm:leading-[1.48] font-light drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               <div>Мы убеждены, что создаётся</div>
               <div className="whitespace-nowrap">для людей, должно соответствовать</div>
               <div>стандартам, которые мы предъявляем</div>
@@ -85,11 +79,14 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ onSelectCake }) => {
               <div>итоговый результат.</div>
             </div>
           </div>
-
         </div>
 
-        {/* 2. TWO LOWER FRAMED CARDS - 2 COLUMNS IN ONE ROW */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+      </div>
+
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
+
+        {/* 2. TWO LOWER FRAMED CARDS - PULLED UPWARD FOR HARMONY IN ONE VIEWPORT */}
+        <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-2.5 sm:mb-3.5">
           
           {/* Card 1: Без заменителей и компромиссов (Leaf Icon, all white text, left-aligned paragraphs) */}
           <div className="rounded-lg bg-choco-950/85 p-2.5 sm:p-4 md:p-5 border border-gold-500/20 hover:border-gold-500/40 transition-all duration-300 flex flex-col items-center justify-between shadow-lg">
